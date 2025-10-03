@@ -327,7 +327,7 @@ h1 {
 }
 
 .menu-category {
-    background: var(--warm-beige);
+    background: #7E7F73;
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0 5px 20px var(--shadow);
@@ -336,7 +336,7 @@ h1 {
 .menu-category h3 {
     font-family: 'Croissant One', cursive;
     font-size: 1.8rem;
-    color: var(--primary-color);
+    color: var(--white);
     margin-bottom: 30px;
     text-align: center;
     border-bottom: 2px solid var(--accent-color);
@@ -353,7 +353,7 @@ h1 {
     justify-content: space-between;
     align-items: flex-start;
     padding: 15px 0;
-    border-bottom: 1px solid var(--cream-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .menu-item:last-child {
@@ -362,13 +362,13 @@ h1 {
 
 
 .item-info h4 {
-    color: var(--primary-color);
+    color: var(--white);
     font-size: 1.2rem;
     margin-bottom: 8px;
 }
 
 .item-info p {
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.85);
     font-size: 0.95rem;
     line-height: 1.5;
 }
@@ -376,7 +376,7 @@ h1 {
 .price {
     font-weight: 700;
     font-size: 1.2rem;
-    color: var(--brown-color);
+    color: var(--accent-color);
     min-width: 80px;
     text-align: right;
 }
@@ -796,7 +796,7 @@ html {
 }
 
 .menu-item:hover {
-    background: var(--cream-color);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
