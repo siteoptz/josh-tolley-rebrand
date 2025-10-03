@@ -385,18 +385,18 @@ h1 {
 .food-banner {
     padding: 50px 0;
     background: var(--warm-beige);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.food-banner .container {
+    max-width: 100%;
+    padding: 0;
 }
 
 .banner-image {
     width: 100%;
-    max-width: 1200px;
     height: 300px;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px var(--shadow);
+    border-radius: 0;
 }
 
 /* Order Section */
@@ -787,7 +787,6 @@ h1 {
     
     .banner-image {
         height: 200px;
-        border-radius: 5px;
     }
 }
 
