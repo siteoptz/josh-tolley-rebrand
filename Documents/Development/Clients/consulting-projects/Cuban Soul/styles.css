@@ -216,12 +216,13 @@ h1 {
 }
 
 .btn-primary {
-    background: var(--accent-color);
-    color: var(--primary-color);
+    background: #98B8AD;
+    color: var(--white);
 }
 
 .btn-primary:hover {
-    background: var(--white);
+    background: #7E9F93;
+    color: var(--white);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -336,10 +337,10 @@ h1 {
 .menu-category h3 {
     font-family: 'Croissant One', cursive;
     font-size: 1.8rem;
-    color: var(--white);
+    color: #243746;
     margin-bottom: 30px;
     text-align: center;
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid #243746;
     padding-bottom: 15px;
 }
 
@@ -353,7 +354,7 @@ h1 {
     justify-content: space-between;
     align-items: flex-start;
     padding: 15px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(36, 55, 70, 0.2);
 }
 
 .menu-item:last-child {
@@ -362,13 +363,13 @@ h1 {
 
 
 .item-info h4 {
-    color: var(--white);
+    color: #243746;
     font-size: 1.2rem;
     margin-bottom: 8px;
 }
 
 .item-info p {
-    color: rgba(255, 255, 255, 0.85);
+    color: #243746;
     font-size: 0.95rem;
     line-height: 1.5;
 }
@@ -376,7 +377,7 @@ h1 {
 .price {
     font-weight: 700;
     font-size: 1.2rem;
-    color: var(--accent-color);
+    color: #243746;
     min-width: 80px;
     text-align: right;
 }
