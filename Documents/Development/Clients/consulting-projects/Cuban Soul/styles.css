@@ -3,12 +3,12 @@
 :root {
     --primary-color: #243746;
     --secondary-color: #243746;
-    --accent-color: #98B8AD;
+    --accent-color: #F2DAB2;
     --cream-color: #FDF7E6;
     --brown-color: #8B4513;
     --dark-teal: #243746;
     --light-teal: #243746;
-    --warm-beige: #98B8AD;
+    --warm-beige: #F2DAB2;
     --text-dark: #2C2C2C;
     --text-light: #666666;
     --white: #FFFFFF;
@@ -327,7 +327,7 @@ h1 {
 }
 
 .menu-category {
-    background: #7E7F73;
+    background: #F2DAB2;
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0 5px 20px var(--shadow);
