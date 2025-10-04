@@ -228,14 +228,14 @@ h1 {
 }
 
 .btn-secondary {
-    background: transparent;
+    background: #98B8AD;
     color: var(--white);
-    border-color: var(--white);
+    border-color: #98B8AD;
 }
 
 .btn-secondary:hover {
-    background: var(--white);
-    color: var(--primary-color);
+    background: #7E9F93;
+    color: var(--white);
 }
 
 /* About Section */
