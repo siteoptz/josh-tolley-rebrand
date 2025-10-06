@@ -96,6 +96,40 @@
             gap: 20px;
         }
 
+        .social-icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: var(--primary-color);
+            font-size: 20px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-dark);
+            transform: scale(1.2);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            color: white;
+            font-size: 24px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .footer-social a:hover {
+            color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
         .emergency-badge {
             background: var(--emergency-red);
             color: white;
@@ -140,7 +174,7 @@
 
         /* Hero Section */
         .hero {
-            background: url('header-banner-tx.jpg') center/cover;
+            background: url('RE_Main.jpeg') center/cover;
             color: white;
             padding: 120px 0 80px;
             text-align: center;
@@ -172,8 +206,22 @@
 
         .hero-subtitle {
             font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .hero-tagline {
+            font-size: 20px;
             margin-bottom: 30px;
-            font-weight: 300;
+            padding: 10px 20px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .hero-cta-container {
@@ -288,7 +336,7 @@
         /* Services Section */
         .services {
             padding: 80px 0;
-            background: var(--gray-light);
+            background: var(--primary-color);
         }
 
         .section-title {
@@ -299,11 +347,19 @@
             margin-bottom: 20px;
         }
 
+        .services .section-title {
+            color: white;
+        }
+
         .section-subtitle {
             text-align: center;
             font-size: 18px;
             color: var(--text-light);
             margin-bottom: 50px;
+        }
+
+        .services .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .services-grid {
@@ -578,6 +634,76 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: var(--gray-light);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .faq-question i {
+            font-size: 24px;
+            margin-top: 2px;
+        }
+
+        .faq-answer {
+            color: var(--text-dark);
+            line-height: 1.8;
+            padding-left: 34px;
+        }
+
+        .faq-answer strong {
+            color: var(--primary-color);
+        }
+
+        .faq-cta {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-cta h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .faq-cta p {
+            font-size: 18px;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+        }
+
         /* Footer */
         footer {
             background: #333;
@@ -666,15 +792,25 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero {
-                padding: 140px 0 80px;
+                padding: 180px 0 80px;
             }
 
             .hero h1 {
-                font-size: 32px;
+                font-size: 28px;
+                line-height: 1.3;
+                padding: 0 15px;
             }
 
             .hero-subtitle {
-                font-size: 18px;
+                font-size: 16px;
+                padding: 0 15px;
+                letter-spacing: 0.5px;
+            }
+
+            .hero-tagline {
+                font-size: 14px;
+                padding: 8px 15px;
+                letter-spacing: 0.5px;
             }
 
             .header-content {
@@ -701,6 +837,54 @@
                 width: 90%;
                 justify-content: center;
             }
+
+            .section-title {
+                font-size: 32px;
+                padding: 0 10px;
+            }
+
+            .section-subtitle {
+                padding: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 170px 0 50px;
+            }
+
+            .hero h1 {
+                font-size: 22px;
+                line-height: 1.4;
+                margin-bottom: 15px;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+
+            .hero-tagline {
+                font-size: 12px;
+                padding: 6px 12px;
+                margin-bottom: 20px;
+            }
+
+            .hero-call-primary,
+            .hero-call-secondary {
+                font-size: 18px;
+                padding: 15px 30px;
+            }
+
+            .emergency-badge {
+                font-size: 12px;
+                padding: 4px 10px;
+            }
+
+            .header-call-btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
@@ -710,10 +894,18 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo-section">
-                    <img src="logo.png" alt="Restorations Enterprise Logo">
+                    <img src="RestorationEnterprise.jpg" alt="Restorations Enterprise Logo">
                     <span class="company-name">Restorations Enterprise</span>
                 </div>
                 <div class="emergency-header-cta">
+                    <div class="social-icons">
+                        <a href="https://instagram.com/restorationenterprise" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/Restoration-Enterprise/100089856954649/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
                     <span class="emergency-badge">24/7 EMERGENCY</span>
                     <a href="tel:713-804-7833" class="header-call-btn">
                         <i class="fas fa-phone-alt"></i>
@@ -727,32 +919,33 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Emergency Water Damage Restoration</h1>
-            <p class="hero-subtitle">Houston's Trusted 24/7 Water Restoration Experts</p>
+            <h1>Houston's Trusted Leader in Water & Mold Restoration</h1>
+            <p class="hero-subtitle">Water • Fire • Mold • Reconstruction — We Handle It All</p>
+            <div><span class="hero-tagline">The #1 Choice for Water Restoration in Houston</span></div>
             
             <div class="emergency-features">
                 <div class="emergency-feature">
-                    <i class="fas fa-clock"></i>
-                    <span>30-Minute Response</span>
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Fastest Response in Houston</span>
                 </div>
                 <div class="emergency-feature">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Licensed & Insured</span>
+                    <i class="fas fa-home"></i>
+                    <span>Full Restoration & Rebuild</span>
                 </div>
                 <div class="emergency-feature">
-                    <i class="fas fa-certificate"></i>
-                    <span>IICRC Certified</span>
+                    <i class="fas fa-users"></i>
+                    <span>Local Experts Since 2009</span>
                 </div>
             </div>
 
             <div class="hero-cta-container">
                 <a href="tel:713-804-7833" class="hero-call-primary">
                     <i class="fas fa-phone-alt"></i>
-                    Call Now: 713-804-7833
+                    Get Immediate Help: 713-804-7833
                 </a>
                 <a href="tel:713-804-7833" class="hero-call-secondary">
                     <i class="fas fa-exclamation-triangle"></i>
-                    Emergency? We're Here 24/7
+                    Emergency? Call Now 24/7
                 </a>
             </div>
         </div>
@@ -762,7 +955,7 @@
     <section class="emergency-bar">
         <div class="container">
             <div class="emergency-bar-content">
-                <span class="emergency-text">⚠️ FLOODING EMERGENCY? WE'RE HERE NOW!</span>
+                <span class="emergency-text">⚠️ When Disaster Strikes, We're Already on Our Way!</span>
                 <a href="tel:713-804-7833" class="emergency-call-now">
                     <i class="fas fa-phone-volume"></i>
                     CALL 713-804-7833
@@ -771,155 +964,11 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <h2 class="section-title">Our Water Restoration Services</h2>
-            <p class="section-subtitle">Complete Solutions for All Water Damage Situations</p>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="water-extraction-removal-2-1.jpg" alt="Water Extraction Service" class="service-image">
-                    <div class="service-content">
-                        <h3 class="service-title">Emergency Water Extraction</h3>
-                        <p class="service-description">Rapid water removal to prevent further damage and mold growth.</p>
-                        <ul class="service-features">
-                            <li>Industrial-grade pumps & vacuums</li>
-                            <li>24/7 immediate response</li>
-                            <li>Complete moisture removal</li>
-                            <li>Prevents structural damage</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <img src="apartment-flood-1.jpg" alt="Residential Water Damage" class="service-image">
-                    <div class="service-content">
-                        <h3 class="service-title">Residential Water Damage</h3>
-                        <p class="service-description">Complete home restoration from floods, leaks, and water disasters.</p>
-                        <ul class="service-features">
-                            <li>Living spaces restoration</li>
-                            <li>Basement flooding cleanup</li>
-                            <li>Carpet & flooring restoration</li>
-                            <li>Personal property recovery</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <img src="commercial-water-damage-restoration-services-1.jpg" alt="Commercial Water Restoration" class="service-image">
-                    <div class="service-content">
-                        <h3 class="service-title">Commercial Water Restoration</h3>
-                        <p class="service-description">Minimize business downtime with our rapid commercial restoration.</p>
-                        <ul class="service-features">
-                            <li>Office & retail restoration</li>
-                            <li>Document & inventory drying</li>
-                            <li>Equipment restoration</li>
-                            <li>Minimal business interruption</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="services-cta">
-                <h3>Don't Wait - Water Damage Worsens Every Hour!</h3>
-                <p style="font-size: 20px; margin: 20px 0;">Get immediate professional help to save your property</p>
-                <a href="tel:713-804-7833" class="services-call-btn">
-                    <i class="fas fa-phone-alt"></i>
-                    Call 713-804-7833 Now
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Google Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <div class="reviews-container">
-                <h2 class="section-title">What Our Customers Say</h2>
-                
-                <div class="google-reviews-header">
-                    <svg class="google-logo" viewBox="0 0 272 92" width="68">
-                        <path fill="#EA4335" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
-                        <path fill="#FBBC05" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
-                        <path fill="#4285F4" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z"/>
-                        <path fill="#34A853" d="M225 3v65h-9.5V3h9.5z"/>
-                        <path fill="#EA4335" d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z"/>
-                        <path fill="#4285F4" d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z"/>
-                    </svg>
-                    <div class="rating-container">
-                        <span class="rating-number">4.7</span>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <span class="review-count">Based on 160 reviews</span>
-                    </div>
-                </div>
-
-                <div class="reviews-grid">
-                    <div class="review-card">
-                        <div class="review-header">
-                            <span class="reviewer-name">Sarah Johnson</span>
-                            <div class="review-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="review-text">"Restorations Enterprise saved our home! They responded within 30 minutes of our call and immediately started extracting water. Professional, thorough, and caring team."</p>
-                        <p class="review-date">2 weeks ago</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <span class="reviewer-name">Michael Chen</span>
-                            <div class="review-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="review-text">"Excellent service during a stressful time. Our basement flooded at 2 AM and they were here by 2:45. Can't thank them enough for their quick response and professional work."</p>
-                        <p class="review-date">1 month ago</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <span class="reviewer-name">Lisa Martinez</span>
-                            <div class="review-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="review-text">"The team was amazing! They handled our insurance claim, restored our property perfectly, and kept us informed throughout the entire process. Highly recommend!"</p>
-                        <p class="review-date">3 weeks ago</p>
-                    </div>
-                </div>
-
-                <a href="https://www.google.com/search?q=restoration+enterprise&rlz=1C5CHFA_enUS1111US1112&oq=restoration+enterprise&gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyCQgBEEUYOxiABDIICAIQABgWGB4yCAgDEAAYFhgeMggIBBAAGBYYHjIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDc2ODNqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x8640c183f6bd6ac3:0x92e728775c4848c2,1,,,," target="_blank" class="view-all-reviews">
-                    <i class="fab fa-google"></i>
-                    View All Google Reviews
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Why Choose Us -->
     <section class="why-choose">
         <div class="container">
-            <h2 class="section-title">Why Houston Chooses Restorations Enterprise</h2>
-            <p class="section-subtitle">Experience, Expertise, and Emergency Response You Can Trust</p>
+            <h2 class="section-title">Born in Houston. Here for Houston. Always.</h2>
+            <p class="section-subtitle">Neighbors First: Serving & Supporting Houston Families When It Matters Most</p>
 
             <div class="features-grid">
                 <div class="feature-item">
@@ -963,12 +1012,272 @@
             </div>
 
             <div class="choose-cta">
-                <h3>Get Expert Water Restoration Help Now!</h3>
-                <p style="font-size: 18px; margin: 20px 0;">Don't let water damage destroy your property - Call the experts!</p>
+                <h3>Here When You Need Us — 24/7 Emergency Restoration</h3>
+                <p style="font-size: 18px; margin: 20px 0;">Restoration. Construction. Peace of Mind — All Under One Roof</p>
                 <a href="tel:713-804-7833" class="choose-call-btn">
                     <i class="fas fa-phone-alt"></i>
                     713-804-7833 - We're Ready!
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">From Water Extraction to Full Reconstruction</h2>
+            <p class="section-subtitle">Your One-Stop Restoration & Rebuild Team — Start to Finish</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="water-extraction-removal-2-1.jpg" alt="Water Extraction Service" class="service-image">
+                    <div class="service-content">
+                        <h3 class="service-title">Emergency Water Extraction</h3>
+                        <p class="service-description">Speed meets expertise — preventing further damage with immediate response.</p>
+                        <ul class="service-features">
+                            <li>Industrial-grade pumps & vacuums</li>
+                            <li>24/7 immediate response</li>
+                            <li>Complete moisture removal</li>
+                            <li>Prevents structural damage</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="apartment-flood-1.jpg" alt="Residential Water Damage" class="service-image">
+                    <div class="service-content">
+                        <h3 class="service-title">Residential Restoration</h3>
+                        <p class="service-description">Restoring homes, rebuilding trust — from emergency to move-in ready.</p>
+                        <ul class="service-features">
+                            <li>Living spaces restoration</li>
+                            <li>Basement flooding cleanup</li>
+                            <li>Carpet & flooring restoration</li>
+                            <li>Personal property recovery</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="commercial-water-damage-restoration-services-1.jpg" alt="Commercial Water Restoration" class="service-image">
+                    <div class="service-content">
+                        <h3 class="service-title">Commercial Restoration</h3>
+                        <p class="service-description">Faster response, smarter restoration — getting your business back online.</p>
+                        <ul class="service-features">
+                            <li>Office & retail restoration</li>
+                            <li>Document & inventory drying</li>
+                            <li>Equipment restoration</li>
+                            <li>Minimal business interruption</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-cta">
+                <h3>Your First Call — Any Hour, Any Disaster</h3>
+                <p style="font-size: 20px; margin: 20px 0;">Real people. Real help. When you need it most.</p>
+                <a href="tel:713-804-7833" class="services-call-btn">
+                    <i class="fas fa-phone-alt"></i>
+                    Call 713-804-7833 Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="reviews-container">
+                <h2 class="section-title">What Our Customers Say</h2>
+                
+                <div class="google-reviews-header">
+                    <svg class="google-logo" viewBox="0 0 272 92" width="68">
+                        <path fill="#EA4335" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
+                        <path fill="#FBBC05" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
+                        <path fill="#4285F4" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z"/>
+                        <path fill="#34A853" d="M225 3v65h-9.5V3h9.5z"/>
+                        <path fill="#EA4335" d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z"/>
+                        <path fill="#4285F4" d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z"/>
+                    </svg>
+                    <div class="rating-container">
+                        <span class="rating-number">4.7</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="review-count">Based on 160 reviews</span>
+                    </div>
+                </div>
+
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Janet Torres</span>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text">"As a property owner, finding a trustworthy and reputable home restoration company is very important. Restoration Enterprise is that company for me. They were very nice and worked with me one on one to make sure that my property received the attention it deserved. Even from all the way in California, getting updates and pictures about how the process was going was a breeze. Restoration Enterprise made quick work of the mold in the laundry room, as well as behind the walls. They will be my go to disaster restoration company for years to come."</p>
+                        <p class="review-date">2 years ago</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Tanner Johnson</span>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text">"When my home flooded from a roof leak, Restoration Enterprise showed up at 4:30 in the morning! Their team cleared all the water immediately and returned at sunrise to continue drying and cleaning. I've never seen such dedication—true life savers!"</p>
+                        <p class="review-date">6 days ago</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Buck Flowers</span>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text">"Restoration Enterprises came out in the middle of the night. I called and they were at my door within an hour. By morning, my home was already drying out. I highly recommend them, incredible overall experience with them."</p>
+                        <p class="review-date">6 days ago</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Fio Yo</span>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text">"Words can't describe how thankful I am. A major roof leak had me panicked, but Restoration Enterprise came right away, worked through the night, and truly saved my home. I'm forever grateful to this amazing team."</p>
+                        <p class="review-date">3 days ago</p>
+                    </div>
+                </div>
+
+                <a href="https://www.google.com/search?q=restoration+enterprise&rlz=1C5CHFA_enUS1111US1112&oq=restoration+enterprise&gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyCQgBEEUYOxiABDIICAIQABgWGB4yCAgDEAAYFhgeMggIBBAAGBYYHjIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDc2ODNqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x8640c183f6bd6ac3:0x92e728775c4848c2,1,,,," target="_blank" class="view-all-reviews">
+                    <i class="fab fa-google"></i>
+                    View All Google Reviews
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-container">
+                <h2 class="section-title">Common Questions & Concerns</h2>
+                <p class="section-subtitle">We understand this is a stressful time. Here are answers to help you make the right decision.</p>
+
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>"How much will this cost? Will my insurance cover it?"</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <strong>We work directly with your insurance company</strong> to maximize your coverage. Most water damage is covered by homeowner's insurance. We'll handle all documentation and communication with your adjuster. <strong>No upfront costs</strong> — we bill insurance directly. Free inspection and estimates always.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            <i class="fas fa-clock"></i>
+                            <span>"How fast can you really get here?"</span>
+                        </h3>
+                        <div class="faq-answer">
+                            Our teams are <strong>strategically stationed across Houston</strong> for true 30-minute response times. We have crews in Sugar Land, The Woodlands, Katy, and central Houston. When you call, we dispatch the nearest available team immediately — <strong>24 hours a day, 365 days a year</strong>, including holidays.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            <i class="fas fa-home"></i>
+                            <span>"Will I have to move out during restoration?"</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <strong>Most customers can stay in their homes</strong> during restoration. We use containment barriers to isolate work areas and HEPA air scrubbers to maintain air quality. If temporary relocation is needed (rare), we'll help coordinate with your insurance for additional living expenses (ALE) coverage.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>"How do I know you're legitimate and qualified?"</span>
+                        </h3>
+                        <div class="faq-answer">
+                            We're <strong>IICRC certified</strong> (Institute of Inspection Cleaning and Restoration Certification), <strong>fully licensed</strong> (License #VET-2023-1847), and carry <strong>$2M in liability insurance</strong>. BBB accredited with an A+ rating. Over <strong>15 years serving Houston</strong> with 160+ five-star Google reviews. We'll provide all credentials upfront.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            <i class="fas fa-tint"></i>
+                            <span>"What if mold has already started growing?"</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <strong>We're certified mold remediation specialists</strong>. Mold can begin within 24-48 hours, which is why our rapid response is critical. We use antimicrobial treatments, HEPA vacuums, and negative air pressure to safely remove mold. All work follows EPA and IICRC S520 standards. <strong>Mold testing and clearance certificates</strong> provided.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            <i class="fas fa-hammer"></i>
+                            <span>"Can you handle the rebuild too, or will I need another contractor?"</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <strong>We're your single source from emergency to move-in ready</strong>. Unlike others who only extract water, we handle complete reconstruction — drywall, flooring, painting, even kitchen and bathroom rebuilds. One team, one point of contact, one warranty. No coordination headaches between multiple contractors.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            <i class="fas fa-file-invoice"></i>
+                            <span>"What if my insurance company gives me trouble?"</span>
+                        </h3>
+                        <div class="faq-answer">
+                            We have <strong>15+ years experience dealing with insurance adjusters</strong>. We document everything with photos, moisture readings, and detailed reports. Our team knows exactly what insurers need to approve claims quickly. If there's pushback, we'll advocate for you with supplemental claims and proper documentation. <strong>We fight to get you maximum coverage</strong>.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            <i class="fas fa-certificate"></i>
+                            <span>"How long will the whole restoration process take?"</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <strong>Water extraction: 1-2 days</strong>. Drying and dehumidification: 3-5 days. Reconstruction varies based on damage extent — minor repairs take 1-2 weeks, major rebuilds 4-6 weeks. We provide a detailed timeline after inspection and <strong>keep you updated daily</strong>. We work efficiently without cutting corners.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-cta">
+                    <h3>Still Have Questions? We Have Answers.</h3>
+                    <p>No obligation. No pressure. Just honest help when you need it most.</p>
+                    <a href="tel:713-804-7833" class="services-call-btn">
+                        <i class="fas fa-phone-alt"></i>
+                        Call 713-804-7833 for Free Consultation
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -980,6 +1289,14 @@
                 <div class="footer-section">
                     <h3>About Restorations Enterprise</h3>
                     <p>Houston's premier water damage restoration company with over 15 years of experience. We're here 24/7 to protect your property and restore your peace of mind.</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/restorationenterprise" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/Restoration-Enterprise/100089856954649/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="footer-section">
