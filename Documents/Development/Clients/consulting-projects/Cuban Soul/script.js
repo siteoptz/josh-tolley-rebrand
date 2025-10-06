@@ -130,12 +130,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Subscription modal functionality
     const modal = document.getElementById('subscriptionModal');
     const subscribeBtn = document.getElementById('subscribeBtn');
+    const promotionsBtn = document.getElementById('promotionsBtn');
     const closeModal = document.querySelector('.close');
     const subscriptionForm = document.getElementById('subscriptionForm');
 
-    // Show modal when button is clicked
+    // Show modal when old subscribe button is clicked (if exists)
     if (subscribeBtn) {
         subscribeBtn.addEventListener('click', function() {
+            modal.style.display = 'block';
+        });
+    }
+    
+    // Show modal when new promotions button is clicked
+    if (promotionsBtn) {
+        promotionsBtn.addEventListener('click', function() {
             modal.style.display = 'block';
         });
     }

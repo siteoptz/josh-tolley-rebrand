@@ -895,7 +895,7 @@ html {
     font-size: 1.1rem;
 }
 
-/* Floating Subscribe Button */
+/* Floating Subscribe/Catering Button */
 .subscribe-float-btn {
     position: fixed;
     bottom: 30px;
@@ -912,11 +912,15 @@ html {
     transition: all 0.3s ease;
     z-index: 1000;
     animation: pulse 2s infinite;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .subscribe-float-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    color: var(--white);
+    text-decoration: none;
 }
 
 /* Animations */
