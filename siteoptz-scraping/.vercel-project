@@ -1,0 +1,20 @@
+# VERCEL PROJECT CONFIGURATION
+# THIS FILE HELPS PREVENT ACCIDENTAL DEPLOYMENTS TO WRONG PROJECTS
+
+CORRECT_PROJECT_NAME=siteoptz-scraping
+PROJECT_TYPE=dashboard
+FRAMEWORK=create-react-app
+
+# ⚠️ NEVER DEPLOY TO THESE PROJECTS:
+# - siteoptz-ai (production website)
+# - siteoptz.com (agency website)
+# - cubansoultx (client website)
+# - Any customer production sites
+
+# ✅ SAFE DEPLOYMENT TARGET:
+# - siteoptz-scraping
+
+# TO VERIFY BEFORE DEPLOYMENT:
+# 1. Run: cat .vercel/project.json
+# 2. Check project name matches "siteoptz-scraping"
+# 3. Never use --prod without verification

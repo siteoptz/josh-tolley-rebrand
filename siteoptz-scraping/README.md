@@ -1,6 +1,19 @@
 # SiteOptz Scraping Platform
 
+> ⚠️ **CRITICAL WARNING**: This is a React dashboard project. **NEVER deploy this to production websites like siteoptz.ai or siteoptz.com**. See [DEPLOYMENT_GUIDELINES.md](./DEPLOYMENT_GUIDELINES.md) for safe deployment instructions.
+
 A comprehensive web scraping platform with tiered pricing plans and dashboard functionality integrated with Stripe checkout.
+
+## 🚨 Deployment Warning
+
+**DO NOT DEPLOY TO:**
+- ❌ siteoptz.ai (main website)
+- ❌ siteoptz.com (agency website)  
+- ❌ Any customer/client production sites
+
+**SAFE TO DEPLOY TO:**
+- ✅ siteoptz-scraping (this project's dedicated Vercel project)
+- ✅ Development/staging environments only
 
 ## Pricing Plans Overview
 
