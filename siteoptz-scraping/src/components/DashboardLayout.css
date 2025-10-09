@@ -1,0 +1,106 @@
+.dashboard-layout {
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.dashboard-header {
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1rem 0;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  margin: 0;
+  color: #1a202c;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-name {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.plan-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.plan-free {
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+.plan-starter {
+  background-color: #bee3f8;
+  color: #2b6cb0;
+}
+
+.plan-pro {
+  background-color: #c6f6d5;
+  color: #2f855a;
+}
+
+.plan-enterprise {
+  background-color: #fbb6ce;
+  color: #b83280;
+}
+
+.dashboard-nav {
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  padding: 1rem 0;
+  color: #4a5568;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  color: #2d3748;
+}
+
+.nav-link.active {
+  color: #3182ce;
+  border-bottom-color: #3182ce;
+}
+
+.dashboard-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
