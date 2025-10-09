@@ -180,6 +180,14 @@ const ProDashboard = () => {
             </div>
           </div>
         </div>
+        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+          <button 
+            className="action-button primary"
+            onClick={() => window.location.href = '/ai-seo'}
+          >
+            📊 Access Advanced Analytics
+          </button>
+        </div>
       </div>
 
       {/* Recent Activity */}
