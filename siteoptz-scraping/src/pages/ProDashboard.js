@@ -105,7 +105,7 @@ const ProDashboard = () => {
         </p>
         <button 
           className="action-button primary"
-          onClick={() => window.location.href = '/ai-seo'}
+          onClick={() => window.location.href = '/dashboard/pro/aiseo'}
           style={{ width: '100%' }}
         >
           Launch Analytics Suite
@@ -183,7 +183,7 @@ const ProDashboard = () => {
         <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
           <button 
             className="action-button primary"
-            onClick={() => window.location.href = '/ai-seo'}
+            onClick={() => window.location.href = '/dashboard/pro/aiseo'}
           >
             📊 Access Advanced Analytics
           </button>

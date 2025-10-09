@@ -35,6 +35,11 @@ function App() {
                   <ProDashboard />
                 </DashboardLayout>
               } />
+              <Route path="/dashboard/pro/aiseo" element={
+                <DashboardLayout plan="pro">
+                  <AISEOProtected />
+                </DashboardLayout>
+              } />
               <Route path="/dashboard/enterprise" element={
                 <DashboardLayout plan="enterprise">
                   <EnterpriseDashboard />
@@ -45,8 +50,8 @@ function App() {
               <Route path="/dashboard/success" element={<SuccessPage />} />
               <Route path="/dashboard/cancel" element={<Navigate to="/dashboard" replace />} />
               
-              {/* AI SEO Service (Protected for Pro/Enterprise users) */}
-              <Route path="/ai-seo" element={<AISEOProtected />} />
+              {/* Legacy AI SEO route - redirects to new location */}
+              <Route path="/ai-seo" element={<Navigate to="/dashboard/pro/aiseo" replace />} />
               
               {/* Default redirect */}
               <Route path="/" element={<Navigate to="/dashboard/free" replace />} />
