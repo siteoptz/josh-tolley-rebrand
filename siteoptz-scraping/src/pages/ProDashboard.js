@@ -6,6 +6,22 @@ import './DashboardPage.css';
 const ProDashboard = () => {
   const { openUpgradeModal } = useStripe();
   const [isUpgrading, setIsUpgrading] = useState(false);
+  
+  // Force navigation to AI SEO - bypass everything
+  React.useEffect(() => {
+    const handleAISEOClick = (e) => {
+      if (e.target.closest('[data-aiseo-link]')) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        window.location.pathname = '/dashboard/pro/aiseo';
+        return false;
+      }
+    };
+    
+    document.addEventListener('click', handleAISEOClick, true);
+    return () => document.removeEventListener('click', handleAISEOClick, true);
+  }, []);
 
   const handleUpgrade = async () => {
     setIsUpgrading(true);
@@ -103,13 +119,14 @@ const ProDashboard = () => {
         <p style={{ color: '#6b7280', marginBottom: '1.5rem' }}>
           Unlock powerful AI-driven SEO and analytics tools to supercharge your business growth.
         </p>
-        <button 
+        <a 
+          href="/dashboard/pro/aiseo"
+          data-aiseo-link="true"
           className="action-button primary"
-          onClick={() => window.location.href = '/dashboard/pro/aiseo'}
-          style={{ width: '100%' }}
+          style={{ width: '100%', display: 'block', textAlign: 'center', textDecoration: 'none' }}
         >
           Launch Analytics Suite
-        </button>
+        </a>
       </div>
 
       {/* Advanced Features */}
@@ -181,12 +198,14 @@ const ProDashboard = () => {
           </div>
         </div>
         <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-          <button 
+          <a 
+            href="/dashboard/pro/aiseo"
+          data-aiseo-link="true"
             className="action-button primary"
-            onClick={() => window.location.href = '/dashboard/pro/aiseo'}
+            style={{ display: 'inline-block', textDecoration: 'none' }}
           >
             📊 Access Advanced Analytics
-          </button>
+          </a>
         </div>
       </div>
 
@@ -217,12 +236,14 @@ const ProDashboard = () => {
       <div className="quick-actions">
         <h2>Quick Actions</h2>
         <div className="actions-grid">
-          <button 
+          <a 
+            href="/dashboard/pro/aiseo"
+          data-aiseo-link="true"
             className="action-button primary"
-            onClick={() => window.location.href = '/ai-seo'}
+            style={{ display: 'inline-block', textDecoration: 'none' }}
           >
             🚀 Analytics Suite
-          </button>
+          </a>
           <button className="action-button secondary">
             Create JavaScript Job
           </button>

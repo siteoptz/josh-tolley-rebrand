@@ -3,7 +3,14 @@ import { useUser } from '../contexts/UserContext';
 import './DashboardLayout.css';
 
 const DashboardLayout = ({ children, plan }) => {
-  const { user, currentPlan } = useUser();
+  const { user, currentPlan, setCurrentPlan } = useUser();
+  
+  // Set the plan based on the route
+  React.useEffect(() => {
+    if (plan && plan !== currentPlan) {
+      setCurrentPlan(plan);
+    }
+  }, [plan, currentPlan, setCurrentPlan]);
 
   return (
     <div className="dashboard-layout">

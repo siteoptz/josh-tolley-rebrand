@@ -4,11 +4,15 @@ import AISEODashboard from './AISEODashboard';
 import { useNavigate } from 'react-router-dom';
 
 const AISEOProtected = () => {
-  const { currentPlan } = useUser();
+  const { currentPlan, user } = useUser();
   const navigate = useNavigate();
 
-  // Check if user has access (Pro or Enterprise plan)
-  const hasAccess = currentPlan === 'pro' || currentPlan === 'enterprise';
+  // Check for SSO token in URL - if present, user is authenticated
+  const urlParams = new URLSearchParams(window.location.search);
+  const hasSSOToken = urlParams.has('sso_token');
+  
+  // Check if user has access (Pro or Enterprise plan OR has SSO token)
+  const hasAccess = currentPlan === 'pro' || currentPlan === 'enterprise' || hasSSOToken;
 
   if (!hasAccess) {
     return (

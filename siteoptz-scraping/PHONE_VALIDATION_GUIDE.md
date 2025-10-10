@@ -510,4 +510,3 @@ await saveAuditTrail(auditTrail);
 ---
 
 **Remember:** This is about **validating and enriching data you already legally possess with consent**. Never use these tools to scrape or contact people without proper authorization.
-

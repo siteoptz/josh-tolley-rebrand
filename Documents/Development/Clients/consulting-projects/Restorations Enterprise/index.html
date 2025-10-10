@@ -71,7 +71,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 10px 0;
+            height: 80px;
         }
 
         .logo-section {
@@ -80,7 +81,7 @@
         }
 
         .logo-section img {
-            height: 50px;
+            height: 120px;
             margin-right: 15px;
         }
 
@@ -188,7 +189,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.6);
             z-index: 1;
         }
 
@@ -369,6 +370,13 @@
             margin-bottom: 50px;
         }
 
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
         .service-card {
             background: white;
             border-radius: 10px;
@@ -499,12 +507,6 @@
             font-size: 16px;
         }
 
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
 
         .review-card {
             background: var(--gray-light);
@@ -792,7 +794,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero {
-                padding: 180px 0 80px;
+                padding: 260px 0 80px;
             }
 
             .hero h1 {
@@ -815,7 +817,9 @@
 
             .header-content {
                 flex-direction: column;
-                gap: 15px;
+                gap: 8px;
+                height: auto;
+                padding: 15px 0 10px 0;
             }
 
             .emergency-header-cta {
@@ -824,6 +828,10 @@
             }
 
             .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -850,7 +858,7 @@
 
         @media (max-width: 480px) {
             .hero {
-                padding: 170px 0 50px;
+                padding: 240px 0 50px;
             }
 
             .hero h1 {
@@ -894,8 +902,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo-section">
-                    <img src="RestorationEnterprise.jpg" alt="Restorations Enterprise Logo">
-                    <span class="company-name">Restorations Enterprise</span>
+                    <img src="logo3.png" alt="Restorations Enterprise Logo">
                 </div>
                 <div class="emergency-header-cta">
                     <div class="social-icons">
