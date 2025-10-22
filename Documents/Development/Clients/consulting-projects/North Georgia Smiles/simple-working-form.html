@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Working Form - North Georgia Smiles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f9fafb;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #175e6a;
+            margin-bottom: 20px;
+        }
+        .method {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #175e6a;
+        }
+        .method h3 {
+            color: #175e6a;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #175e6a;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e4e4e4;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #ebab65;
+        }
+        button {
+            background: #ebab65;
+            color: #175e6a;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background: #d99548;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .status {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: none;
+        }
+        .status.show {
+            display: block;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .backup-info {
+            background: #fff3cd;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border: 1px solid #ffeaa7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Alternative Form Solutions</h1>
+        <p>Since both FormSubmit and EmailJS are having issues, here are working alternatives:</p>
+
+        <!-- Method 1: Netlify Forms -->
+        <div class="method">
+            <h3>Method 1: Netlify Forms (Recommended)</h3>
+            <p><strong>Setup:</strong> Move hosting to Netlify (5 minutes)</p>
+            <p><strong>Reliability:</strong> 100% - Built into hosting platform</p>
+            <p><strong>Code:</strong> Just add <code>netlify</code> attribute to form</p>
+            
+            <form name="contact" method="POST" data-netlify="true" style="margin-top: 15px;">
+                <input type="hidden" name="form-name" value="contact" />
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Message:</label>
+                    <textarea name="message" rows="3" required></textarea>
+                </div>
+                <button type="submit">Test Netlify Form</button>
+            </form>
+            <p style="font-size: 14px; color: #666;">Note: Only works when deployed to Netlify</p>
+        </div>
+
+        <!-- Method 2: Backup Data Capture -->
+        <div class="method">
+            <h3>Method 2: Local Data Capture + Manual Processing</h3>
+            <p><strong>How it works:</strong> Saves form data locally, you can export and email manually</p>
+            
+            <form id="backupForm" style="margin-top: 15px;">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone:</label>
+                    <input type="tel" name="phone">
+                </div>
+                <div class="form-group">
+                    <label>Message:</label>
+                    <textarea name="message" rows="3"></textarea>
+                </div>
+                <button type="submit">Save Form Data</button>
+                <button type="button" onclick="exportData()">Export All Submissions</button>
+            </form>
+            <div id="backupStatus" class="status"></div>
+        </div>
+
+        <!-- Method 3: Direct Email Link -->
+        <div class="method">
+            <h3>Method 3: Pre-filled Email Link</h3>
+            <p><strong>How it works:</strong> Opens user's email client with pre-filled message</p>
+            
+            <form id="emailLinkForm" style="margin-top: 15px;">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" id="linkName" value="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="linkEmail" value="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Phone:</label>
+                    <input type="tel" id="linkPhone" value="770-123-4567">
+                </div>
+                <div class="form-group">
+                    <label>Message:</label>
+                    <textarea id="linkMessage" rows="3">I would like to schedule an appointment.</textarea>
+                </div>
+                <button type="button" onclick="generateEmailLink()">Open Email Client</button>
+            </form>
+        </div>
+
+        <div class="backup-info">
+            <strong>📞 Always Available:</strong><br>
+            Phone: <strong>(770)-884-2868</strong><br>
+            Email: <strong>antonio@siteoptz.com</strong>
+        </div>
+    </div>
+
+    <script>
+        // Method 2: Backup Data Capture
+        document.getElementById('backupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            data.timestamp = new Date().toISOString();
+            data.id = Date.now();
+            
+            // Save to localStorage
+            const submissions = JSON.parse(localStorage.getItem('form_submissions') || '[]');
+            submissions.push(data);
+            localStorage.setItem('form_submissions', JSON.stringify(submissions));
+            
+            // Show success
+            const status = document.getElementById('backupStatus');
+            status.textContent = `✅ Form data saved! Total submissions: ${submissions.length}`;
+            status.className = 'status show success';
+            
+            // Reset form
+            this.reset();
+            
+            console.log('Form submission saved:', data);
+        });
+        
+        // Export function
+        function exportData() {
+            const submissions = JSON.parse(localStorage.getItem('form_submissions') || '[]');
+            
+            if (submissions.length === 0) {
+                alert('No form submissions to export');
+                return;
+            }
+            
+            // Create CSV content
+            const headers = ['ID', 'Timestamp', 'Name', 'Email', 'Phone', 'Message'];
+            const csvContent = [
+                headers.join(','),
+                ...submissions.map(sub => [
+                    sub.id,
+                    sub.timestamp,
+                    `"${sub.name || ''}"`,
+                    sub.email || '',
+                    sub.phone || '',
+                    `"${(sub.message || '').replace(/"/g, '""')}"`
+                ].join(','))
+            ].join('\\n');
+            
+            // Download CSV
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `form-submissions-${new Date().toISOString().split('T')[0]}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert(`Exported ${submissions.length} form submissions`);
+        }
+        
+        // Method 3: Email Link Generator
+        function generateEmailLink() {
+            const name = document.getElementById('linkName').value;
+            const email = document.getElementById('linkEmail').value;
+            const phone = document.getElementById('linkPhone').value;
+            const message = document.getElementById('linkMessage').value;
+            
+            const subject = encodeURIComponent('New Appointment Request - North Georgia Smiles');
+            const body = encodeURIComponent(`
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+Message:
+${message}
+
+---
+Sent from North Georgia Smiles website contact form
+Time: ${new Date().toLocaleString()}
+            `.trim());
+            
+            const mailtoLink = `mailto:antonio@siteoptz.com?subject=${subject}&body=${body}`;
+            
+            // Try to open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Email client should open with pre-filled message. If not, copy the details and email manually to antonio@siteoptz.com');
+        }
+        
+        console.log('Alternative form solutions loaded');
+        console.log('FormSubmit issues: Both email and activation key endpoints failing');
+        console.log('EmailJS issues: Gmail API scope authentication error');
+        console.log('Backup solutions: Netlify Forms, Local storage, Email links');
+    </script>
+</body>
+</html>

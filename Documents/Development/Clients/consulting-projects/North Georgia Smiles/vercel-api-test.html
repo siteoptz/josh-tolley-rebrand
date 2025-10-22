@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vercel API Test - North Georgia Smiles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f9fafb;
+            color: #175e6a;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #175e6a;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #6b7280;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        .info-box {
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #c3e6cb;
+        }
+        .warning-box {
+            background: #fff3cd;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #ffeaa7;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #175e6a;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e4e4e4;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #ebab65;
+            box-shadow: 0 0 0 3px rgba(235, 171, 101, 0.1);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        button {
+            background: #ebab65;
+            color: #175e6a;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        button:hover {
+            background: #d99548;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+        }
+        button:disabled {
+            background: #ccc;
+            color: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+            display: none;
+        }
+        .status.show {
+            display: block;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .debug {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 20px;
+            border: 1px solid #dee2e6;
+        }
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            body {
+                margin: 20px auto;
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Vercel API Test</h1>
+        <p class="subtitle">Testing form submission through Vercel serverless functions</p>
+        
+        <div class="info-box">
+            <strong>✅ How This Works:</strong><br>
+            • Form submits to /api/send-email (your Vercel function)<br>
+            • Function processes the data and sends emails<br>
+            • 100% reliable - runs on your own hosting<br>
+            • No third-party dependencies like FormSubmit/EmailJS
+        </div>
+        
+        <div class="warning-box">
+            <strong>📝 Setup Required:</strong><br>
+            To actually send emails, add a RESEND_API_KEY environment variable to your Vercel project.<br>
+            For now, it will log the email content to the console for manual processing.
+        </div>
+        
+        <div id="status" class="status"></div>
+        
+        <form id="testForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" value="Test" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" value="User" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" value="test@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone *</label>
+                    <input type="tel" id="phone" name="phone" value="770-123-4567" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Service Needed *</label>
+                <select id="service" name="service" required>
+                    <option value="api-test">🔧 Vercel API Test</option>
+                    <option value="cleaning">Dental Cleaning & Exam</option>
+                    <option value="emergency">Emergency Care</option>
+                    <option value="consultation">General Consultation</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Testing Vercel serverless function..."></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn">
+                🚀 Test Vercel API
+            </button>
+        </form>
+        
+        <div class="form-group" style="margin-top: 30px;">
+            <button type="button" onclick="testAPI()" style="background: #6c757d;">
+                🔍 Test API Endpoint Directly
+            </button>
+        </div>
+        
+        <div id="debugInfo" class="debug" style="display: none;"></div>
+        
+        <div style="margin-top: 30px; text-align: center; color: #6b7280;">
+            <p>Backup: <strong>(770)-884-2868</strong></p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('testForm');
+        const status = document.getElementById('status');
+        const submitBtn = document.getElementById('submitBtn');
+        const debugInfo = document.getElementById('debugInfo');
+        
+        // Set current timestamp in message
+        document.getElementById('message').value = `Testing Vercel API at: ${new Date().toLocaleString()}`;
+        
+        function showStatus(message, type) {
+            status.textContent = message;
+            status.className = `status show ${type}`;
+        }
+        
+        function showDebug(info) {
+            debugInfo.textContent = JSON.stringify(info, null, 2);
+            debugInfo.style.display = 'block';
+        }
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.textContent = '⏳ Sending to Vercel API...';
+            showStatus('Submitting to Vercel serverless function...', 'info');
+            
+            try {
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
+                
+                // Add form metadata
+                data.formType = 'api-test';
+                data.timestamp = new Date().toISOString();
+                data.userAgent = navigator.userAgent;
+                data.url = window.location.href;
+                
+                console.log('Submitting to Vercel API:', data);
+                showDebug({ request: data });
+                
+                // Submit to our Vercel serverless function
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                console.log('Response status:', response.status);
+                console.log('Response headers:', Object.fromEntries(response.headers));
+                
+                const result = await response.json();
+                console.log('Response body:', result);
+                
+                showDebug({ 
+                    request: data, 
+                    response: {
+                        status: response.status,
+                        headers: Object.fromEntries(response.headers),
+                        body: result
+                    }
+                });
+                
+                if (result.success) {
+                    showStatus('✅ SUCCESS! Form submitted via Vercel API. Check antonio@siteoptz.com inbox!', 'success');
+                    
+                    if (result.emailSent) {
+                        showStatus('✅ SUCCESS! Email sent via Vercel API to antonio@siteoptz.com', 'success');
+                    } else {
+                        showStatus('✅ Form data captured! Check Vercel function logs for manual email processing.', 'info');
+                    }
+                    
+                    form.reset();
+                    
+                    // Update message for next test
+                    setTimeout(() => {
+                        document.getElementById('message').value = `Testing Vercel API at: ${new Date().toLocaleString()}`;
+                    }, 100);
+                } else {
+                    throw new Error(result.message || 'API request failed');
+                }
+                
+            } catch (error) {
+                console.error('Submission error:', error);
+                showStatus(`❌ Error: ${error.message}`, 'error');
+                
+                showDebug({ 
+                    error: {
+                        message: error.message,
+                        stack: error.stack
+                    }
+                });
+            } finally {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = '🚀 Test Vercel API';
+            }
+        });
+        
+        // Test API endpoint directly
+        async function testAPI() {
+            showStatus('Testing API endpoint...', 'info');
+            
+            try {
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: 'Direct API Test',
+                        email: 'api-test@example.com',
+                        phone: '770-123-4567',
+                        service: 'api-test',
+                        message: 'Direct API endpoint test',
+                        formType: 'direct-test'
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showStatus('✅ API endpoint is working!', 'success');
+                } else {
+                    showStatus(`❌ API error: ${result.message}`, 'error');
+                }
+                
+                showDebug({ apiTest: result });
+                
+            } catch (error) {
+                showStatus(`❌ API test failed: ${error.message}`, 'error');
+                showDebug({ apiTestError: error.message });
+            }
+        }
+        
+        // Log page info
+        console.log('Vercel API Test Page');
+        console.log('API Endpoint: /api/send-email');
+        console.log('Current URL:', window.location.href);
+        console.log('Ready to test!');
+    </script>
+</body>
+</html>

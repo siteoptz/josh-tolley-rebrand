@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3Forms Test - Alternative Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        form {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background: #175e6a;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0f4a53;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            display: block;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Alternative Form Service Test (Web3Forms)</h1>
+    <p>Testing with Web3Forms as an alternative to FormSubmit.co</p>
+    
+    <div id="status" class="status"></div>
+    
+    <form id="web3form">
+        <!-- Web3Forms requires an access key - using your key -->
+        <input type="hidden" name="access_key" value="6e875beb-e289-40a2-a64a-fbc754346b52">
+        
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Your Phone">
+        <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+        
+        <!-- Custom settings -->
+        <input type="hidden" name="subject" value="New Form Submission from North Georgia Smiles">
+        <input type="hidden" name="redirect" value="">
+        <input type="hidden" name="from_name" value="North Georgia Smiles Website">
+        
+        <button type="submit">Send via Web3Forms</button>
+    </form>
+    
+    <hr>
+    <h2>How to Set Up Web3Forms:</h2>
+    <ol>
+        <li>Go to <a href="https://web3forms.com" target="_blank">https://web3forms.com</a></li>
+        <li>Enter your email address (antonio@siteoptz.com)</li>
+        <li>Get your Access Key instantly (no registration needed)</li>
+        <li>Replace YOUR_ACCESS_KEY_HERE in the form above</li>
+        <li>Test the form</li>
+    </ol>
+    
+    <script>
+        const form = document.getElementById('web3form');
+        const status = document.getElementById('status');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            
+            status.innerHTML = "Sending...";
+            status.className = "status";
+            
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    status.innerHTML = "✓ Form submitted successfully!";
+                    status.className = "status success";
+                    form.reset();
+                } else {
+                    throw new Error(result.message || 'Form submission failed');
+                }
+            } catch (error) {
+                status.innerHTML = "✗ Error: " + error.message;
+                status.className = "status error";
+            }
+        });
+    </script>
+</body>
+</html>

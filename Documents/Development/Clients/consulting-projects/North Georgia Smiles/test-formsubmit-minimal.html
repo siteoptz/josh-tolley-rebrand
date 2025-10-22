@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal FormSubmit Test</title>
+</head>
+<body>
+    <h1>Minimal FormSubmit Test</h1>
+    <p>This is the simplest possible FormSubmit form - using standard POST method (no JavaScript)</p>
+    
+    <!-- Simple HTML form without JavaScript -->
+    <form action="https://formsubmit.co/antonio@siteoptz.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required><br><br>
+        <input type="email" name="email" placeholder="Your Email" required><br><br>
+        <input type="hidden" name="_subject" value="Test from Minimal Form">
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit">Send Test (No JavaScript)</button>
+    </form>
+    
+    <hr>
+    
+    <p>Note: This will redirect to FormSubmit's thank you page after submission.</p>
+</body>
+</html>

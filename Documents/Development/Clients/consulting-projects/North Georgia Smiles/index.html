@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Dentistry Cumming GA | Complete Dental Care | North Georgia Smiles</title>
+    <meta name="description" content="Comprehensive general dentistry in Cumming, GA. From routine cleanings to advanced treatments. Same-day appointments, insurance accepted. North Georgia Smiles - Your complete dental care partner.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "name": "North Georgia Smiles",
+        "image": "https://cummingsmiledentistry.com/logo.jpg",
+        "@id": "https://cummingsmiledentistry.com",
+        "url": "https://cummingsmiledentistry.com/general-dentistry",
+        "telephone": "+17708897867",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1595 Peachtree Pkwy #207",
+            "addressLocality": "Cumming",
+            "addressRegion": "GA",
+            "postalCode": "30041",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.2073,
+            "longitude": -84.1402
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "17:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday", "Sunday"],
+                "opens": "09:00",
+                "closes": "15:00"
+            }
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "General Dentistry Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Dental Cleanings",
+                        "description": "Professional teeth cleaning and oral hygiene"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Dental Fillings",
+                        "description": "Tooth-colored composite fillings"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Root Canal Treatment",
+                        "description": "Advanced endodontic therapy"
+                    }
+                }
+            ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "927"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Sarah Johnson"
+                },
+                "reviewBody": "Best dental experience I've ever had! The team is professional and caring."
+            }
+        ]
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #175e6a;
+            --primary-dark: #0f4a53;
+            --primary-light: #1f7a89;
+            --secondary: #ebab65;
+            --secondary-dark: #d99548;
+            --secondary-light: #f2c088;
+            --text-dark: #175e6a;
+            --text-gray: #6b7280;
+            --bg-light: #f9fafb;
+            --border-light: #e4e4e4;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(23, 94, 106, 0.1), 0 2px 4px -1px rgba(23, 94, 106, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(23, 94, 106, 0.15), 0 4px 6px -2px rgba(23, 94, 106, 0.08);
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 900;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+            filter: brightness(0) saturate(100%) invert(21%) sepia(11%) saturate(2186%) hue-rotate(147deg) brightness(96%) contrast(93%);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
+            background-size: 50px 50px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            font-weight: 400;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .value-props {
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .value-prop {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .value-prop i {
+            color: var(--secondary);
+            font-size: 1.3rem;
+        }
+
+        /* CTA Buttons */
+        .btn {
+            padding: 16px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--text-dark);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .hero-ctas {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Services Grid */
+        .services {
+            background: var(--bg-light);
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 36px;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .service-price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+        }
+
+        /* Testimonials Slider */
+        .testimonials {
+            background: var(--primary);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .testimonial-stars {
+            color: var(--secondary);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            background: var(--bg-light);
+            padding: 80px 0;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--border-light);
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(235, 171, 101, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--border-light);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--secondary);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: var(--text-dark);
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        .pricing-card .price span {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-gray);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .pricing-features li i {
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 0 50px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .value-props {
+                justify-content: center;
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .hero-ctas {
+                justify-content: center;
+                flex-direction: column;
+                width: 100%;
+                padding: 0 20px;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 30px;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17610824970">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17610824970');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="logo2-white-transparent-bg.png" alt="North Georgia Smiles Logo">
+                </div>
+                <div class="nav-menu">
+                    <a href="emergency-dental-landing-page.html">Home</a>
+                    <a href="general-dentistry.html">General Dentistry</a>
+                    <a href="emergency-dental-landing-page.html">Emergency Care</a>
+                    <a href="tel:+17708842868" class="btn btn-primary">
+                        <i class="fas fa-phone-alt"></i> Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CallRail Test Number -->
+    <div style="text-align: center; padding: 10px; background: #f5f5f5;">
+        Call us: <span>(770)-884-2868</span>
+    </div>
+    
+    <!-- Hero Section with Strong Headlines -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transform Your Smile with Expert General Dentistry in Cumming, GA</h1>
+                    <p class="hero-subtitle">Comprehensive Dental Care That Puts Your Comfort First</p>
+                    
+                    <div class="value-props">
+                        <div class="value-prop">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Same-Day Appointments</span>
+                        </div>
+                        <div class="value-prop">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Most Insurance Accepted</span>
+                        </div>
+                        <div class="value-prop">
+                            <i class="fas fa-check-circle"></i>
+                            <span>35+ Years Experience</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-ctas">
+                        <a href="#contact-form" class="btn btn-primary">
+                            <i class="fas fa-calendar-check"></i>
+                            Book Your Appointment
+                        </a>
+                        <a href="tel:+17708842868" class="btn btn-secondary">
+                            <i class="fas fa-phone-alt"></i>
+                            Call: <span class="callrail-swap-target" data-swap-target="">(770)-884-2868</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="hero image.png" alt="Professional dental care at North Georgia Smiles">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Reviews Section -->
+    <section class="section" style="background: var(--primary); padding: 80px 0;">
+        <div class="container">
+            <div style="text-align: center; color: white;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: white;">What Our Patients Are Saying</h2>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 30px;">
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--secondary);">4.8</div>
+                    <div style="display: flex; gap: 5px; font-size: 2rem; color: var(--secondary);">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p style="font-size: 1.5rem; margin-bottom: 30px; color: white;">Over 927 Reviews on <span style="font-family: 'Google Sans', 'Product Sans', 'Roboto', sans-serif; color: #4285F4;">Google</span>!</p>
+                <a href="https://www.google.com/maps/place//data=!4m3!3m2!1s0x88f59beb79c8b687:0x444156272b78f60b!12e1?source=g.page.m.ia._&laa=nmx-review-solicitation-ia2" target="_blank" class="btn btn-primary" style="font-size: 1.1rem; padding: 18px 40px;">
+                    <i class="fab fa-google"></i>
+                    Check Us Out on <span style="font-family: 'Google Sans', 'Product Sans', 'Roboto', sans-serif; color: #4285F4; font-size: 1.12em;">Google</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 20px;">
+                    Our General Dentistry Services
+                </h2>
+                <p style="font-size: 1.2rem; color: var(--text-gray); max-width: 700px; margin: 0 auto;">
+                    From preventive care to complex treatments, we provide comprehensive dental services to keep your smile healthy and beautiful.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Dental Cleanings & Exams</h3>
+                    <p>Professional cleanings and comprehensive exams to maintain optimal oral health and prevent dental issues.</p>
+                    <div class="service-price">Starting at $129</div>
+                    <a href="#contact-form" class="btn btn-primary" style="width: 100%; justify-content: center; text-align: center;">
+                        Schedule Now
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Dental Implants</h3>
+                    <p>Permanent tooth replacement solutions that look, feel, and function like natural teeth.</p>
+                    <div class="service-price">$500 OFF</div>
+                    <a href="#contact-form" class="btn btn-primary" style="width: 100%; justify-content: center; text-align: center;">
+                        Learn More
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Dental Crowns</h3>
+                    <p>Custom-made crowns that protect and restore damaged teeth, matching your natural tooth color perfectly.</p>
+                    <div class="service-price">Starting at $899</div>
+                    <a href="#contact-form" class="btn btn-primary" style="width: 100%; justify-content: center; text-align: center;">
+                        Get Started
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-procedures"></i>
+                    </div>
+                    <h3>Root Canal Therapy</h3>
+                    <p>Advanced endodontic treatment to save infected teeth and eliminate pain with gentle, modern techniques.</p>
+                    <div class="service-price">Starting at $700</div>
+                    <a href="#contact-form" class="btn btn-primary" style="width: 100%; justify-content: center; text-align: center;">
+                        Book Consultation
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Bleaching For Life</h3>
+                    <p>Professional whitening treatments that brighten your smile by several shades in just one visit.</p>
+                    <div class="service-price">Starting at $99</div>
+                    <a href="#contact-form" class="btn btn-primary" style="width: 100%; justify-content: center; text-align: center;">
+                        Brighten Your Smile
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Preventive Care</h3>
+                    <p>Comprehensive preventive treatments including fluoride, sealants, and oral cancer screenings.</p>
+                    <div class="service-price">Starting at $45</div>
+                    <a href="#contact-form" class="btn btn-primary" style="width: 100%; justify-content: center; text-align: center;">
+                        Protect Your Smile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="section" id="team" style="background: var(--bg-light); padding: 80px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 20px;">Meet Our Expert Team</h2>
+                <p style="font-size: 1.2rem; color: var(--text-gray); max-width: 700px; margin: 0 auto;">Dedicated professionals committed to your dental health and comfort</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 900px; margin: 40px auto 0;">
+                <div style="text-align: center; background: white; border-radius: 16px; padding: 20px; box-shadow: var(--shadow); border: 2px solid var(--primary); transition: all 0.3s ease;">
+                    <img src="Dr. Leo Eliezer.jpg" alt="Dr. Leo Eliezer" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 0 auto 15px; border: 3px solid var(--secondary);">
+                    <h3 style="color: var(--primary); font-weight: 700; margin-bottom: 5px;">Dr. Leo Eliezer</h3>
+                    <p style="color: var(--text-gray); font-size: 14px; font-weight: 600;">Lead Dentist</p>
+                    <p style="color: var(--text-gray); font-size: 13px; line-height: 1.5; margin-top: 10px;">With over 15 years of experience, Dr. Eliezer combines advanced dental expertise with a gentle, patient-centered approach to deliver exceptional care.</p>
+                </div>
+                
+                <div style="text-align: center; background: white; border-radius: 16px; padding: 20px; box-shadow: var(--shadow); border: 2px solid var(--primary); transition: all 0.3s ease;">
+                    <img src="Dr Rasha Juma.jpg" alt="Dr. Rasha Juma" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 0 auto 15px; border: 3px solid var(--secondary);">
+                    <h3 style="color: var(--primary); font-weight: 700; margin-bottom: 5px;">Dr. Rasha Juma</h3>
+                    <p style="color: var(--text-gray); font-size: 14px; font-weight: 600;">Associate Dentist</p>
+                    <p style="color: var(--text-gray); font-size: 13px; line-height: 1.5; margin-top: 10px;">Dr. Juma brings precision and compassion to every procedure, specializing in restorative dentistry and helping patients achieve their ideal smiles with personalized care.</p>
+                </div>
+                
+                <div style="text-align: center; background: white; border-radius: 16px; padding: 20px; box-shadow: var(--shadow); border: 2px solid var(--primary); transition: all 0.3s ease;">
+                    <img src="Dr. Hailey Myung.jpg" alt="Dr. Hailey Myung" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 0 auto 15px; border: 3px solid var(--secondary);">
+                    <h3 style="color: var(--primary); font-weight: 700; margin-bottom: 5px;">Dr. Hailey Myung</h3>
+                    <p style="color: var(--text-gray); font-size: 14px; font-weight: 600;">Associate Dentist</p>
+                    <p style="color: var(--text-gray); font-size: 13px; line-height: 1.5; margin-top: 10px;">Dr. Myung combines cutting-edge techniques with a warm bedside manner, focusing on preventive care and cosmetic dentistry to help patients maintain healthy, beautiful smiles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- We Do Things Differently Section -->
+    <section class="section" style="background: white; padding: 80px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 20px;">We Do Things Differently</h2>
+            </div>
+            
+            <div style="background: var(--white); border-radius: 16px; padding: 30px; box-shadow: var(--shadow-lg); border: 2px solid var(--primary);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center;">
+                    <div style="padding: 20px;">
+                        <div style="margin-bottom: 15px; display: flex; justify-content: center; align-items: center; height: 200px;">
+                            <img src="time icon.png" alt="Average Wait Time" style="width: 195px; height: 195px; object-fit: contain; margin: 0 auto;">
+                        </div>
+                        <h4 style="font-weight: 600; margin-bottom: 10px; color: var(--primary);">Average Wait Time</h4>
+                        <p style="color: var(--text-gray);">Under 30 minutes</p>
+                    </div>
+                    <div style="padding: 20px;">
+                        <div style="margin-bottom: 15px; display: flex; justify-content: center; align-items: center; height: 200px;">
+                            <img src="certified icon.png" alt="Board Certified" style="width: 195px; height: 195px; object-fit: contain; margin: 0 auto;">
+                        </div>
+                        <h4 style="font-weight: 600; margin-bottom: 10px; color: var(--primary);">Board Certified</h4>
+                        <p style="color: var(--text-gray);">35+ Years Experience</p>
+                    </div>
+                    <div style="padding: 20px;">
+                        <div style="margin-bottom: 15px; display: flex; justify-content: center; align-items: center; height: 200px;">
+                            <img src="reviews icon.png" alt="Patient Reviews" style="width: 195px; height: 195px; object-fit: contain; margin: 0 auto;">
+                        </div>
+                        <h4 style="font-weight: 600; margin-bottom: 10px; color: var(--primary);">Patient Reviews</h4>
+                        <p style="color: var(--text-gray);">4.8/5 Star Rating</p>
+                    </div>
+                    <div style="padding: 20px;">
+                        <div style="margin-bottom: 15px; display: flex; justify-content: center; align-items: center; height: 200px;">
+                            <img src="emergency icon.png" alt="Emergency Ready" style="width: 195px; height: 195px; object-fit: contain; margin: 0 auto;">
+                        </div>
+                        <h4 style="font-weight: 600; margin-bottom: 10px; color: var(--primary);">Emergency Ready</h4>
+                        <p style="color: var(--text-gray);">500+ Emergency Cases</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 20px;">
+                    Why Cumming Trusts Us with Their Smiles
+                </h2>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">35+</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Happy Patients</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4.8★</div>
+                    <div class="stat-label"><span style="font-family: 'Google Sans', 'Product Sans', 'Roboto', sans-serif; color: #4285F4;">Google</span> Rating</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">Emergency</div>
+                    <div class="stat-label">Emergency Care</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">
+                    What Our Patients Say
+                </h2>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "North Georgia Smiles has been my family's dentist for over 5 years. Dr. Eliezer and his team are incredibly professional, caring, and always make us feel comfortable. The office uses the latest technology and the results are always excellent!"
+                </p>
+                <div class="testimonial-author">
+                    - Jennifer Martinez, Cumming GA
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 20px;">
+                    Transparent, Affordable Pricing
+                </h2>
+                <p style="font-size: 1.2rem; color: var(--text-gray); max-width: 700px; margin: 0 auto;">
+                    Quality dental care shouldn't break the bank. We offer competitive pricing and flexible payment options.
+                </p>
+            </div>
+
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>New Patient Special</h3>
+                    <div class="price">
+                        $129
+                        <span>/first visit</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Comprehensive Exam</li>
+                        <li><i class="fas fa-check"></i> Digital X-Rays</li>
+                        <li><i class="fas fa-check"></i> Professional Cleaning</li>
+                        <li><i class="fas fa-check"></i> Treatment Plan</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-primary" style="width: 100%; justify-content: center; text-align: center;">
+                        Claim Offer
+                    </a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3>NGS Membership Plan</h3>
+                    <div class="price">
+                        $49
+                        <span>/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 2 Cleanings per Year</li>
+                        <li><i class="fas fa-check"></i> All X-Rays Included</li>
+                        <li><i class="fas fa-check"></i> 15% Off All Treatments</li>
+                        <li><i class="fas fa-check"></i> Emergency Priority</li>
+                        <li><i class="fas fa-check"></i> Free Consultations</li>
+                        <li><i class="fas fa-check"></i> Free Teeth Whitening</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-primary" style="width: 100%; justify-content: center; text-align: center;">
+                        Join Today
+                    </a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Dental Implants Special</h3>
+                    <div class="price">
+                        $500 OFF
+                        <span>Plus Free Consultation</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> $500 Off Dental Implants</li>
+                        <li><i class="fas fa-check"></i> Free Implant Consultation</li>
+                        <li><i class="fas fa-check"></i> 3D Imaging & Treatment Planning</li>
+                        <li><i class="fas fa-check"></i> Lifetime Warranty Available</li>
+                        <li><i class="fas fa-check"></i> Flexible Payment Options</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-primary" style="width: 100%; justify-content: center; text-align: center;">
+                        Schedule Free Consult
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section" id="contact-form">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 20px;">
+                    Schedule Your Appointment Today
+                </h2>
+                <p style="font-size: 1.2rem; color: var(--text-gray);">
+                    Take the first step towards a healthier, more beautiful smile
+                </p>
+            </div>
+
+            <div class="form-container">
+                <form id="appointmentForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Needed *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="cleaning">Dental Cleaning & Exam</option>
+                            <option value="filling">Dental Filling</option>
+                            <option value="crown">Dental Crown</option>
+                            <option value="root-canal">Root Canal</option>
+                            <option value="whitening">Teeth Whitening</option>
+                            <option value="consultation">General Consultation</option>
+                            <option value="emergency">Emergency Care</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us more about your dental needs..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 18px; justify-content: center; text-align: center;">
+                        <i class="fas fa-calendar-check"></i>
+                        Request Appointment
+                    </button>
+
+                    <p style="text-align: center; margin-top: 20px; color: var(--text-gray);">
+                        Or call us directly at <strong style="color: var(--primary);"><span class="callrail-swap-target" data-swap-target="">(770)-884-2868</span></strong>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 20px;">
+                    Conveniently Located in Cumming, GA
+                </h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+                <div>
+                    <h3 style="font-size: 1.8rem; color: var(--primary); margin-bottom: 20px;">North Georgia Smiles</h3>
+                    <div style="margin-bottom: 20px;">
+                        <p style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--secondary); font-size: 20px;"></i>
+                            <span>1595 Peachtree Pkwy #207, Cumming, GA 30041</span>
+                        </p>
+                        <p style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <i class="fas fa-phone" style="color: var(--secondary); font-size: 20px;"></i>
+                            <span class="callrail-swap-target" data-swap-target="">(770)-884-2868</span>
+                        </p>
+                        <p style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <i class="fas fa-clock" style="color: var(--secondary); font-size: 20px;"></i>
+                            <span>Mon-Thu: 8AM-5PM | Fri: 8AM-2PM</span>
+                        </p>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-directions"></i>
+                        Get Directions
+                    </a>
+                </div>
+                <div>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.7517754814173!2d-84.14018668478756!3d34.04654818060947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f59beb79c8b687%3A0x444156272b78f60b!2sNorth%20Georgia%20Smiles!5e0!3m2!1sen!2sus!4v1234567890"
+                        width="100%"
+                        height="400"
+                        style="border:0; border-radius: 16px;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>North Georgia Smiles</h4>
+                    <p>Your trusted partner for comprehensive dental care in Cumming, GA. We're committed to providing exceptional service and creating beautiful, healthy smiles.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="emergency-dental-landing-page.html">Home</a></li>
+                        <li><a href="general-dentistry.html">General Dentistry</a></li>
+                        <li><a href="emergency-dental-landing-page.html">Emergency Care</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Dental Cleanings</a></li>
+                        <li><a href="#services">Dental Fillings</a></li>
+                        <li><a href="#services">Crowns & Bridges</a></li>
+                        <li><a href="#services">Root Canal Therapy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>1595 Peachtree Pkwy #207<br>
+                    Cumming, GA 30041<br>
+                    Phone: <span class="callrail-swap-target" data-swap-target="" style="color: rgba(255, 255, 255, 0.8);">(770)-884-2868</span></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 North Georgia Smiles. All rights reserved. | <a href="#" style="color: var(--secondary);">Privacy Policy</a> | <a href="#" style="color: var(--secondary);">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handler - Using FormSubmit with activation key
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const submitButton = event.target.querySelector('button[type="submit"]');
+            const originalText = submitButton ? submitButton.textContent : '';
+            
+            // Disable button and show loading
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+            }
+            
+            try {
+                const formData = new FormData(event.target);
+                
+                // Add FormSubmit configuration
+                formData.append('_subject', 'General Dentistry Appointment Request - North Georgia Smiles');
+                formData.append('_cc', 'antonio@siteoptz.com,drleodmd@gmail.com,jpasmin@northgeorgiasmiles.com,info@northgeorgiasmiles.com');
+                formData.append('_captcha', 'false');
+                formData.append('_template', 'table');
+                
+                console.log('Submitting to FormSubmit with activation key');
+                
+                // Use the activation key as the endpoint
+                const response = await fetch('https://formsubmit.co/eb7394d41a39e3b5e175f78b88b39e2e', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    // Redirect to thank you page with correct domain
+                    window.location.href = 'https://cummingsmiledentistry.com/thank-you.html';
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('There was an error submitting your request. Please call us directly at (770)-884-2868.');
+            } finally {
+                // Re-enable button
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalText;
+                }
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation to elements when they come into view
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.service-card, .stat, .pricing-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+    </script>
+<script type="text/javascript" src="https://cdn.callrail.com/companies/954907885/599e3f8eab5eba7c67b0/12/swap.js"></script>
+</body>
+</html>

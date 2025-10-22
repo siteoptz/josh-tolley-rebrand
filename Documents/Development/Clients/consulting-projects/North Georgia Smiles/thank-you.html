@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - North Georgia Smiles</title>
+    <meta name="description" content="Thank you for your appointment request. We will contact you within 1 business hour to confirm your appointment.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #175e6a;
+            --primary-dark: #0f4a53;
+            --primary-light: #1f7a89;
+            --secondary: #ebab65;
+            --secondary-dark: #d99548;
+            --secondary-light: #f2c088;
+            --text-dark: #175e6a;
+            --text-gray: #6b7280;
+            --bg-light: #f9fafb;
+            --border-light: #e4e4e4;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(23, 94, 106, 0.1), 0 2px 4px -1px rgba(23, 94, 106, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(23, 94, 106, 0.15), 0 4px 6px -2px rgba(23, 94, 106, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 900;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+            filter: brightness(0) saturate(100%) invert(21%) sepia(11%) saturate(2186%) hue-rotate(147deg) brightness(96%) contrast(93%);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .thank-you-container {
+            max-width: 800px;
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--secondary);
+        }
+
+        .success-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 60px;
+            color: var(--text-dark);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .thank-you-container h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .thank-you-container .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .info-card {
+            background: var(--bg-light);
+            padding: 30px 20px;
+            border-radius: 16px;
+            border: 2px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .info-card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .info-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .contact-highlight {
+            background: var(--primary);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 40px 0;
+        }
+
+        .contact-highlight h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .phone-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin: 10px 0;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--text-dark);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .actions {
+            margin-top: 40px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .thank-you-container {
+                padding: 40px 20px;
+                margin: 20px;
+            }
+
+            .info-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .phone-number {
+                font-size: 1.5rem;
+            }
+
+            .actions {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17610824970">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17610824970');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo2-white-transparent-bg.png" alt="North Georgia Smiles Logo">
+            </div>
+            <div class="nav-menu">
+                <a href="/">Home</a>
+                <a href="general-dentistry.html">General Dentistry</a>
+                <a href="emergency-dental-landing-page.html">Emergency Care</a>
+                <a href="tel:+17708842868" class="btn btn-primary">
+                    <i class="fas fa-phone-alt"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="thank-you-container">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            
+            <h1>Thank You!</h1>
+            <p class="subtitle">
+                Your appointment request has been successfully submitted. We're excited to help you achieve your perfect smile!
+            </p>
+
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Quick Response</h3>
+                    <p>We will contact you within <strong>1 business hour</strong> to confirm your appointment.</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>We'll work with your schedule to find the perfect appointment time that works for you.</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Expert Care</h3>
+                    <p>Our experienced team is ready to provide you with exceptional dental care.</p>
+                </div>
+            </div>
+
+            <div class="contact-highlight">
+                <h3>Need Immediate Assistance?</h3>
+                <p>Call us directly for urgent dental needs or questions</p>
+                <div class="phone-number">(770)-884-2868</div>
+                <p><strong>Office Hours:</strong> Mon-Thu: 8AM-5PM | Fri: 8AM-2PM</p>
+            </div>
+
+            <div class="actions">
+                <a href="/" class="btn btn-primary">
+                    <i class="fas fa-home"></i>
+                    Return Home
+                </a>
+                <a href="tel:+17708842868" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i>
+                    Call Now
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 North Georgia Smiles. All rights reserved.</p>
+            <p>1595 Peachtree Pkwy #207, Cumming, GA 30041</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add entrance animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.thank-you-container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(30px)';
+            container.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            
+            setTimeout(() => {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+
+        // Track page view
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                'page_title': 'Thank You - Form Submitted',
+                'page_location': window.location.href,
+                'event_category': 'form_completion'
+            });
+        }
+
+        console.log('Thank you page loaded - Form submission successful');
+    </script>
+    
+    <!-- CallRail Tracking -->
+    <script type="text/javascript" src="https://cdn.callrail.com/companies/954907885/599e3f8eab5eba7c67b0/12/swap.js"></script>
+</body>
+</html>
