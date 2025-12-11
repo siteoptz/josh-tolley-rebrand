@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sceptyr - Rule Your Wealth | Build Your Legacy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --deep-blue: #0F2F44;
+            --darker-blue: #0a1f2e;
+            --vibrant-yellow: #EEBA2B;
+            --white: #FFFFFF;
+            --light-gray: #F8F9FA;
+            --medium-gray: #6C757D;
+            --dark-gray: #343A40;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 47, 68, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--vibrant-yellow);
+        }
+
+        .nav-cta {
+            background: var(--vibrant-yellow);
+            color: var(--deep-blue);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .nav-cta:hover {
+            background: #d4a426;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(15, 47, 68, 0.9), rgba(10, 31, 46, 0.8)), 
+                        url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1920&h=1080&fit=crop&crop=center') center/cover;
+            min-height: calc(100vh - 100px);
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: var(--white);
+            margin-top: 100px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(238, 186, 43, 0.2);
+            border: 2px solid var(--vibrant-yellow);
+            color: var(--vibrant-yellow);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero-highlight {
+            color: var(--vibrant-yellow);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .btn-primary {
+            background: var(--vibrant-yellow);
+            color: var(--deep-blue);
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1.2rem 3rem;
+            border: 2px solid var(--white);
+            border-radius: 5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #d4a426;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(238, 186, 43, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--deep-blue);
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Client Qualification Section */
+        .qualification-section {
+            background: var(--light-gray);
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .qualification-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .qualification-header {
+            margin-bottom: 4rem;
+        }
+
+        .qualification-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--deep-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .qualification-subtitle {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .qualification-form {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(15, 47, 68, 0.1);
+            border: 1px solid rgba(15, 47, 68, 0.1);
+        }
+
+        .question-container {
+            margin-bottom: 2rem;
+        }
+
+        .question-number {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--vibrant-yellow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .question-text {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--deep-blue);
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+
+        .answer-options {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .answer-option {
+            background: var(--white);
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+
+        .answer-option:hover {
+            border-color: var(--vibrant-yellow);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(238, 186, 43, 0.2);
+        }
+
+        .answer-option.selected {
+            background: var(--deep-blue);
+            color: var(--white);
+            border-color: var(--deep-blue);
+        }
+
+        .answer-option-label {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .answer-option-text {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .progress-indicator {
+            width: 100%;
+            height: 4px;
+            background: var(--light-gray);
+            border-radius: 2px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--vibrant-yellow), var(--deep-blue));
+            border-radius: 2px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .qualification-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .btn-qualification {
+            background: var(--deep-blue);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-qualification:hover {
+            background: var(--darker-blue);
+            transform: translateY(-2px);
+        }
+
+        .btn-qualification:disabled {
+            background: var(--medium-gray);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-qualification.primary {
+            background: var(--vibrant-yellow);
+            color: var(--deep-blue);
+        }
+
+        .btn-qualification.primary:hover {
+            background: #d4a426;
+        }
+
+        .qualification-hidden {
+            display: none;
+        }
+
+        .qualification-results {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .results-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--deep-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .results-subtitle {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .recommended-services {
+            background: var(--deep-blue);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .recommended-services h4 {
+            color: var(--vibrant-yellow);
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-list li {
+            color: var(--white);
+            padding: 0.5rem 0;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--white);
+            padding: 4rem 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--darker-blue);
+            line-height: 1;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--deep-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Why Sceptyr Section */
+        .why-sceptyr {
+            background: var(--deep-blue);
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--deep-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .why-sceptyr .section-title {
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--medium-gray);
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .why-sceptyr .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .why-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .why-card {
+            position: relative;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-start;
+            padding: 0;
+        }
+
+        .why-card:nth-child(1) {
+            background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop');
+        }
+
+        .why-card:nth-child(2) {
+            background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop');
+        }
+
+        .why-card:nth-child(3) {
+            background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=600&fit=crop');
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(15, 47, 68, 0.9), rgba(15, 47, 68, 0.3));
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .why-card:hover::before {
+            background: linear-gradient(to right, rgba(238, 186, 43, 0.9), rgba(238, 186, 43, 0.3));
+        }
+
+        .why-image {
+            display: none;
+        }
+
+        .why-title {
+            position: relative;
+            z-index: 2;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            padding: 2rem;
+            margin: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .why-card:hover .why-title {
+            color: var(--white);
+        }
+
+        .why-description {
+            display: none;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--light-gray);
+            padding: 6rem 0;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--deep-blue);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--vibrant-yellow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(238, 186, 43, 0.05), rgba(255, 255, 255, 0.02));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(15, 47, 68, 0.3);
+            border-left-color: var(--white);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--vibrant-yellow);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card:hover .service-number {
+            color: var(--white);
+        }
+
+        .service-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-content h3 {
+            color: var(--white);
+        }
+
+        .service-content p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .service-link {
+            color: var(--vibrant-yellow);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-link:hover {
+            color: var(--white);
+            gap: 1rem;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            background: var(--white);
+            padding: 6rem 0;
+        }
+
+        .blog-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid var(--light-gray);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-card:nth-child(1) .blog-image {
+            background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=300&fit=crop');
+        }
+        .blog-card:nth-child(2) .blog-image {
+            background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=300&fit=crop');
+        }
+        .blog-card:nth-child(3) .blog-image {
+            background-image: url('https://images.unsplash.com/photo-1427751840561-9852520f8ce8?w=600&h=300&fit=crop');
+        }
+        .blog-card:nth-child(4) .blog-image {
+            background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&h=300&fit=crop');
+        }
+        .blog-card:nth-child(5) .blog-image {
+            background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&h=300&fit=crop');
+        }
+        .blog-card:nth-child(6) .blog-image {
+            background-image: url('https://images.unsplash.com/photo-1551135049-8a33b5883817?w=600&h=300&fit=crop');
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--darker-blue);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-excerpt {
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .blog-date {
+            color: var(--medium-gray);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .blog-link {
+            color: var(--darker-blue);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            font-size: 0.85rem;
+        }
+
+        .blog-link:hover {
+            color: var(--vibrant-yellow);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--vibrant-yellow);
+            color: var(--deep-blue);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .cta-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .cta-button-large {
+            background: var(--deep-blue);
+            color: var(--white);
+            padding: 1.5rem 4rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .cta-button-large:hover {
+            background: var(--darker-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(15, 47, 68, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--deep-blue);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--vibrant-yellow);
+        }
+
+        .footer-brand p {
+            font-size: 1rem;
+            opacity: 0.8;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--darker-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--vibrant-yellow);
+            color: var(--deep-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--vibrant-yellow);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--vibrant-yellow);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .legal-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .legal-links a:hover {
+            color: var(--vibrant-yellow);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stats-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .stat-item {
+                flex: none;
+            }
+
+            .why-grid,
+            .services-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .legal-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .qualification-title {
+                font-size: 2rem;
+            }
+
+            .qualification-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .question-text {
+                font-size: 1.2rem;
+            }
+
+            .answer-option {
+                padding: 1rem;
+            }
+
+            .qualification-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-qualification {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">SCEPTYR</a>
+            <ul class="nav-menu">
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#wealth" class="nav-link">Wealth Management</a></li>
+                <li><a href="#legacy" class="nav-link">Legacy Planning</a></li>
+                <li><a href="#insights" class="nav-link">Insights</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-cta">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">Making Extraordinary Wealth Possible</div>
+            <h1>RULE YOUR <span class="hero-highlight">WEALTH</span><br>BUILD YOUR LEGACY</h1>
+            <p>Strategic wealth management for those ready to rule their financial kingdom. Where traditional excellence meets modern innovation.</p>
+            <div class="hero-buttons">
+                <a href="#consultation" class="btn-primary">Start Your Journey</a>
+                <a href="#services" class="btn-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Qualification Section -->
+    <section class="qualification-section" id="qualification">
+        <div class="qualification-container">
+            <div class="qualification-header">
+                <h2 class="qualification-title">Find Your Path to Excellence</h2>
+                <p class="qualification-subtitle">Help us understand your situation so we can provide the most relevant guidance for your wealth strategy</p>
+            </div>
+            
+            <div class="qualification-form">
+                <div class="progress-indicator">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                
+                <!-- Question 0: Gateway -->
+                <div class="question-step" id="question-0">
+                    <div class="question-container">
+                        <div class="question-number">Gateway Question</div>
+                        <div class="question-text">What brings you to Kingsbridge today?</div>
+                        <div class="answer-options">
+                            <div class="answer-option" data-answer="A">
+                                <div class="answer-option-label">A)</div>
+                                <div class="answer-option-text">I'm exploring a significant business decision</div>
+                            </div>
+                            <div class="answer-option" data-answer="B">
+                                <div class="answer-option-label">B)</div>
+                                <div class="answer-option-text">I was referred by someone who works with you</div>
+                            </div>
+                            <div class="answer-option" data-answer="C">
+                                <div class="answer-option-label">C)</div>
+                                <div class="answer-option-text">I'm researching firms for a future transaction</div>
+                            </div>
+                            <div class="answer-option" data-answer="D">
+                                <div class="answer-option-label">D)</div>
+                                <div class="answer-option-text">I'm not entirely sure yet—tell me more about what you do</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 1: Situation Identification -->
+                <div class="question-step qualification-hidden" id="question-1">
+                    <div class="question-container">
+                        <div class="question-number">Situation Assessment</div>
+                        <div class="question-text">Which statement best describes your current situation?</div>
+                        <div class="answer-options">
+                            <div class="answer-option" data-answer="A">
+                                <div class="answer-option-label">A)</div>
+                                <div class="answer-option-text">I own a business I'm considering transitioning</div>
+                            </div>
+                            <div class="answer-option" data-answer="B">
+                                <div class="answer-option-label">B)</div>
+                                <div class="answer-option-text">I'm looking to acquire a business or asset</div>
+                            </div>
+                            <div class="answer-option" data-answer="C">
+                                <div class="answer-option-label">C)</div>
+                                <div class="answer-option-text">I own multiple businesses or assets and need strategic guidance</div>
+                            </div>
+                            <div class="answer-option" data-answer="D">
+                                <div class="answer-option-label">D)</div>
+                                <div class="answer-option-text">I'm preparing a business for future opportunities</div>
+                            </div>
+                            <div class="answer-option" data-answer="E">
+                                <div class="answer-option-label">E)</div>
+                                <div class="answer-option-text">I need specialized financial structuring</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 2: Transaction Value -->
+                <div class="question-step qualification-hidden" id="question-2">
+                    <div class="question-container">
+                        <div class="question-number">Engagement Scope</div>
+                        <div class="question-text">What's your expected transaction or engagement value?</div>
+                        <div class="answer-options">
+                            <div class="answer-option" data-answer="A">
+                                <div class="answer-option-label">A)</div>
+                                <div class="answer-option-text">Under $1M</div>
+                            </div>
+                            <div class="answer-option" data-answer="B">
+                                <div class="answer-option-label">B)</div>
+                                <div class="answer-option-text">$1M - $5M</div>
+                            </div>
+                            <div class="answer-option" data-answer="C">
+                                <div class="answer-option-label">C)</div>
+                                <div class="answer-option-text">$5M - $25M</div>
+                            </div>
+                            <div class="answer-option" data-answer="D">
+                                <div class="answer-option-label">D)</div>
+                                <div class="answer-option-text">$25M+</div>
+                            </div>
+                            <div class="answer-option" data-answer="E">
+                                <div class="answer-option-label">E)</div>
+                                <div class="answer-option-text">I'm not sure yet</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 3: Working Style -->
+                <div class="question-step qualification-hidden" id="question-3">
+                    <div class="question-container">
+                        <div class="question-number">Partnership Approach</div>
+                        <div class="question-text">How do you prefer to work with advisory firms?</div>
+                        <div class="answer-options">
+                            <div class="answer-option" data-answer="A">
+                                <div class="answer-option-label">A)</div>
+                                <div class="answer-option-text">I want a dedicated team exclusively focused on my situation</div>
+                            </div>
+                            <div class="answer-option" data-answer="B">
+                                <div class="answer-option-label">B)</div>
+                                <div class="answer-option-text">I prefer project-based engagements</div>
+                            </div>
+                            <div class="answer-option" data-answer="C">
+                                <div class="answer-option-label">C)</div>
+                                <div class="answer-option-text">I need ongoing strategic partnership</div>
+                            </div>
+                            <div class="answer-option" data-answer="D">
+                                <div class="answer-option-label">D)</div>
+                                <div class="answer-option-text">I'm evaluating multiple firms</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="question-step qualification-hidden" id="results">
+                    <div class="qualification-results">
+                        <h3 class="results-title">Your Recommended Path</h3>
+                        <p class="results-subtitle">Based on your responses, we've identified the most relevant services for your situation</p>
+                        
+                        <div class="recommended-services" id="serviceRecommendations">
+                            <h4>Recommended Services</h4>
+                            <ul class="service-list" id="serviceList">
+                                <!-- Services will be populated by JavaScript -->
+                            </ul>
+                        </div>
+                        
+                        <div style="margin-top: 2rem;">
+                            <a href="#contact" class="btn-qualification primary">Schedule Consultation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="qualification-navigation">
+                    <button class="btn-qualification" id="prevButton" onclick="previousQuestion()" disabled>Previous</button>
+                    <button class="btn-qualification primary" id="nextButton" onclick="nextQuestion()" disabled>Next</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">$2.4B</div>
+                <div class="stat-label">Assets Under Management</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">47</div>
+                <div class="stat-label">Years of Excellence</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15K+</div>
+                <div class="stat-label">Families Served</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Client Retention</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Sceptyr Section -->
+    <section class="why-sceptyr">
+        <div class="section-header">
+            <h2 class="section-title">Why Sceptyr</h2>
+            <p class="section-subtitle">We combine institutional expertise with personalized strategies to help you build generational wealth</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <h3 class="why-title">Strategic Planning</h3>
+            </div>
+            <div class="why-card">
+                <h3 class="why-title">Fiduciary Standard</h3>
+            </div>
+            <div class="why-card">
+                <h3 class="why-title">Proven Results</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive solutions designed to secure and grow your wealth across generations</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-number">01</div>
+                <div class="service-content">
+                    <h3>Wealth Management</h3>
+                    <p>Sophisticated portfolio strategies combining traditional wisdom with modern innovation</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-number">02</div>
+                <div class="service-content">
+                    <h3>Legacy Planning</h3>
+                    <p>Comprehensive estate strategies to preserve and transfer wealth to future generations</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-number">03</div>
+                <div class="service-content">
+                    <h3>Hedge Fund Access</h3>
+                    <p>Exclusive alternative investment opportunities for qualified investors</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-number">04</div>
+                <div class="service-content">
+                    <h3>RIA Solutions</h3>
+                    <p>Independent advisory services aligned with your best interests</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-number">05</div>
+                <div class="service-content">
+                    <h3>Tax Optimization</h3>
+                    <p>Strategic tax planning to maximize your wealth retention</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-number">06</div>
+                <div class="service-content">
+                    <h3>Wealth Education</h3>
+                    <p>Exclusive insights and resources to empower informed decisions</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section" id="insights">
+        <div class="section-header">
+            <h2 class="section-title">From Wealth Builders for Wealth Builders</h2>
+            <p class="section-subtitle">Strategic insights and proven strategies from those who've walked the path to financial sovereignty</p>
+        </div>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-category">Featured Insight</div>
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-title">Building Generational Wealth: A Blueprint for Success</h3>
+                    <p class="blog-excerpt">How successful families create lasting financial legacies that span multiple generations, featuring exclusive strategies from our wealth advisors.</p>
+                    <div class="blog-meta">
+                        <span class="blog-date">Dec 1, 2024</span>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-category">Market Analysis</div>
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-title">Alternative Investments in 2024: What You Need to Know</h3>
+                    <p class="blog-excerpt">Exploring hedge funds, private equity, and other opportunities for qualified investors.</p>
+                    <div class="blog-meta">
+                        <span class="blog-date">Nov 28, 2024</span>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-category">Legacy Planning</div>
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-title">Tax-Efficient Wealth Transfer Strategies</h3>
+                    <p class="blog-excerpt">Maximize what you pass on to the next generation with smart estate planning.</p>
+                    <div class="blog-meta">
+                        <span class="blog-date">Nov 25, 2024</span>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-category">Press Release</div>
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-title">Sceptyr Expands Services to Underserved Markets</h3>
+                    <p class="blog-excerpt">Bringing institutional-quality wealth management to new communities nationwide.</p>
+                    <div class="blog-meta">
+                        <span class="blog-date">Nov 20, 2024</span>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-category">Podcast</div>
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-title">Ruling Your Wealth: Conversations with Industry Leaders</h3>
+                    <p class="blog-excerpt">Listen to our latest episode featuring insights from successful entrepreneurs.</p>
+                    <div class="blog-meta">
+                        <span class="blog-date">Nov 15, 2024</span>
+                        <a href="#" class="blog-link">Listen Now →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-category">Wealth Strategy</div>
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-title">The Psychology of Wealth: Mindset Matters</h3>
+                    <p class="blog-excerpt">Understanding the mental frameworks that separate the wealthy from everyone else.</p>
+                    <div class="blog-meta">
+                        <span class="blog-date">Nov 10, 2024</span>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-container">
+            <h2 class="cta-title">Ready to Rule Your Wealth?</h2>
+            <p class="cta-subtitle">Join an exclusive community of forward-thinking individuals building lasting legacies</p>
+            <a href="#consultation" class="cta-button-large">Schedule Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Sceptyr</h3>
+                    <p>Helping clients rule their wealth and build lasting legacies since 1977. Your trusted partner in strategic wealth management.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">𝕏</a>
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">▶</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Wealth Management</a></li>
+                        <li><a href="#">Legacy Planning</a></li>
+                        <li><a href="#">Hedge Funds</a></li>
+                        <li><a href="#">RIA Solutions</a></li>
+                        <li><a href="#">Tax Optimization</a></li>
+                        <li><a href="#">Wealth Education</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Our Legacy</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Market Insights</a></li>
+                        <li><a href="#">White Papers</a></li>
+                        <li><a href="#">Research Reports</a></li>
+                        <li><a href="#">Client Portal</a></li>
+                        <li><a href="#">News & Updates</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© 2024 Sceptyr. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Compliance</a>
+                    <a href="#">Disclosures</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(15, 47, 68, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                navbar.style.background = 'rgba(15, 47, 68, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.why-card, .service-card, .blog-card, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Add staggered animation delays
+        document.querySelectorAll('.why-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        document.querySelectorAll('.stat-item').forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        document.querySelectorAll('.blog-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Qualification Logic Tree System
+        let currentQuestion = 0;
+        let answers = {};
+        const totalQuestions = 4; // 0, 1, 2, 3, results
+
+        // Service recommendation logic based on answers
+        const serviceMatrix = {
+            'seller': ['Seller Representation', 'Strategic M&A', 'Pre-Sale Value Building'],
+            'buyer': ['Buyer Representation', 'Strategic M&A', 'First Time Buyer Program'],
+            'portfolio': ['Advisory Services', 'Strategic M&A', 'Financial Services'],
+            'valueBuilding': ['Pre-Sale Value Building', 'Advisory Services'],
+            'financial': ['Financial Services', 'Advisory Services'],
+            'highValue': ['Strategic M&A', 'Advisory Services', 'Financial Services'],
+            'midValue': ['Seller Representation', 'Buyer Representation', 'Advisory Services'],
+            'lowValue': ['Advisory Services', 'Pre-Sale Value Building'],
+            'dedicated': ['Comprehensive Advisory Services', 'Strategic M&A'],
+            'project': ['Project-Based Engagements', 'Specialized Advisory'],
+            'ongoing': ['Advisory Services', 'Strategic Partnership'],
+            'evaluating': ['Consultation Services', 'Market Analysis']
+        };
+
+        function initializeQualification() {
+            // Add click event listeners to all answer options
+            document.querySelectorAll('.answer-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    selectAnswer(this);
+                });
+            });
+
+            updateProgress();
+            updateNavigationButtons();
+        }
+
+        function selectAnswer(element) {
+            const questionId = element.closest('.question-step').id;
+            const answer = element.getAttribute('data-answer');
+            
+            // Remove previous selections in this question
+            element.closest('.answer-options').querySelectorAll('.answer-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Add selection to clicked option
+            element.classList.add('selected');
+            
+            // Store the answer
+            answers[questionId] = answer;
+            
+            // Enable next button
+            updateNavigationButtons();
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions - 1) {
+                hideCurrentQuestion();
+                currentQuestion++;
+                showCurrentQuestion();
+                updateProgress();
+                updateNavigationButtons();
+                
+                // If we reached the end, generate results
+                if (currentQuestion === totalQuestions - 1) {
+                    generateResults();
+                }
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                hideCurrentQuestion();
+                currentQuestion--;
+                showCurrentQuestion();
+                updateProgress();
+                updateNavigationButtons();
+            }
+        }
+
+        function hideCurrentQuestion() {
+            const currentStep = document.getElementById(`question-${currentQuestion}`);
+            if (currentStep) {
+                currentStep.classList.add('qualification-hidden');
+            }
+            
+            // Hide results if going back from results
+            const results = document.getElementById('results');
+            if (currentQuestion === totalQuestions - 1 && results) {
+                results.classList.add('qualification-hidden');
+            }
+        }
+
+        function showCurrentQuestion() {
+            let stepToShow;
+            
+            if (currentQuestion === totalQuestions - 1) {
+                stepToShow = document.getElementById('results');
+            } else {
+                stepToShow = document.getElementById(`question-${currentQuestion}`);
+            }
+            
+            if (stepToShow) {
+                stepToShow.classList.remove('qualification-hidden');
+            }
+        }
+
+        function updateProgress() {
+            const progressBar = document.getElementById('progressBar');
+            const progress = ((currentQuestion + 1) / totalQuestions) * 100;
+            progressBar.style.width = progress + '%';
+        }
+
+        function updateNavigationButtons() {
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+            
+            // Update previous button
+            prevButton.disabled = currentQuestion === 0;
+            
+            // Update next button
+            if (currentQuestion === totalQuestions - 1) {
+                nextButton.style.display = 'none';
+            } else {
+                nextButton.style.display = 'block';
+                const currentQuestionStep = document.getElementById(`question-${currentQuestion}`);
+                const hasSelection = currentQuestionStep && currentQuestionStep.querySelector('.answer-option.selected');
+                nextButton.disabled = !hasSelection;
+            }
+        }
+
+        function generateResults() {
+            const services = determineRecommendedServices();
+            const serviceList = document.getElementById('serviceList');
+            
+            serviceList.innerHTML = '';
+            services.forEach(service => {
+                const li = document.createElement('li');
+                li.textContent = service;
+                serviceList.appendChild(li);
+            });
+        }
+
+        function determineRecommendedServices() {
+            let recommendedServices = new Set();
+            
+            // Analyze answers and determine service recommendations
+            const q1Answer = answers['question-1']; // Situation
+            const q2Answer = answers['question-2']; // Transaction value
+            const q3Answer = answers['question-3']; // Working style
+            
+            // Based on situation (Q1)
+            if (q1Answer === 'A') { // Business transition
+                serviceMatrix.seller.forEach(s => recommendedServices.add(s));
+            } else if (q1Answer === 'B') { // Acquisition
+                serviceMatrix.buyer.forEach(s => recommendedServices.add(s));
+            } else if (q1Answer === 'C') { // Multiple businesses
+                serviceMatrix.portfolio.forEach(s => recommendedServices.add(s));
+            } else if (q1Answer === 'D') { // Future prep
+                serviceMatrix.valueBuilding.forEach(s => recommendedServices.add(s));
+            } else if (q1Answer === 'E') { // Financial structuring
+                serviceMatrix.financial.forEach(s => recommendedServices.add(s));
+            }
+            
+            // Based on transaction value (Q2)
+            if (q2Answer === 'D') { // $25M+
+                serviceMatrix.highValue.forEach(s => recommendedServices.add(s));
+            } else if (['B', 'C'].includes(q2Answer)) { // $1M-$25M
+                serviceMatrix.midValue.forEach(s => recommendedServices.add(s));
+            } else { // Under $1M or unsure
+                serviceMatrix.lowValue.forEach(s => recommendedServices.add(s));
+            }
+            
+            // Based on working style (Q3)
+            if (q3Answer === 'A') { // Dedicated team
+                serviceMatrix.dedicated.forEach(s => recommendedServices.add(s));
+            } else if (q3Answer === 'B') { // Project-based
+                serviceMatrix.project.forEach(s => recommendedServices.add(s));
+            } else if (q3Answer === 'C') { // Ongoing partnership
+                serviceMatrix.ongoing.forEach(s => recommendedServices.add(s));
+            } else if (q3Answer === 'D') { // Evaluating
+                serviceMatrix.evaluating.forEach(s => recommendedServices.add(s));
+            }
+            
+            // Ensure we have at least 3 services
+            if (recommendedServices.size < 3) {
+                ['Advisory Services', 'Strategic Consultation', 'Market Analysis'].forEach(s => {
+                    recommendedServices.add(s);
+                });
+            }
+            
+            return Array.from(recommendedServices).slice(0, 6); // Limit to 6 services
+        }
+
+        // Initialize the qualification system when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeQualification();
+        });
+    </script>
+</body>
+</html>
