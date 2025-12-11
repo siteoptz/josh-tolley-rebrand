@@ -427,15 +427,61 @@
             margin: 0;
         }
 
-        .service-list li {
-            color: var(--white);
-            padding: 0.5rem 0;
-            font-weight: 500;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        .service-item {
+            background: rgba(255, 255, 255, 0.05);
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--vibrant-yellow);
+            transition: all 0.3s ease;
         }
 
-        .service-list li:last-child {
-            border-bottom: none;
+        .service-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .service-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-title {
+            color: var(--vibrant-yellow);
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            border: 1px solid var(--vibrant-yellow);
+            color: var(--vibrant-yellow);
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            background: var(--vibrant-yellow);
+            color: var(--deep-blue);
+            transform: translateY(-1px);
         }
 
         /* Stats Section */
@@ -2145,33 +2191,105 @@
         let questionPath = []; // Track the path taken through questions
         let totalSteps = 0; // Dynamic based on path taken
 
-        // Complete service recommendation matrix from specification
+        // Complete service recommendation matrix with descriptions from specification
         const serviceRecommendations = {
             // Seller Path Services
-            'seller-representation': 'Seller Representation',
-            'strategic-ma': 'Strategic M&A Advisory',
-            'pre-sale-value-building': 'Pre-Sale Value Building',
-            'equity-partnerships': 'Equity Partnership Structuring',
+            'seller-representation': {
+                title: 'Seller Representation',
+                description: 'Comprehensive representation for business owners ready to transition within 12 months. We handle negotiations, due diligence coordination, and transaction structuring to maximize your outcome.',
+                link: '#seller-representation'
+            },
+            'strategic-ma': {
+                title: 'Strategic M&A Advisory',
+                description: 'Sophisticated advisory for complex transactions involving strategic buyers, competitive processes, and institutional interest. Discrete market positioning and optimal buyer selection.',
+                link: '#strategic-ma'
+            },
+            'pre-sale-value-building': {
+                title: 'Pre-Sale Value Building',
+                description: 'Strategic initiatives to optimize business value 1-3 years before a potential transaction. Financial documentation, operational systems, and strategic positioning enhancement.',
+                link: '#value-building'
+            },
+            'equity-partnerships': {
+                title: 'Equity Partnership Structuring',
+                description: 'Capital infusion strategies while maintaining control, strategic partnerships with industry expertise, and succession planning frameworks for key team members.',
+                link: '#equity-partnerships'
+            },
             
             // Buyer Path Services
-            'buyer-representation': 'Buyer Representation',
-            'first-time-buyer-program': 'First Time Buyer Program',
-            'comprehensive-first-buyer': 'Comprehensive First Time Buyer Program',
-            'defined-asset-brokerage': 'Defined Asset Brokerage',
+            'buyer-representation': {
+                title: 'Buyer Representation',
+                description: 'Dedicated representation for experienced buyers seeking specific businesses or assets. Market intelligence, valuation analysis, and negotiation expertise.',
+                link: '#buyer-representation'
+            },
+            'first-time-buyer-program': {
+                title: 'First Time Buyer Program',
+                description: 'Comprehensive guidance for first-time business acquirers. Education on valuation, financing options, due diligence processes, and opportunity identification.',
+                link: '#first-time-buyer'
+            },
+            'comprehensive-first-buyer': {
+                title: 'Comprehensive First Time Buyer Program',
+                description: 'Complete end-to-end support addressing valuation concerns, financing structure, opportunity identification, and process management for first-time acquirers.',
+                link: '#comprehensive-buyer'
+            },
+            'defined-asset-brokerage': {
+                title: 'Defined Asset Brokerage',
+                description: 'Specialized brokerage for specific asset classes including real estate, equipment, intellectual property, and other defined asset categories.',
+                link: '#asset-brokerage'
+            },
             
             // Portfolio/Advisory Services
-            'advisory-services': 'Advisory Services',
-            'financial-services': 'Financial Services',
-            'comprehensive-advisory': 'Comprehensive Advisory Services',
+            'advisory-services': {
+                title: 'Advisory Services',
+                description: 'Strategic advisory for portfolio optimization, succession planning, and evaluating growth versus exit opportunities. Ongoing strategic partnership and decision support.',
+                link: '#advisory-services'
+            },
+            'financial-services': {
+                title: 'Financial Services',
+                description: 'Complex financial structuring, wealth management strategies, tax and estate planning coordination, and multi-generational wealth transfer solutions.',
+                link: '#financial-services'
+            },
+            'comprehensive-advisory': {
+                title: 'Comprehensive Advisory Services',
+                description: 'Dedicated team exclusively focused on your situation with ongoing strategic partnership, active management support, and comprehensive decision-making guidance.',
+                link: '#comprehensive-advisory'
+            },
             
             // Specialized Services
-            'strategic-partnership': 'Strategic Partnership Development',
-            'consultation-services': 'Consultation Services',
-            'market-analysis': 'Market Analysis',
-            'case-studies': 'Industry Case Studies & Track Record',
-            'discovery-call': 'Discovery Call Scheduling',
-            'investment-guide': 'Investment Structure Guide',
-            'confidentiality-emphasis': 'Confidential Advisory Services'
+            'strategic-partnership': {
+                title: 'Strategic Partnership Development',
+                description: 'Ongoing strategic partnership arrangements for complex portfolio management and long-term wealth optimization strategies.',
+                link: '#strategic-partnership'
+            },
+            'consultation-services': {
+                title: 'Consultation Services',
+                description: 'Professional consultation for evaluating multiple advisory firms, providing market analysis and strategic recommendations for complex situations.',
+                link: '#consultation'
+            },
+            'market-analysis': {
+                title: 'Market Analysis',
+                description: 'Comprehensive market intelligence, industry trends analysis, and strategic positioning assessments for informed decision-making.',
+                link: '#market-analysis'
+            },
+            'case-studies': {
+                title: 'Industry Case Studies & Track Record',
+                description: 'Access to our extensive case study library and track record documentation demonstrating industry expertise and successful transaction history.',
+                link: '#case-studies'
+            },
+            'discovery-call': {
+                title: 'Discovery Call Scheduling',
+                description: 'Personalized discovery consultation to assess cultural fit, communication style, and alignment of strategic objectives and working relationship preferences.',
+                link: '#discovery-call'
+            },
+            'investment-guide': {
+                title: 'Investment Structure Guide',
+                description: 'Detailed investment structure guide outlining fee structures, terms, and engagement frameworks for informed decision-making.',
+                link: '#investment-guide'
+            },
+            'confidentiality-emphasis': {
+                title: 'Confidential Advisory Services',
+                description: 'Discrete advisory services emphasizing exclusivity, confidentiality, and white-glove service for high-net-worth individuals and sensitive transactions.',
+                link: '#confidential-advisory'
+            }
         };
 
         // Question routing logic from specification
@@ -2380,14 +2498,26 @@
         }
 
         function generateResults() {
-            const services = determineRecommendedServices();
+            const serviceKeys = determineRecommendedServices();
             const serviceList = document.getElementById('serviceList');
             
             serviceList.innerHTML = '';
-            services.forEach(service => {
-                const li = document.createElement('li');
-                li.textContent = service;
-                serviceList.appendChild(li);
+            serviceKeys.forEach(serviceKey => {
+                const service = serviceRecommendations[serviceKey];
+                if (service) {
+                    const serviceItem = document.createElement('div');
+                    serviceItem.className = 'service-item';
+                    
+                    serviceItem.innerHTML = `
+                        <div class="service-title">${service.title}</div>
+                        <div class="service-description">${service.description}</div>
+                        <a href="${service.link}" class="service-link">
+                            Learn More →
+                        </a>
+                    `;
+                    
+                    serviceList.appendChild(serviceItem);
+                }
             });
         }
 
@@ -2405,117 +2535,117 @@
                 // Apply service logic based on specification
                 if (questionId.startsWith('question-2')) { // Seller path
                     if (questionId === 'question-2A' && answer === 'A') {
-                        services.push(serviceRecommendations['seller-representation']);
+                        services.push('seller-representation');
                     } else if (questionId === 'question-2A' && answer === 'B') {
-                        services.push(serviceRecommendations['pre-sale-value-building']);
-                        services.push(serviceRecommendations['seller-representation']);
+                        services.push('pre-sale-value-building');
+                        services.push('seller-representation');
                     } else if (questionId === 'question-2A' && answer === 'C') {
-                        services.push(serviceRecommendations['strategic-ma']);
+                        services.push('strategic-ma');
                     } else if (questionId === 'question-2B') {
-                        services.push(serviceRecommendations['strategic-ma']);
-                        if (answer === 'B') services.push(serviceRecommendations['advisory-services']);
+                        services.push('strategic-ma');
+                        if (answer === 'B') services.push('advisory-services');
                     } else if (questionId === 'question-2C') {
                         if (answer === 'A') {
-                            services.push(serviceRecommendations['advisory-services']);
-                            services.push(serviceRecommendations['pre-sale-value-building']);
+                            services.push('advisory-services');
+                            services.push('pre-sale-value-building');
                         } else if (answer === 'B') {
-                            services.push(serviceRecommendations['pre-sale-value-building']);
+                            services.push('pre-sale-value-building');
                         } else if (answer === 'C') {
-                            services.push(serviceRecommendations['seller-representation']);
+                            services.push('seller-representation');
                         }
                     } else if (questionId === 'question-2D') {
-                        services.push(serviceRecommendations['equity-partnerships']);
-                        if (answer === 'A') services.push(serviceRecommendations['financial-services']);
-                        if (answer === 'B') services.push(serviceRecommendations['strategic-ma']);
-                        if (answer === 'C') services.push(serviceRecommendations['advisory-services']);
+                        services.push('equity-partnerships');
+                        if (answer === 'A') services.push('financial-services');
+                        if (answer === 'B') services.push('strategic-ma');
+                        if (answer === 'C') services.push('advisory-services');
                     }
                 }
                 
                 if (questionId.startsWith('question-3')) { // Buyer path
                     if (questionId === 'question-3A') {
-                        services.push(serviceRecommendations['first-time-buyer-program']);
-                        if (answer === 'A') services.push(serviceRecommendations['advisory-services']);
-                        if (answer === 'B') services.push(serviceRecommendations['financial-services']);
-                        if (answer === 'C') services.push(serviceRecommendations['buyer-representation']);
-                        if (answer === 'D') services.push(serviceRecommendations['comprehensive-first-buyer']);
+                        services.push('first-time-buyer-program');
+                        if (answer === 'A') services.push('advisory-services');
+                        if (answer === 'B') services.push('financial-services');
+                        if (answer === 'C') services.push('buyer-representation');
+                        if (answer === 'D') services.push('comprehensive-first-buyer');
                     } else if (questionId === 'question-3B') {
                         if (answer === 'A' || answer === 'B') {
-                            services.push(serviceRecommendations['buyer-representation']);
-                            if (answer === 'B') services.push(serviceRecommendations['advisory-services']);
+                            services.push('buyer-representation');
+                            if (answer === 'B') services.push('advisory-services');
                         } else if (answer === 'C') {
-                            services.push(serviceRecommendations['strategic-ma']);
-                            services.push(serviceRecommendations['advisory-services']);
+                            services.push('strategic-ma');
+                            services.push('advisory-services');
                         }
                     } else if (questionId === 'question-3C') {
                         if (answer === 'A') {
-                            services.push(serviceRecommendations['buyer-representation']);
-                            services.push(serviceRecommendations['strategic-ma']);
+                            services.push('buyer-representation');
+                            services.push('strategic-ma');
                         } else if (answer === 'B') {
-                            services.push(serviceRecommendations['defined-asset-brokerage']);
+                            services.push('defined-asset-brokerage');
                         } else if (answer === 'C') {
-                            services.push(serviceRecommendations['strategic-ma']);
-                            services.push(serviceRecommendations['advisory-services']);
+                            services.push('strategic-ma');
+                            services.push('advisory-services');
                         }
                     } else if (questionId === 'question-3D') {
-                        services.push(serviceRecommendations['strategic-ma']);
+                        services.push('strategic-ma');
                         if (answer === 'B' || answer === 'C') {
-                            services.push(serviceRecommendations['advisory-services']);
-                            if (answer === 'C') services.push(serviceRecommendations['financial-services']);
+                            services.push('advisory-services');
+                            if (answer === 'C') services.push('financial-services');
                         }
                     }
                 }
                 
                 if (questionId.startsWith('question-4')) { // Portfolio path
                     if (questionId === 'question-4A') {
-                        services.push(serviceRecommendations['advisory-services']);
-                        if (answer === 'A') services.push(serviceRecommendations['strategic-ma']);
-                        if (answer === 'B') services.push(serviceRecommendations['equity-partnerships']);
-                        if (answer === 'C') services.push(serviceRecommendations['pre-sale-value-building']);
+                        services.push('advisory-services');
+                        if (answer === 'A') services.push('strategic-ma');
+                        if (answer === 'B') services.push('equity-partnerships');
+                        if (answer === 'C') services.push('pre-sale-value-building');
                     } else if (questionId === 'question-4B') {
-                        services.push(serviceRecommendations['advisory-services']);
-                        if (answer === 'B') services.push(serviceRecommendations['equity-partnerships']);
-                        if (answer === 'C') services.push(serviceRecommendations['financial-services']);
+                        services.push('advisory-services');
+                        if (answer === 'B') services.push('equity-partnerships');
+                        if (answer === 'C') services.push('financial-services');
                     } else if (questionId === 'question-4C') {
-                        services.push(serviceRecommendations['financial-services']);
-                        services.push(serviceRecommendations['advisory-services']);
-                        if (answer === 'B') services.push(serviceRecommendations['equity-partnerships']);
-                        if (answer === 'C') services.push(serviceRecommendations['strategic-ma']);
+                        services.push('financial-services');
+                        services.push('advisory-services');
+                        if (answer === 'B') services.push('equity-partnerships');
+                        if (answer === 'C') services.push('strategic-ma');
                     }
                 }
                 
                 if (questionId.startsWith('question-5')) { // Value building path
                     if (questionId === 'question-5A') {
                         if (answer === 'A') {
-                            services.push(serviceRecommendations['pre-sale-value-building']);
+                            services.push('pre-sale-value-building');
                         } else if (answer === 'B') {
-                            services.push(serviceRecommendations['pre-sale-value-building']);
-                            services.push(serviceRecommendations['advisory-services']);
+                            services.push('pre-sale-value-building');
+                            services.push('advisory-services');
                         } else if (answer === 'C') {
-                            services.push(serviceRecommendations['advisory-services']);
-                            services.push(serviceRecommendations['pre-sale-value-building']);
+                            services.push('advisory-services');
+                            services.push('pre-sale-value-building');
                         }
                     }
                 }
                 
                 if (questionId.startsWith('question-6')) { // Financial services path
                     if (questionId === 'question-6A') {
-                        services.push(serviceRecommendations['financial-services']);
-                        if (answer === 'A') services.push(serviceRecommendations['buyer-representation']);
-                        if (answer === 'B') services.push(serviceRecommendations['seller-representation']);
-                        if (answer === 'C') services.push(serviceRecommendations['equity-partnerships']);
-                        if (answer === 'D') services.push(serviceRecommendations['strategic-ma']);
+                        services.push('financial-services');
+                        if (answer === 'A') services.push('buyer-representation');
+                        if (answer === 'B') services.push('seller-representation');
+                        if (answer === 'C') services.push('equity-partnerships');
+                        if (answer === 'D') services.push('strategic-ma');
                     }
                 }
                 
                 if (questionId === 'question-8A') { // Decision factors
                     if (answer === 'A') {
-                        services.push(serviceRecommendations['case-studies']);
+                        services.push('case-studies');
                     } else if (answer === 'B') {
-                        services.push(serviceRecommendations['discovery-call']);
+                        services.push('discovery-call');
                     } else if (answer === 'C') {
-                        services.push(serviceRecommendations['investment-guide']);
+                        services.push('investment-guide');
                     } else if (answer === 'D') {
-                        services.push(serviceRecommendations['confidentiality-emphasis']);
+                        services.push('confidentiality-emphasis');
                     }
                 }
             }
@@ -2526,13 +2656,13 @@
             // If we don't have enough services, add default ones
             if (uniqueServices.length < 3) {
                 const defaultServices = [
-                    serviceRecommendations['advisory-services'],
-                    serviceRecommendations['consultation-services'],
-                    serviceRecommendations['market-analysis']
+                    'advisory-services',
+                    'consultation-services',
+                    'market-analysis'
                 ];
-                defaultServices.forEach(service => {
-                    if (!uniqueServices.includes(service)) {
-                        uniqueServices.push(service);
+                defaultServices.forEach(serviceKey => {
+                    if (!uniqueServices.includes(serviceKey)) {
+                        uniqueServices.push(serviceKey);
                     }
                 });
             }
