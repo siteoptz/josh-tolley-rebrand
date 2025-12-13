@@ -1,0 +1,978 @@
+/* Cuban Soul Food Truck - Stylesheet */
+
+:root {
+    --primary-color: #243746;
+    --secondary-color: #243746;
+    --accent-color: #F2DAB2;
+    --cream-color: #FDF7E6;
+    --brown-color: #8B4513;
+    --dark-teal: #243746;
+    --light-teal: #243746;
+    --warm-beige: #F2DAB2;
+    --text-dark: #2C2C2C;
+    --text-light: #666666;
+    --white: #FFFFFF;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bahnschrift', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--cream-color);
+}
+
+h1 {
+    font-family: 'Croissant One', cursive;
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background: var(--white);
+    box-shadow: 0 2px 10px var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 6px 0;
+    width: 100%;
+}
+
+.header-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.phone {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.phone:hover {
+    color: var(--accent-color);
+}
+
+.navbar {
+    background: var(--white);
+    padding: 10px 0;
+    width: 100%;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-image {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-logo {
+    height: 160px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(
+        135deg,
+        var(--primary-color) 0%,
+        var(--dark-teal) 50%,
+        var(--light-teal) 100%
+    );
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-logo {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.hero-logo-img {
+    height: 240px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.hero-title {
+    font-family: 'Croissant One', cursive;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-family: 'Bahnschrift', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background: #98B8AD;
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: #7E9F93;
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background: #98B8AD;
+    color: var(--white);
+    border-color: #98B8AD;
+}
+
+.btn-secondary:hover {
+    background: #7E9F93;
+    color: var(--white);
+}
+
+/* About Section */
+.about {
+    padding: 100px 0;
+    background: var(--warm-beige);
+}
+
+.about h2 {
+    font-family: 'Croissant One', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tagline {
+    font-family: 'Bahnschrift', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--brown-color);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature {
+    background: var(--cream-color);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.feature-icon {
+    width: 195px;
+    height: 195px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.feature h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Menu Section */
+.menu {
+    padding: 100px 0;
+    background: #243746;
+}
+
+.menu h2 {
+    font-family: 'Croissant One', cursive;
+    font-size: 2.5rem;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.menu-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 50px;
+}
+
+.menu-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.menu-category {
+    background: #F2DAB2;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 5px 20px var(--shadow);
+}
+
+.menu-category h3 {
+    font-family: 'Croissant One', cursive;
+    font-size: 1.8rem;
+    color: #243746;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid #243746;
+    padding-bottom: 15px;
+}
+
+.menu-items {
+    display: grid;
+    gap: 20px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(36, 55, 70, 0.2);
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+
+.item-info h4 {
+    color: #243746;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.item-info p {
+    color: #243746;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #243746;
+    min-width: 80px;
+    text-align: right;
+}
+
+/* Food Banner */
+.food-banner {
+    padding: 50px 0;
+    background: var(--warm-beige);
+}
+
+.food-banner .container {
+    max-width: 100%;
+    padding: 0;
+}
+
+.banner-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+/* Order Section */
+.order {
+    padding: 50px 0 100px 0;
+    background: var(--warm-beige);
+}
+
+.order h2 {
+    font-family: 'Croissant One', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.order-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 50px;
+}
+
+.order-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.order-info {
+    background: var(--cream-color);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.order-info h3 {
+    font-family: 'Croissant One', cursive;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+.info-item {
+    margin-bottom: 25px;
+}
+
+.info-item strong {
+    display: block;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.info-item a {
+    color: var(--brown-color);
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.order-form {
+    background: var(--cream-color);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow);
+}
+
+.order-form h3 {
+    font-family: 'Croissant One', cursive;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--warm-beige);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-note {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Contact Section */
+.contact {
+    padding: 100px 0;
+    background: var(--cream-color);
+}
+
+.contact h2 {
+    font-family: 'Croissant One', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    background: var(--cream-color);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px var(--shadow);
+}
+
+.contact-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.contact-item a {
+    color: var(--brown-color);
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.location-info {
+    background: var(--cream-color);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow);
+}
+
+.location-info h3 {
+    font-family: 'Croissant One', cursive;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.social-btn.facebook {
+    background: #1877F2;
+    color: white;
+}
+
+.social-btn.instagram {
+    background: linear-gradient(45deg, #F56040, #C13584);
+    color: white;
+}
+
+.social-btn.twitter {
+    background: #1DA1F2;
+    color: white;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.truck-image {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    background: var(--cream-color);
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(
+        135deg,
+        var(--primary-color) 0%,
+        var(--dark-teal) 50%,
+        var(--light-teal) 100%
+    );
+    color: var(--white);
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-brand .logo {
+    margin-bottom: 20px;
+}
+
+.footer-brand .logo-text h3 {
+    color: var(--white);
+    font-family: 'Croissant One', cursive;
+}
+
+.footer-brand p {
+    font-style: italic;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    line-height: 1.8;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+.footer-contact a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .food-banner {
+        padding: 40px 0 0 0;
+    }
+    
+    .order-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .footer-brand .logo {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .footer-logo {
+        margin: 0 auto;
+    }
+    
+    .menu-categories {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .price {
+        margin-top: 10px;
+        text-align: left;
+    }
+    
+    .social-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .hero-logo-img {
+        height: 160px;
+    }
+    
+    .logo-image {
+        height: 60px;
+    }
+    
+    .footer-logo {
+        height: 100px;
+    }
+    
+    .menu-category,
+    .order-form,
+    .order-info,
+    .location-info {
+        padding: 25px;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .banner-image {
+        height: 200px;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation for menu items */
+.menu-item {
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Form validation styles */
+.form-group input:invalid,
+.form-group select:invalid,
+.form-group textarea:invalid {
+    border-color: #e74c3c;
+}
+
+.form-group input:valid,
+.form-group select:valid,
+.form-group textarea:valid {
+    border-color: #27ae60;
+}
+
+/* Subscription Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 5% auto;
+    padding: 40px;
+    border: none;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    font-family: 'Croissant One', cursive;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.modal-content p {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: var(--text-light);
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--primary-color);
+}
+
+.subscription-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.subscription-form .form-group {
+    margin-bottom: 0;
+}
+
+.subscription-form .btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+/* Floating Subscribe/Catering Button */
+.subscribe-float-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-teal));
+    color: var(--white);
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.subscribe-float-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateY(-30px) scale(0.95);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive modal */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 10% auto;
+        padding: 30px 20px;
+        width: 95%;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.7rem;
+    }
+    
+    .subscribe-float-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .subscribe-float-btn {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+        width: auto;
+        text-align: center;
+    }
+}
