@@ -109,7 +109,8 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
+            padding-top: 80px;
             background: linear-gradient(135deg, var(--primary-blue) 0%, #04213e 100%);
             display: flex;
             align-items: center;
@@ -805,9 +806,12 @@
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
+            .hero {
+                padding-top: 100px;
+            }
+            
             .hero-content {
                 padding: 0 2rem;
-                padding-top: 10rem;
             }
             
             .hero-title {
