@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Wealth Outlook: Navigating Unprecedented Opportunities - Sceptyr</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #07305d;
+            --secondary-beige: #d8bf95;
+            --light-beige: #f8f2f2;
+            --white: #FFFFFF;
+            --medium-gray: #6C757D;
+            --dark-gray: #343A40;
+            --charcoal: #2B2B2B;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(7, 48, 93, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-beige);
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #04213e 100%);
+            color: var(--white);
+            padding: 120px 0 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .article-category {
+            color: var(--secondary-beige);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .article-title {
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .article-meta {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Article Content */
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+            margin: 2rem 0 1rem;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: var(--light-beige);
+            border-left: 4px solid var(--secondary-beige);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .key-insights {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .key-insights h3 {
+            color: var(--secondary-beige);
+            margin-bottom: 1.5rem;
+        }
+
+        .insights-list {
+            list-style: none;
+        }
+
+        .insights-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .insights-list li:before {
+            content: "→";
+            color: var(--secondary-beige);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Back Navigation */
+        .back-nav {
+            background: var(--light-beige);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .back-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .back-link:hover {
+            color: var(--secondary-beige);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="sceptyr-staging.html" class="logo">Sceptyr</a>
+            <ul class="nav-menu">
+                <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="resources-media.html" class="nav-link">Resources/Media</a></li>
+                <li><a href="contact-us.html" class="nav-link">Contact us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <section class="article-header">
+        <div class="header-content">
+            <div class="article-category">Market Analysis</div>
+            <h1 class="article-title">2026 Wealth Outlook: Navigating Unprecedented Opportunities</h1>
+            <p class="article-subtitle">
+                Economic shifts create generational wealth-building windows for those who understand the new rules
+            </p>
+            <div class="article-meta">
+                <span>January 10, 2025</span>
+                <span>•</span>
+                <span>12 minute read</span>
+                <span>•</span>
+                <span>By Josh Tolley</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <main class="article-content">
+        <div class="content-section">
+            <h2>The Great Wealth Redistribution Begins</h2>
+            <p>
+                We stand at the precipice of the largest wealth transfer in human history. As we enter 2026, 
+                three massive forces are converging to create unprecedented opportunities for those positioned 
+                to recognize and capitalize on them: geopolitical realignment, technological acceleration, 
+                and demographic transformation.
+            </p>
+            <p>
+                The traditional investment playbook—60/40 portfolios, dollar-cost averaging, and hope—will not 
+                suffice in this new era. The families that emerge wealthier in the next decade will be those 
+                who understand that we're not experiencing a normal market cycle, but rather a complete 
+                restructuring of global economic power.
+            </p>
+        </div>
+
+        <div class="key-insights">
+            <h3>Key Wealth-Building Themes for 2026</h3>
+            <ul class="insights-list">
+                <li>Artificial Intelligence infrastructure investments yielding 25-40% annual returns</li>
+                <li>Emerging market currencies strengthening against a weakening dollar</li>
+                <li>Private credit opportunities in the $2-5 trillion financing gap</li>
+                <li>Real estate arbitrage in overlooked secondary markets</li>
+                <li>Commodity supercycle positioning ahead of infrastructure spending</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Geopolitical Chess: The New Investment Map</h2>
+            <p>
+                The unipolar world order established after WWII is giving way to a multipolar reality. 
+                China's economic expansion, India's demographic dividend, and the Middle East's diversification 
+                away from oil dependence are creating entirely new investment ecosystems.
+            </p>
+            
+            <div class="highlight-box">
+                <strong>Opportunity Alert:</strong> Southeast Asian markets are experiencing what China did 
+                in the 1990s. Vietnam's manufacturing boom, Indonesia's resource wealth, and Thailand's 
+                logistics hub development present 10-year growth stories that most institutional investors 
+                are still ignoring.
+            </div>
+
+            <h3>The Dollar's Decline Creates Currency Winners</h3>
+            <p>
+                As the Federal Reserve grapples with unsustainable debt levels, the dollar's reserve currency 
+                status faces its first serious challenge since Bretton Woods. Central bank gold accumulation 
+                has reached levels not seen since the 1970s, while bilateral trade agreements increasingly 
+                bypass dollar settlements.
+            </p>
+            <p>
+                Smart money is already diversifying into Swiss francs, Singapore dollars, and even select 
+                cryptocurrency positions. The families that preserve and grow wealth through this transition 
+                will be those who position ahead of, not after, the currency realignment.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>The AI Investment Tsunami</h2>
+            <p>
+                We're witnessing the early innings of an artificial intelligence revolution that will dwarf 
+                the internet's impact on wealth creation. But here's what most investors miss: the real money 
+                isn't in the AI companies everyone's talking about—it's in the infrastructure, data, and 
+                specialized services that make AI possible.
+            </p>
+            
+            <h3>Where the Real AI Fortunes Will Be Made</h3>
+            <p>
+                While retail investors chase AI stock momentum, sophisticated capital is flowing into private 
+                markets: semiconductor foundries, data center REITs, specialized cooling systems, and the 
+                rare earth mining operations that supply AI's material needs.
+            </p>
+            <p>
+                Consider this: global data center capacity needs to triple by 2030 to support AI workloads. 
+                The companies building that infrastructure—not the ones creating chatbots—will generate 
+                the next generation of billionaire families.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Demographic Destiny: Aging Boomers, Rising Millennials</h2>
+            <p>
+                The largest generational wealth transfer in history—$84 trillion from Baby Boomers to younger 
+                generations—is accelerating. But this isn't just about inheritance. It's about completely 
+                different investment preferences, risk tolerances, and value systems reshaping entire markets.
+            </p>
+            
+            <div class="highlight-box">
+                <strong>Generational Arbitrage:</strong> Millennials prioritize sustainability, technology 
+                integration, and experiences over material goods. The companies and assets that align with 
+                these values are trading at significant discounts to their long-term potential.
+            </div>
+
+            <h3>The Coming Real Estate Revolution</h3>
+            <p>
+                Traditional real estate models—suburban sprawl, car-dependent communities, energy-inefficient 
+                buildings—are becoming stranded assets. Meanwhile, mixed-use developments, walkable communities, 
+                and smart buildings are seeing explosive demand and premium valuations.
+            </p>
+            <p>
+                The most significant opportunity may be in secondary cities like Austin, Nashville, and Denver, 
+                where millennials are migrating for affordability and quality of life, but infrastructure 
+                investment hasn't caught up to demand.
+            </p>
+        </div>
+
+        <div class="key-insights">
+            <h3>Tactical Positioning for 2026</h3>
+            <ul class="insights-list">
+                <li>Allocate 15-25% to alternative investments with 7+ year time horizons</li>
+                <li>Establish currency hedges through precious metals and foreign real estate</li>
+                <li>Target private equity funds focused on AI infrastructure and healthcare technology</li>
+                <li>Consider direct lending strategies capturing 12-18% yields in credit-starved markets</li>
+                <li>Build positions in commodity-producing assets before institutional recognition</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>The Path Forward: Institutional Thinking for Individual Wealth</h2>
+            <p>
+                The opportunities outlined in this analysis aren't available to retail investors browsing 
+                brokerage apps. They require institutional-quality thinking: longer time horizons, higher 
+                minimum investments, and sophisticated due diligence processes.
+            </p>
+            <p>
+                This is why the wealth gap continues to widen. Those with access to alternative investments, 
+                private markets, and strategic advisory continue to compound wealth at rates that public 
+                markets simply cannot match.
+            </p>
+            <p>
+                The question isn't whether these opportunities exist—it's whether you're positioned to 
+                access them before they become obvious to everyone else.
+            </p>
+        </div>
+    </main>
+
+    <!-- Back Navigation -->
+    <section class="back-nav">
+        <a href="resources-media.html" class="back-link">← Back to Resources & Media</a>
+    </section>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>

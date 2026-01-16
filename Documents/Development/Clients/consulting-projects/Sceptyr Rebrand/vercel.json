@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/sceptyr-staging.html"
+    },
+    {
+      "source": "/sceptyr-staging",
+      "destination": "/sceptyr-staging.html"
+    }
+  ]
+}

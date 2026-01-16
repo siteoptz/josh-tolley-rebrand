@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 47: Unlocking Alpha Through Alternative Investments - Ruling Your Wealth Podcast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #07305d;
+            --secondary-beige: #d8bf95;
+            --light-beige: #f8f2f2;
+            --white: #FFFFFF;
+            --medium-gray: #6C757D;
+            --dark-gray: #343A40;
+            --charcoal: #2B2B2B;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(7, 48, 93, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-beige);
+        }
+
+        /* Podcast Header */
+        .podcast-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #04213e 100%);
+            color: var(--white);
+            padding: 120px 0 4rem;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .podcast-series {
+            color: var(--secondary-beige);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .episode-title {
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .episode-description {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .episode-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .play-button {
+            background: var(--secondary-beige);
+            color: var(--primary-blue);
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Podcast Content */
+        .podcast-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+            margin: 2rem 0 1rem;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .guest-bio {
+            background: var(--light-beige);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .guest-bio h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .key-takeaways {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .key-takeaways h3 {
+            color: var(--secondary-beige);
+            margin-bottom: 1.5rem;
+        }
+
+        .takeaways-list {
+            list-style: none;
+        }
+
+        .takeaways-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .takeaways-list li:before {
+            content: "🎯";
+            position: absolute;
+            left: 0;
+        }
+
+        .timestamps {
+            background: var(--white);
+            border: 1px solid var(--light-beige);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .timestamps h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .timestamp-item {
+            display: flex;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-beige);
+        }
+
+        .timestamp-time {
+            color: var(--secondary-beige);
+            font-weight: 600;
+            min-width: 80px;
+        }
+
+        .timestamp-description {
+            flex: 1;
+        }
+
+        /* Back Navigation */
+        .back-nav {
+            background: var(--light-beige);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .back-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .back-link:hover {
+            color: var(--secondary-beige);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .episode-title {
+                font-size: 2.2rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .episode-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="sceptyr-staging.html" class="logo">Sceptyr</a>
+            <ul class="nav-menu">
+                <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="resources-media.html" class="nav-link">Resources/Media</a></li>
+                <li><a href="contact-us.html" class="nav-link">Contact us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Podcast Header -->
+    <section class="podcast-header">
+        <div class="header-content">
+            <div class="podcast-series">Ruling Your Wealth Podcast</div>
+            <h1 class="episode-title">Episode 47: Unlocking Alpha Through Alternative Investments</h1>
+            <p class="episode-description">
+                Former Goldman Sachs MD Marcus Thompson reveals how ultra-high-net-worth families achieve 
+                15%+ annual returns through private markets
+            </p>
+            <div class="episode-meta">
+                <span>January 8, 2025</span>
+                <span>•</span>
+                <span>58 minutes</span>
+                <span>•</span>
+                <span>Hosted by Josh Tolley</span>
+            </div>
+            <button class="play-button">▶ Play Episode</button>
+        </div>
+    </section>
+
+    <!-- Podcast Content -->
+    <main class="podcast-content">
+        <div class="guest-bio">
+            <h3>About Our Guest: Marcus Thompson</h3>
+            <p>
+                Marcus Thompson spent 15 years at Goldman Sachs, where he rose to Managing Director overseeing 
+                alternative investment strategies for the firm's ultra-high-net-worth clients. He now manages 
+                a $2.3 billion family office fund and serves as Senior Investment Advisor to three billionaire 
+                families. Marcus holds an MBA from Wharton and is a CFA charterholder.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Episode Overview</h2>
+            <p>
+                In this revealing conversation, Marcus pulls back the curtain on the investment strategies 
+                that institutional investors and billionaire families use to consistently outperform public 
+                markets. This isn't about picking stocks or timing markets—it's about accessing entirely 
+                different asset classes that most investors never even know exist.
+            </p>
+            <p>
+                Marcus discusses the specific allocation frameworks, due diligence processes, and risk 
+                management techniques that have allowed his clients to achieve double-digit returns through 
+                multiple market cycles, including the 2008 financial crisis and the 2020 pandemic.
+            </p>
+        </div>
+
+        <div class="key-takeaways">
+            <h3>Key Takeaways from This Episode</h3>
+            <ul class="takeaways-list">
+                <li>Why the "Yale Model" of alternative investing has evolved and what's replaced it</li>
+                <li>The specific private equity strategies yielding 20%+ IRRs in today's market</li>
+                <li>How to access direct lending opportunities with 12-18% annual yields</li>
+                <li>The infrastructure investments that will dominate the next decade</li>
+                <li>Marcus's framework for evaluating hedge fund managers and fee structures</li>
+                <li>Real estate strategies beyond traditional REITs and rental properties</li>
+                <li>How billionaire families structure their alternative investment portfolios</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>The Alternative Investment Landscape Has Changed</h2>
+            <p>
+                "Most people think alternative investments are just hedge funds and private equity," Marcus 
+                explains, "but the real opportunities today are in areas like infrastructure debt, specialty 
+                lending, and direct co-investments. The strategies that worked in the 2000s have been 
+                arbitraged away by institutional capital."
+            </p>
+            <p>
+                He reveals how his clients have pivoted away from traditional private equity funds toward 
+                direct investments, co-investment opportunities, and specialized credit strategies that 
+                institutions can't easily access due to size constraints.
+            </p>
+        </div>
+
+        <div class="timestamps">
+            <h3>Episode Timestamps</h3>
+            <div class="timestamp-item">
+                <div class="timestamp-time">0:00</div>
+                <div class="timestamp-description">Introduction and Marcus's Goldman Sachs background</div>
+            </div>
+            <div class="timestamp-item">
+                <div class="timestamp-time">5:30</div>
+                <div class="timestamp-description">Why traditional 60/40 portfolios fail wealthy families</div>
+            </div>
+            <div class="timestamp-item">
+                <div class="timestamp-time">12:15</div>
+                <div class="timestamp-description">The evolution of the Yale endowment model</div>
+            </div>
+            <div class="timestamp-item">
+                <div class="timestamp-time">18:45</div>
+                <div class="timestamp-description">Private credit opportunities in today's market</div>
+            </div>
+            <div class="timestamp-item">
+                <div class="timestamp-time">26:20</div>
+                <div class="timestamp-description">Infrastructure investing beyond traditional models</div>
+            </div>
+            <div class="timestamp-item">
+                <div class="timestamp-time">34:10</div>
+                <div class="timestamp-description">Real estate strategies: opportunity zones and development</div>
+            </div>
+            <div class="timestamp-item">
+                <div class="timestamp-time">41:30</div>
+                <div class="timestamp-description">Hedge fund selection and fee negotiation tactics</div>
+            </div>
+            <div class="timestamp-item">
+                <div class="timestamp-time">48:00</div>
+                <div class="timestamp-description">Building an alternative investment portfolio: allocation framework</div>
+            </div>
+            <div class="timestamp-item">
+                <div class="timestamp-time">54:15</div>
+                <div class="timestamp-description">Common mistakes and how to avoid them</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Actionable Investment Framework</h2>
+            <p>
+                Marcus doesn't just share theory—he provides his actual allocation framework that his 
+                billionaire clients use to structure their alternative investment portfolios. This includes 
+                specific percentage allocations, risk management protocols, and the minimum investment 
+                thresholds needed to access institutional-quality opportunities.
+            </p>
+            <p>
+                He also reveals the three questions he asks every fund manager, the red flags that 
+                immediately disqualify investment opportunities, and the specific due diligence process 
+                that has helped him avoid every major blow-up in the alternative investment space over 
+                the past two decades.
+            </p>
+        </div>
+    </main>
+
+    <!-- Back Navigation -->
+    <section class="back-nav">
+        <a href="resources-media.html" class="back-link">← Back to Resources & Media</a>
+    </section>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Play button functionality
+        document.querySelector('.play-button').addEventListener('click', function() {
+            alert('This would normally open your podcast player or embedded audio player.');
+        });
+    </script>
+</body>
+</html>
