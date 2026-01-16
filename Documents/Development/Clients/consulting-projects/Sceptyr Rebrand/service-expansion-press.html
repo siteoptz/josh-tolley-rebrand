@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sceptyr Launches $500M Expansion Into Emerging Wealth Centers - Press Release</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #07305d;
+            --secondary-beige: #d8bf95;
+            --light-beige: #f8f2f2;
+            --white: #FFFFFF;
+            --medium-gray: #6C757D;
+            --dark-gray: #343A40;
+            --charcoal: #2B2B2B;
+            --press-green: #2d5a27;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(7, 48, 93, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-beige);
+        }
+
+        /* Press Release Header */
+        .press-header {
+            background: linear-gradient(135deg, var(--press-green) 0%, #1a3317 100%);
+            color: var(--white);
+            padding: 120px 0 4rem;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .press-category {
+            color: var(--secondary-beige);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .press-title {
+            font-size: 3.2rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .press-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .press-meta {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Press Content */
+        .press-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .press-dateline {
+            background: var(--light-beige);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+            margin: 2rem 0 1rem;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .lead-paragraph {
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 1.8;
+            color: var(--charcoal);
+            margin-bottom: 2rem;
+        }
+
+        .quote-block {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: '"';
+            font-size: 6rem;
+            color: var(--secondary-beige);
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .quote-attribution {
+            color: var(--secondary-beige);
+            font-weight: 600;
+            padding-left: 2rem;
+        }
+
+        .expansion-details {
+            background: var(--light-beige);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .expansion-details h3 {
+            color: var(--press-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .markets-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .market-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .market-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .market-stats {
+            list-style: none;
+        }
+
+        .market-stats li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--medium-gray);
+        }
+
+        .market-stats li strong {
+            color: var(--dark-gray);
+        }
+
+        .financial-highlights {
+            background: var(--press-green);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .financial-highlights h3 {
+            color: var(--secondary-beige);
+            margin-bottom: 1.5rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .metric-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary-beige);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-info {
+            background: var(--white);
+            border: 1px solid var(--light-beige);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .company-info h3 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .contact-info h3 {
+            color: var(--secondary-beige);
+            margin-bottom: 1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Back Navigation */
+        .back-nav {
+            background: var(--light-beige);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .back-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .back-link:hover {
+            color: var(--secondary-beige);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .press-title {
+                font-size: 2.2rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .markets-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="sceptyr-staging.html" class="logo">Sceptyr</a>
+            <ul class="nav-menu">
+                <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="resources-media.html" class="nav-link">Resources/Media</a></li>
+                <li><a href="contact-us.html" class="nav-link">Contact us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Press Release Header -->
+    <section class="press-header">
+        <div class="header-content">
+            <div class="press-category">Company News</div>
+            <h1 class="press-title">Sceptyr Launches $500M Expansion Into Emerging Wealth Centers</h1>
+            <p class="press-subtitle">
+                Following record growth, wealth management firm targets tech entrepreneurs and crypto wealth in Austin, Nashville, and Denver
+            </p>
+            <div class="press-meta">
+                <span>December 20, 2025</span>
+                <span>•</span>
+                <span>4 minute read</span>
+                <span>•</span>
+                <span>For Immediate Release</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Press Release Content -->
+    <main class="press-content">
+        <div class="press-dateline">
+            DALLAS, TX - December 20, 2025 - Sceptyr, LLC
+        </div>
+
+        <p class="lead-paragraph">
+            Sceptyr, the rapidly growing wealth management firm specializing in ultra-high-net-worth individuals, 
+            today announced a $500 million strategic expansion into three emerging wealth centers: Austin, Texas; 
+            Nashville, Tennessee; and Denver, Colorado. The expansion follows a record year of 127% growth in 
+            assets under management and positions Sceptyr to capture the explosive growth in technology entrepreneur 
+            and cryptocurrency wealth in these markets.
+        </p>
+
+        <div class="content-section">
+            <h2>Strategic Market Expansion</h2>
+            <p>
+                The new offices will serve the rapidly expanding population of tech entrepreneurs, cryptocurrency 
+                investors, and high-growth business owners who have migrated to these markets over the past five years. 
+                Unlike traditional wealth centers like New York and San Francisco, these emerging markets lack 
+                institutional-quality wealth management services tailored to digital asset wealth and alternative 
+                investment strategies.
+            </p>
+            <p>
+                "We're following our clients," said Josh Tolley, Founder and CEO of Sceptyr. "The geography of 
+                American wealth is shifting dramatically. Austin has become the unofficial capital of crypto wealth, 
+                Nashville is attracting entertainment and media moguls, and Denver is emerging as a hub for outdoor 
+                recreation and cannabis entrepreneurs. These clients need sophisticated wealth management that 
+                understands their unique circumstances."
+            </p>
+        </div>
+
+        <div class="quote-block">
+            <div class="quote-text">
+                Traditional wealth management firms are still structured for oil fortunes and old money. 
+                We're building for entrepreneurs who sold companies to Google, crypto investors who bought 
+                Bitcoin at $100, and business owners whose companies grew 1000% during the digital transformation. 
+                These clients need strategies that didn't exist five years ago.
+            </div>
+            <div class="quote-attribution">
+                - Josh Tolley, Founder & CEO, Sceptyr
+            </div>
+        </div>
+
+        <div class="expansion-details">
+            <h3>Target Market Analysis</h3>
+            <div class="markets-grid">
+                <div class="market-card">
+                    <div class="market-name">Austin, Texas</div>
+                    <ul class="market-stats">
+                        <li><strong>Pop. Growth:</strong> 21% (2020-2025)</li>
+                        <li><strong>Tech Companies:</strong> 3,000+ relocations</li>
+                        <li><strong>Avg. Wealth:</strong> $8.2M per HNW household</li>
+                        <li><strong>Key Sectors:</strong> Tech, crypto, gaming</li>
+                    </ul>
+                </div>
+                <div class="market-card">
+                    <div class="market-name">Nashville, Tennessee</div>
+                    <ul class="market-stats">
+                        <li><strong>Pop. Growth:</strong> 18% (2020-2025)</li>
+                        <li><strong>HNW Migration:</strong> 2,400+ families</li>
+                        <li><strong>Avg. Wealth:</strong> $6.8M per HNW household</li>
+                        <li><strong>Key Sectors:</strong> Entertainment, healthcare, finance</li>
+                    </ul>
+                </div>
+                <div class="market-card">
+                    <div class="market-name">Denver, Colorado</div>
+                    <ul class="market-stats">
+                        <li><strong>Pop. Growth:</strong> 15% (2020-2025)</li>
+                        <li><strong>Business Growth:</strong> 400+ relocations</li>
+                        <li><strong>Avg. Wealth:</strong> $7.1M per HNW household</li>
+                        <li><strong>Key Sectors:</strong> Cannabis, aerospace, outdoor rec</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Specialized Service Offerings</h2>
+            <p>
+                Each new office will feature dedicated alternative investment platforms designed specifically for 
+                clients with digital asset wealth and non-traditional investment portfolios. Services will include 
+                cryptocurrency tax planning, digital asset custody solutions, and access to private equity and 
+                venture capital opportunities typically reserved for institutional investors.
+            </p>
+            <p>
+                The expansion also introduces Sceptyr's new Family Office Lite service for clients with $10-50 million 
+                in net worth—a market segment traditionally underserved by both traditional wealth managers and 
+                full-service family offices. This service provides institutional-quality investment management, 
+                tax planning, and estate planning without the overhead of a complete family office structure.
+            </p>
+
+            <h3>Technology Integration</h3>
+            <p>
+                All new offices will feature Sceptyr's proprietary wealth management platform, integrating traditional 
+                portfolio management with digital asset tracking, alternative investment monitoring, and real-time 
+                tax optimization. The platform connects directly to major cryptocurrency exchanges, private equity 
+                funds, and alternative investment platforms to provide unified portfolio oversight.
+            </p>
+        </div>
+
+        <div class="financial-highlights">
+            <h3>2025 Performance Highlights</h3>
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-number">127%</span>
+                    <div>AUM Growth</div>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">$2.8B</span>
+                    <div>Assets Under Management</div>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">340+</span>
+                    <div>New Clients Added</div>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">18.3%</span>
+                    <div>Average Client Returns</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Leadership and Staffing</h2>
+            <p>
+                Sceptyr has recruited senior wealth management professionals with specific experience in emerging 
+                wealth demographics for each new location. The Austin office will be led by former Goldman Sachs 
+                Private Wealth Management director Sarah Chen, who previously managed over $1.2 billion in technology 
+                executive portfolios.
+            </p>
+            <p>
+                The Nashville office will be directed by Michael Rodriguez, former head of entertainment wealth 
+                management at Morgan Stanley, while the Denver office will be led by Jennifer Walsh, a specialist 
+                in cannabis industry wealth management and alternative investments.
+            </p>
+
+            <h3>Hiring and Local Investment</h3>
+            <p>
+                The expansion is expected to create 150 new jobs across the three markets over the next 18 months, 
+                including wealth advisors, portfolio managers, tax specialists, and client service professionals. 
+                Sceptyr is also investing in local partnerships with accounting firms, law firms, and investment 
+                banks to create comprehensive wealth management ecosystems in each market.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Market Opportunity and Growth Projections</h2>
+            <p>
+                Industry research indicates that high-net-worth populations in secondary markets are growing at 
+                double the rate of traditional wealth centers. The migration of wealthy individuals to tax-advantaged 
+                states, combined with the creation of new wealth in technology and cryptocurrency markets, creates 
+                an estimated $150 billion addressable market in Sceptyr's target demographics.
+            </p>
+            <p>
+                "We're not just expanding geographically—we're expanding demographically," noted Tolley. "The next 
+                generation of wealthy Americans looks very different from the previous generation. They're younger, 
+                more tech-savvy, and their wealth is structured differently. Traditional wealth management hasn't 
+                adapted to serve them effectively."
+            </p>
+        </div>
+
+        <div class="company-info">
+            <h3>About Sceptyr</h3>
+            <p>
+                Founded in 2019, Sceptyr specializes in comprehensive wealth management for ultra-high-net-worth 
+                individuals and families with complex financial profiles. The firm's approach combines traditional 
+                wealth management with expertise in alternative investments, digital assets, and tax optimization 
+                strategies. Sceptyr manages over $2.8 billion in client assets and serves more than 400 families 
+                across the United States.
+            </p>
+        </div>
+
+        <div class="contact-info">
+            <h3>Media Contact</h3>
+            <div class="contact-grid">
+                <div>
+                    <strong>Press Inquiries:</strong><br>
+                    Sarah Mitchell<br>
+                    Director of Communications<br>
+                    sarah.mitchell@sceptyr.com<br>
+                    (555) 123-4567
+                </div>
+                <div>
+                    <strong>Investor Relations:</strong><br>
+                    Michael Chen<br>
+                    Chief Financial Officer<br>
+                    investor.relations@sceptyr.com<br>
+                    (555) 123-4568
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <p style="font-style: italic; text-align: center; color: var(--medium-gray);">
+                This press release contains forward-looking statements regarding Sceptyr's expansion plans and 
+                market projections. Actual results may differ materially from those projected.
+            </p>
+        </div>
+    </main>
+
+    <!-- Back Navigation -->
+    <section class="back-nav">
+        <a href="resources-media.html" class="back-link">← Back to Resources & Media</a>
+    </section>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
