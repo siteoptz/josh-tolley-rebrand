@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sceptyr - Where Legacy Meets Strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #07305d;
+            --secondary-beige: #d8bf95;
+            --light-beige: #f8f2f2;
+            --white: #FFFFFF;
+            --medium-gray: #6C757D;
+            --dark-gray: #343A40;
+            --charcoal: #2B2B2B;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        p {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(7, 48, 93, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-beige);
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--secondary-beige);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding-top: 80px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #04213e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(238,186,43,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            padding: 0 2rem;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--secondary-beige);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--secondary-beige);
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-size: 0.9rem;
+        }
+
+        .hero-cta:hover {
+            background: var(--secondary-beige);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(216, 191, 149, 0.3);
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 8rem 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .story-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .story-intro {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .section-label {
+            font-size: 0.9rem;
+            color: var(--secondary-beige);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .story-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .story-lead {
+            font-size: 1.4rem;
+            color: var(--medium-gray);
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Philosophy Grid */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            margin-top: 6rem;
+        }
+
+        .philosophy-card {
+            text-align: left;
+        }
+
+        .philosophy-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--secondary-beige);
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .philosophy-title {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .philosophy-text {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Metrics Section */
+        .metrics-section {
+            background: var(--light-beige);
+            padding: 6rem 0;
+        }
+
+        .metrics-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .metric-item {
+            padding: 2rem 1rem;
+        }
+
+        .metric-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .metric-label {
+            font-size: 1rem;
+            color: var(--medium-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        /* Approach Section */
+        .approach-section {
+            padding: 8rem 0;
+            background: linear-gradient(rgba(7, 48, 93, 0.85), rgba(7, 48, 93, 0.85)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            position: relative;
+        }
+
+        .approach-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .approach-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .approach-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .approach-text p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+        }
+
+        .approach-list {
+            list-style: none;
+            margin-top: 3rem;
+        }
+
+        .approach-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+
+        .approach-list li:before {
+            content: '→';
+            color: var(--secondary-beige);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #04213e 100%);
+            padding: 8rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(216,191,149,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .contact-section p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            font-weight: 300;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .contact-cta {
+            display: inline-block;
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--secondary-beige);
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-size: 0.9rem;
+        }
+
+        .contact-cta:hover {
+            background: var(--secondary-beige);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(216, 191, 149, 0.3);
+        }
+
+        /* What We Have Done Section */
+        .what-we-have-done-section {
+            padding: 8rem 0;
+            background: var(--white);
+        }
+
+        .accomplishments-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .accomplishment-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--light-beige);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .accomplishment-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .accomplishment-image {
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .accomplishment-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .accomplishment-card p {
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        /* Creativity Section */
+        .creativity-section {
+            padding: 8rem 0;
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .creativity-examples {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .creativity-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-left: 4px solid var(--secondary-beige);
+            border-radius: 5px;
+        }
+
+        .creativity-card h4 {
+            color: var(--secondary-beige);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .creativity-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        /* Activism Section */
+        .activism-section {
+            padding: 8rem 0;
+            background: var(--light-beige);
+        }
+
+        .activism-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .activism-pillar {
+            text-align: center;
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .activism-pillar:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .activism-pillar h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .activism-pillar p {
+            color: var(--dark-gray);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        /* FROM WEALTH BUILDERS Section */
+        .from-wealth-builders-section {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, var(--light-beige) 0%, var(--white) 100%);
+        }
+
+        .entrepreneur-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .entrepreneur-header h2 {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .entrepreneur-header p {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .entrepreneur-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .entrepreneur-card {
+            background: var(--white);
+            border: 1px solid rgba(216, 191, 149, 0.2);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .entrepreneur-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(7, 48, 93, 0.15);
+            border-color: var(--secondary-beige);
+        }
+
+        .entrepreneur-card.featured {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .card-image-small {
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(7, 48, 93, 0.7) 100%);
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .card-category {
+            display: inline-block;
+            color: var(--secondary-beige);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+        }
+
+        .entrepreneur-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        .entrepreneur-card.featured h3 {
+            font-size: 1.8rem;
+        }
+
+        .entrepreneur-card p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .card-link {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-link:hover {
+            color: var(--secondary-beige);
+            gap: 12px;
+        }
+
+        .entrepreneur-cta {
+            text-align: center;
+        }
+
+        .view-all-btn {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-blue);
+            border-radius: 5px;
+        }
+
+        .view-all-btn:hover {
+            background: transparent;
+            color: var(--primary-blue);
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 8rem 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .insight-card {
+            background: var(--white);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .insight-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .insight-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .insight-date {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 3px;
+        }
+
+        .insight-content {
+            padding: 2rem;
+        }
+
+        .insight-category {
+            color: var(--secondary-beige);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .insight-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .insight-content p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            color: var(--secondary-beige);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 160px;
+                min-height: calc(100vh - 60px);
+            }
+            
+            .hero-content {
+                padding: 0 2rem;
+                margin-top: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .story-headline {
+                font-size: 2.5rem;
+            }
+            
+            .approach-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .entrepreneur-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .entrepreneur-card.featured {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .entrepreneur-card.featured h3 {
+                font-size: 1.4rem;
+            }
+
+            .accomplishments-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .insights-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .activism-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .accomplishments-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-beige) 50%, var(--light-beige) 100%);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .footer-brand p {
+            line-height: 1.7;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(248, 242, 242, 0.1);
+            border: 2px solid var(--light-beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--light-beige);
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .social-link:hover {
+            background: var(--light-beige);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--light-beige);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(248, 242, 242, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-legal a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-legal a:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Sceptyr</a>
+            <ul class="nav-menu">
+                <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="resources-media.html" class="nav-link">Resources/Media</a></li>
+                <li><a href="contact-us.html" class="nav-link">Contact us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">For Those Who Understand</div>
+            <h1 class="hero-title">Where Legacy Meets Strategy</h1>
+            <p class="hero-description">
+                We work alongside those who recognize that true wealth transcends net worth—
+                individuals, families, and enterprises who understand that legacy is built through deliberate action, not circumstance.
+            </p>
+            <a href="#story" class="hero-cta">Discover More</a>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="story-section">
+        <div class="story-container">
+            <div class="story-intro">
+                <div class="section-label">Our Foundation</div>
+                <h2 class="story-headline">Built for Those Others Overlook</h2>
+                <p class="story-lead">
+                    While traditional institutions chase market cap and net worth, we focus on something more fundamental: 
+                    the relentless drive to create, protect, and multiply wealth across generations.
+                </p>
+            </div>
+
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="philosophy-number">01</div>
+                    <h3 class="philosophy-title">Selective Partnership</h3>
+                    <p class="philosophy-text">
+                        We choose our relationships based on ambition and commitment, not existing assets. 
+                        The hardest working individuals often have the greatest potential for exponential growth.
+                    </p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-number">02</div>
+                    <h3 class="philosophy-title">Generational Thinking</h3>
+                    <p class="philosophy-text">
+                        True wealth creation requires structures that not only grow today's capital 
+                        but establish frameworks for tomorrow's opportunities.
+                    </p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-number">03</div>
+                    <h3 class="philosophy-title">Beyond Traditional</h3>
+                    <p class="philosophy-text">
+                        When conventional advisors say "diversify and wait," we identify pathways 
+                        that sophisticated wealth builders have always known exist.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="metrics-section">
+        <div class="metrics-container">
+            <div class="section-label">Track Record</div>
+            <h2 class="story-headline">Results Speak Quietly</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-number">$2.4B+</span>
+                    <span class="metric-label">Assets Structured</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">15+</span>
+                    <span class="metric-label">Years Experience</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">250+</span>
+                    <span class="metric-label">Families Served</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">98%</span>
+                    <span class="metric-label">Client Retention</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section id="approach" class="approach-section">
+        <div class="approach-container">
+            <div class="approach-content">
+                <div class="approach-text">
+                    <h2>A Different Standard</h2>
+                    <p>
+                        Most financial firms serve whoever walks through the door. We work exclusively 
+                        with those who share our understanding: that exceptional wealth requires 
+                        exceptional thinking.
+                    </p>
+                    <p>
+                        Our clients don't need to be convinced that alternative approaches exist. 
+                        They arrive knowing that traditional advice—"save 10%, diversify, and hope"—
+                        won't build the legacy they envision.
+                    </p>
+                    
+                    <ul class="approach-list">
+                        <li>Wealth Creation Through Strategic Structuring</li>
+                        <li>Legacy Protection Across Generations</li>
+                        <li>Alternative Investment Strategies</li>
+                        <li>Tax-Efficient Growth Mechanisms</li>
+                        <li>Business & Personal Wealth Integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Have Done Section -->
+    <section id="what-we-have-done" class="what-we-have-done-section">
+        <div class="story-container">
+            <div class="story-intro">
+                <div class="section-label">Track Record</div>
+                <h2 class="story-headline">What We Have Done</h2>
+                <p class="story-lead">
+                    Our results speak through the families and enterprises we've helped achieve financial sovereignty. 
+                    Each relationship represents years of strategic partnership and measurable success.
+                </p>
+            </div>
+            
+            <div class="accomplishments-grid">
+                <div class="accomplishment-card">
+                    <div class="accomplishment-image" style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=200&fit=crop');"></div>
+                    <h3>Legacy Structuring</h3>
+                    <p>Established multi-generational trust structures for 40+ families, preserving $1.2B+ in wealth transfer while minimizing tax impact by an average of 65%.</p>
+                </div>
+                
+                <div class="accomplishment-card">
+                    <div class="accomplishment-image" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=200&fit=crop');"></div>
+                    <h3>Alternative Investments</h3>
+                    <p>Secured access to exclusive hedge fund opportunities delivering 12-18% annual returns for qualified investors over 5-year periods.</p>
+                </div>
+                
+                <div class="accomplishment-card">
+                    <div class="accomplishment-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=200&fit=crop');"></div>
+                    <h3>Business Optimization</h3>
+                    <p>Restructured 25+ businesses for optimal tax efficiency and succession planning, increasing enterprise value by average of 35%.</p>
+                </div>
+                
+                <div class="accomplishment-card">
+                    <div class="accomplishment-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop');"></div>
+                    <h3>Strategic Planning</h3>
+                    <p>Developed comprehensive wealth strategies resulting in 400% growth for families starting with $2-5M in assets over 10-year periods.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creativity in Service Section -->
+    <section class="creativity-section">
+        <div class="approach-container">
+            <div class="approach-content">
+                <div class="approach-text">
+                    <div class="section-label" style="color: var(--secondary-beige);">Innovation</div>
+                    <h2>Creativity in Service of Our Clients</h2>
+                    <p>
+                        Traditional wealth management follows predictable patterns. We create custom solutions 
+                        that others haven't considered—because exceptional circumstances require exceptional thinking.
+                    </p>
+                    <p>
+                        Whether structuring cross-border wealth transfers, accessing emerging market opportunities, 
+                        or designing tax-advantaged investment vehicles, our creativity serves one purpose: 
+                        your financial success.
+                    </p>
+                </div>
+                <div class="creativity-examples">
+                    <div class="creativity-card">
+                        <h4>Private Market Access</h4>
+                        <p>Exclusive partnerships with premier funds typically available only to institutional investors</p>
+                    </div>
+                    <div class="creativity-card">
+                        <h4>Custom Structures</h4>
+                        <p>Bespoke legal and financial architectures designed for your specific wealth goals</p>
+                    </div>
+                    <div class="creativity-card">
+                        <h4>Global Strategies</h4>
+                        <p>International wealth optimization leveraging jurisdictions most beneficial to your situation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activism Section -->
+    <section class="activism-section">
+        <div class="story-container">
+            <div class="story-intro">
+                <div class="section-label">Our Mission</div>
+                <h2 class="story-headline">Activism Through Access</h2>
+                <p class="story-lead">
+                    We believe extraordinary wealth creation shouldn't be reserved for those who inherit privilege. 
+                    Our activism is practical: opening doors that traditional institutions keep closed.
+                </p>
+            </div>
+            
+            <div class="activism-content">
+                <div class="activism-pillar">
+                    <h3>Democratizing Sophisticated Finance</h3>
+                    <p>Making institutional-quality strategies available to driven individuals regardless of their starting point. If you have the vision and commitment, we provide the access.</p>
+                </div>
+                
+                <div class="activism-pillar">
+                    <h3>Education as Empowerment</h3>
+                    <p>Knowledge transfer that extends beyond portfolio management. We teach the frameworks wealthy families use to think about money, risk, and opportunity.</p>
+                </div>
+                
+                <div class="activism-pillar">
+                    <h3>Challenging Industry Norms</h3>
+                    <p>Questioning why certain investments, strategies, and opportunities remain exclusive. Our role is to expand what's possible for serious wealth builders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FROM WEALTH BUILDERS Section -->
+    <section class="from-wealth-builders-section">
+        <div class="story-container">
+            <div class="entrepreneur-header">
+                <h2>FROM WEALTH BUILDERS FOR WEALTH BUILDERS</h2>
+                <p>Strategic insights and proven strategies from those who've walked the path to financial sovereignty</p>
+            </div>
+            
+            <div class="entrepreneur-grid">
+                <!-- Featured Post -->
+                <div class="entrepreneur-card featured">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop');">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">FEATURED INSIGHT</span>
+                        <h3>Building Generational Wealth: A Blueprint for Success</h3>
+                        <p>How successful families create lasting financial legacies that span multiple generations, featuring exclusive strategies from our wealth advisors.</p>
+                        <a href="#" class="card-link">READ MORE →</a>
+                    </div>
+                </div>
+
+                <!-- Regular Posts -->
+                <div class="entrepreneur-card">
+                    <div class="card-content">
+                        <span class="card-category">WEALTH STRATEGY</span>
+                        <h3>The Psychology of Wealth: Mindset Matters</h3>
+                        <p>Understanding the mental frameworks that separate the wealthy from everyone else.</p>
+                        <a href="#" class="card-link">READ MORE →</a>
+                    </div>
+                </div>
+
+                <div class="entrepreneur-card">
+                    <div class="card-content">
+                        <span class="card-category">PODCAST</span>
+                        <h3>Ruling Your Wealth: Conversations with Industry Leaders</h3>
+                        <p>Listen to our latest episode featuring insights from successful entrepreneurs.</p>
+                        <a href="#" class="card-link">LISTEN NOW →</a>
+                    </div>
+                </div>
+
+                <div class="entrepreneur-card with-image">
+                    <div class="card-image-small" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=200&fit=crop');"></div>
+                    <div class="card-content">
+                        <span class="card-category">MARKET ANALYSIS</span>
+                        <h3>Alternative Investments in 2025: What You Need to Know</h3>
+                        <p>Exploring hedge funds, private equity, and other opportunities for qualified investors.</p>
+                        <a href="#" class="card-link">READ MORE →</a>
+                    </div>
+                </div>
+
+                <div class="entrepreneur-card with-image">
+                    <div class="card-image-small" style="background-image: url('https://images.unsplash.com/photo-1427751840561-9852520f8ce8?w=400&h=200&fit=crop');"></div>
+                    <div class="card-content">
+                        <span class="card-category">LEGACY PLANNING</span>
+                        <h3>Tax-Efficient Wealth Transfer Strategies</h3>
+                        <p>Maximize what you pass on to the next generation with smart estate planning.</p>
+                        <a href="#" class="card-link">READ MORE →</a>
+                    </div>
+                </div>
+
+                <div class="entrepreneur-card with-image">
+                    <div class="card-image-small" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=200&fit=crop');"></div>
+                    <div class="card-content">
+                        <span class="card-category">PRESS RELEASE</span>
+                        <h3>Sceptyr Expands Services to Underserved Markets</h3>
+                        <p>Bringing institutional-quality wealth management to new communities nationwide.</p>
+                        <a href="#" class="card-link">READ MORE →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="entrepreneur-cta">
+                <a href="#" class="view-all-btn">VIEW ALL INSIGHTS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts Section -->
+    <section id="blog" class="blog-section">
+        <div class="story-container">
+            <div class="section-header">
+                <div class="section-label">Expert Analysis</div>
+                <h2 class="story-headline">Latest Blog Posts</h2>
+                <p class="story-lead">Stay informed with our expert analysis and market perspectives</p>
+            </div>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-image" style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&h=300&fit=crop');">
+                        <div class="insight-date">Jan 15, 2025</div>
+                    </div>
+                    <div class="insight-content">
+                        <div class="insight-category">Market Analysis</div>
+                        <h3>2026 Wealth Outlook</h3>
+                        <p>Our comprehensive analysis of emerging opportunities and strategies for the year ahead</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-image" style="background-image: url('https://images.unsplash.com/photo-1551135049-8a33b5883817?w=600&h=300&fit=crop');">
+                        <div class="insight-date">Jan 10, 2025</div>
+                    </div>
+                    <div class="insight-content">
+                        <div class="insight-category">Estate Planning</div>
+                        <h3>Generational Wealth Transfer</h3>
+                        <p>Essential strategies for preserving and transferring wealth across generations</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop');">
+                        <div class="insight-date">Jan 5, 2025</div>
+                    </div>
+                    <div class="insight-content">
+                        <div class="insight-category">Investment Strategy</div>
+                        <h3>Alternative Investments</h3>
+                        <p>How hedge funds and private equity can diversify your portfolio</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Ready to Begin?</h2>
+            <p>
+                If you've read this far, you likely understand what we do and why it matters. 
+                The next step is a conversation about how these principles apply to your specific situation.
+            </p>
+            <a href="mailto:connect@sceptyr.com" class="contact-cta">Start the Conversation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Sceptyr</h3>
+                    <p>Helping driven individuals and families build lasting legacies through sophisticated wealth management strategies. Your partner in financial sovereignty since 2008.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">Li</a>
+                        <a href="#" class="social-link">X</a>
+                        <a href="#" class="social-link">FB</a>
+                        <a href="#" class="social-link">YT</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Wealth Management</a></li>
+                        <li><a href="#">Legacy Planning</a></li>
+                        <li><a href="#">Alternative Investments</a></li>
+                        <li><a href="#">Tax Optimization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Client Portal</a></li>
+                        <li><a href="#">Insights</a></li>
+                        <li><a href="#">Research</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© 2024 Sceptyr. All rights reserved.</div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Disclosures</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+    </script>
+</body>
+</html>
