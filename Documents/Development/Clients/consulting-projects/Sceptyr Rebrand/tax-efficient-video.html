@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero-Tax Wealth Transfer: Advanced Strategies Masterclass - Sceptyr Video Series</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #07305d;
+            --secondary-beige: #d8bf95;
+            --light-beige: #f8f2f2;
+            --white: #FFFFFF;
+            --medium-gray: #6C757D;
+            --dark-gray: #343A40;
+            --charcoal: #2B2B2B;
+            --video-red: #c41e3a;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(7, 48, 93, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-beige);
+        }
+
+        /* Video Header */
+        .video-header {
+            background: linear-gradient(135deg, var(--video-red) 0%, #8b1a2b 100%);
+            color: var(--white);
+            padding: 120px 0 4rem;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .video-category {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .video-title {
+            font-size: 3.2rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .video-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .video-player {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 3rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .play-button {
+            background: var(--white);
+            color: var(--video-red);
+            border: none;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 0 auto 1rem;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-meta {
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+        }
+
+        /* Video Content */
+        .video-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+            margin: 2rem 0 1rem;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .instructor-bio {
+            background: var(--light-beige);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            border-left: 4px solid var(--video-red);
+        }
+
+        .instructor-bio h3 {
+            color: var(--video-red);
+            margin-bottom: 1rem;
+        }
+
+        .series-modules {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .series-modules h3 {
+            color: var(--secondary-beige);
+            margin-bottom: 1.5rem;
+        }
+
+        .module-list {
+            list-style: none;
+        }
+
+        .module-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .module-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .module-title {
+            font-weight: 600;
+            color: var(--secondary-beige);
+        }
+
+        .module-duration {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .key-strategies {
+            background: var(--video-red);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .key-strategies h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .strategies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .strategy-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .strategy-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .downloads-section {
+            background: var(--light-beige);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .downloads-section h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .download-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .download-button {
+            background: var(--video-red);
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .download-button:hover {
+            background: #a01729;
+            transform: translateY(-2px);
+        }
+
+        .testimonials {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .testimonials h3 {
+            color: var(--secondary-beige);
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            color: var(--secondary-beige);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .legal-disclaimer {
+            background: var(--light-beige);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        /* Back Navigation */
+        .back-nav {
+            background: var(--light-beige);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .back-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .back-link:hover {
+            color: var(--secondary-beige);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .video-title {
+                font-size: 2.2rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .strategies-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="sceptyr-staging.html" class="logo">Sceptyr</a>
+            <ul class="nav-menu">
+                <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="resources-media.html" class="nav-link">Resources/Media</a></li>
+                <li><a href="contact-us.html" class="nav-link">Contact us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Video Header -->
+    <section class="video-header">
+        <div class="header-content">
+            <div class="video-category">Educational Video Series</div>
+            <h1 class="video-title">Zero-Tax Wealth Transfer: Advanced Strategies Masterclass</h1>
+            <p class="video-subtitle">
+                Former IRS Senior Counsel reveals legal loopholes used by billionaire families to transfer unlimited wealth tax-free
+            </p>
+            <div class="video-player">
+                <button class="play-button">▶</button>
+                <div class="video-meta">
+                    December 15, 2025 • 4-Part Series • Total Runtime: 4 hours 17 minutes
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Content -->
+    <main class="video-content">
+        <div class="instructor-bio">
+            <h3>About the Instructor: Robert Chen, Former IRS Senior Counsel</h3>
+            <p>
+                Robert Chen spent 18 years at the IRS, including 8 years as Senior Counsel in the Office of Chief Counsel, 
+                where he specialized in high-net-worth estate and gift tax matters. He was the lead attorney on cases 
+                involving some of America's wealthiest families and helped draft regulations governing advanced estate 
+                planning techniques. Robert now serves as Managing Partner at Chen & Associates, advising ultra-high-net-worth 
+                families on tax-efficient wealth transfer strategies.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Series Overview</h2>
+            <p>
+                This comprehensive video masterclass reveals the sophisticated legal strategies that billionaire families 
+                use to transfer unlimited wealth across generations while paying zero estate taxes. Unlike theoretical 
+                academic discussions, this series provides practical, implementable techniques based on actual IRS 
+                rulings, court cases, and regulatory guidance.
+            </p>
+            <p>
+                Robert Chen draws from his extensive experience as the IRS attorney who reviewed and approved many of 
+                these strategies, providing unprecedented insight into how these techniques work, why they're legal, 
+                and how they can be properly implemented for families with $10+ million in net worth.
+            </p>
+        </div>
+
+        <div class="series-modules">
+            <h3>4-Part Video Series</h3>
+            <ul class="module-list">
+                <li class="module-item">
+                    <div>
+                        <div class="module-title">Module 1: Charitable Lead Annuity Trusts (CLATs)</div>
+                        <div>How to transfer 10-20x your gift tax exemption through charitable structures</div>
+                    </div>
+                    <div class="module-duration">68 minutes</div>
+                </li>
+                <li class="module-item">
+                    <div>
+                        <div class="module-title">Module 2: Installment Sales to Defective Grantor Trusts</div>
+                        <div>Advanced trust structures for tax-free wealth accumulation and transfer</div>
+                    </div>
+                    <div class="module-duration">72 minutes</div>
+                </li>
+                <li class="module-item">
+                    <div>
+                        <div class="module-title">Module 3: Valuation Discount Techniques</div>
+                        <div>Legal methods to reduce asset values by 30-50% for transfer tax purposes</div>
+                    </div>
+                    <div class="module-duration">59 minutes</div>
+                </li>
+                <li class="module-item">
+                    <div>
+                        <div class="module-title">Module 4: Implementation & Documentation</div>
+                        <div>Step-by-step legal processes and required documentation for each strategy</div>
+                    </div>
+                    <div class="module-duration">78 minutes</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>What Makes This Series Unique</h2>
+            <p>
+                Most estate planning education focuses on basic techniques available to any high-net-worth family. 
+                This masterclass reveals the advanced strategies that only billionaire families and their advisors 
+                typically know about—techniques that require sophisticated legal documentation and precise implementation 
+                but can save tens or hundreds of millions in estate taxes.
+            </p>
+            <p>
+                Robert provides actual case studies from his IRS career, showing how families like the Waltons, 
+                Gettys, and other billionaire dynasties have used these techniques to transfer billions tax-free. 
+                More importantly, he explains the specific legal requirements and potential pitfalls that can 
+                invalidate these strategies if not properly implemented.
+            </p>
+
+            <h3>Inside Access to IRS Perspective</h3>
+            <p>
+                As the former IRS attorney who reviewed many of these transactions, Robert provides unique insight 
+                into how the IRS evaluates these strategies, what triggers audits, and how to structure transactions 
+                to minimize scrutiny. This inside perspective is invaluable for families and their advisors who 
+                want to implement these techniques with confidence.
+            </p>
+        </div>
+
+        <div class="key-strategies">
+            <h3>Advanced Strategies Covered</h3>
+            <div class="strategies-grid">
+                <div class="strategy-card">
+                    <div class="strategy-title">Charitable Lead Annuity Trusts</div>
+                    <p>Leverage charitable deductions to transfer massive wealth with minimal gift tax impact</p>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-title">Defective Grantor Trusts</div>
+                    <p>Create tax-free wealth accumulation vehicles that bypass estate taxes entirely</p>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-title">Valuation Discounts</div>
+                    <p>Legal techniques to reduce asset values by 30-50% for transfer tax purposes</p>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-title">Split-Interest Gifts</div>
+                    <p>Sophisticated structures that provide income to grantors while transferring growth</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="downloads-section">
+            <h3>Included Legal Templates & Resources</h3>
+            <div class="download-grid">
+                <div class="download-item">
+                    <h4>CLAT Legal Templates</h4>
+                    <p>Complete legal documentation for Charitable Lead Annuity Trust implementation</p>
+                    <button class="download-button">Download PDF</button>
+                </div>
+                <div class="download-item">
+                    <h4>Valuation Analysis Tools</h4>
+                    <p>Excel models for calculating optimal discount percentages and tax savings</p>
+                    <button class="download-button">Download Excel</button>
+                </div>
+                <div class="download-item">
+                    <h4>IRS Case Study Database</h4>
+                    <p>Detailed analysis of successful and failed implementations with IRS outcomes</p>
+                    <button class="download-button">Download Database</button>
+                </div>
+                <div class="download-item">
+                    <h4>Implementation Checklists</h4>
+                    <p>Step-by-step guides for proper documentation and regulatory compliance</p>
+                    <button class="download-button">Download Checklist</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Real-World Applications</h2>
+            <p>
+                Throughout the series, Robert walks through actual implementations with families worth $50+ million, 
+                showing how these strategies saved hundreds of millions in estate taxes. He covers common mistakes 
+                that can invalidate these techniques, regulatory changes that affect implementation, and best practices 
+                for ongoing compliance and administration.
+            </p>
+            <p>
+                Each module includes detailed Q&A sessions addressing the most common concerns from family attorneys, 
+                accountants, and wealth managers. These sessions provide practical guidance on coordinating with 
+                existing estate plans, managing ongoing trust administration, and adapting strategies as tax laws change.
+            </p>
+        </div>
+
+        <div class="testimonials">
+            <h3>What Participants Are Saying</h3>
+            
+            <div class="testimonial-item">
+                <div class="testimonial-text">
+                    "As an estate planning attorney, I thought I knew all the advanced strategies. Robert's series 
+                    revealed techniques I'd never heard of and provided the legal foundation to implement them 
+                    confidently for my ultra-high-net-worth clients."
+                </div>
+                <div class="testimonial-author">- Sarah Mitchell, Partner, Mitchell & Associates Estate Planning</div>
+            </div>
+            
+            <div class="testimonial-item">
+                <div class="testimonial-text">
+                    "The IRS perspective was invaluable. Understanding how these strategies are reviewed and what 
+                    triggers scrutiny has completely changed how we structure our clients' wealth transfer plans. 
+                    We've already saved one family $40 million in projected estate taxes."
+                </div>
+                <div class="testimonial-author">- Michael Rodriguez, CPA, Rodriguez Family Office Services</div>
+            </div>
+            
+            <div class="testimonial-item">
+                <div class="testimonial-text">
+                    "The legal templates alone are worth the investment. We've implemented CLATs for three families 
+                    using Robert's documentation, and the precision and attention to regulatory details is exceptional."
+                </div>
+                <div class="testimonial-author">- Jennifer Walsh, Managing Director, Walsh Wealth Management</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Who Should Watch This Series</h2>
+            <p>
+                This masterclass is designed for families with $10+ million in net worth, their attorneys, CPAs, 
+                and wealth managers who want to implement institutional-quality estate planning strategies. The 
+                content is technical and requires basic understanding of estate and gift tax concepts, but Robert 
+                explains complex legal principles in accessible language.
+            </p>
+            <p>
+                While these strategies can save millions in taxes, they require sophisticated implementation and 
+                ongoing administration. The series emphasizes the importance of working with qualified professionals 
+                and provides guidance on assembling the right advisory team for successful implementation.
+            </p>
+        </div>
+
+        <div class="legal-disclaimer">
+            <h3>Legal Disclaimer</h3>
+            <p>
+                This video series is for educational purposes only and does not constitute legal or tax advice. 
+                The strategies discussed require professional implementation by qualified attorneys and tax advisors. 
+                Tax laws are complex and subject to change, and individual circumstances vary significantly. Always 
+                consult with qualified professionals before implementing any estate planning strategies discussed 
+                in this series.
+            </p>
+        </div>
+    </main>
+
+    <!-- Back Navigation -->
+    <section class="back-nav">
+        <a href="resources-media.html" class="back-link">← Back to Resources & Media</a>
+    </section>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Play button functionality
+        document.querySelector('.play-button').addEventListener('click', function() {
+            alert('This would normally open the video player or registration form.');
+        });
+
+        // Download buttons functionality
+        document.querySelectorAll('.download-button').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('This would normally trigger a download or require user registration.');
+            });
+        });
+    </script>
+</body>
+</html>
