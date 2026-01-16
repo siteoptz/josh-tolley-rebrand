@@ -478,6 +478,42 @@
         }
 
         /* Mobile Responsiveness */
+        /* Seven Pillars Section */
+        .seven-pillars-container {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--light-beige);
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-beige);
+        }
+
+        .seven-pillars-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .seven-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .pillar-item h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .pillar-item p {
+            color: var(--dark-gray);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
         @media (max-width: 768px) {
             .page-title {
                 font-size: 3rem;
@@ -536,6 +572,21 @@
 
             .nav-link {
                 font-size: 1.2rem;
+            }
+
+            .seven-pillars-container {
+                padding: 1.5rem;
+                text-align: center;
+            }
+
+            .seven-pillars-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: left;
+            }
+
+            .seven-pillars-title {
+                font-size: 1.3rem;
             }
         }
 
@@ -744,36 +795,36 @@
                         <p class="featured-excerpt">
                             Generational wealth isn't just about accumulating assets—it's about creating a perpetual financial legacy that grows stronger with each passing generation. While most families lose their wealth by the third generation (a phenomenon known as "shirtsleeves to shirtsleeves"), the ultra-wealthy have mastered specific strategies that ensure their fortunes not only survive but thrive across centuries.
                         </p>
-                        <div style="margin-top: 2rem; padding: 2rem; background: var(--light-beige); border-radius: 8px; border-left: 4px solid var(--secondary-beige);">
-                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary-blue); margin-bottom: 1rem;">The Seven Pillars of Generational Wealth</h3>
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-                                <div>
-                                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; font-weight: 600;">1. Institutional-Quality Investment Infrastructure</h4>
-                                    <p style="color: var(--dark-gray); line-height: 1.6; margin-bottom: 1rem;">Family offices and sophisticated investment vehicles that provide access to opportunities unavailable to retail investors. Private equity, hedge funds, direct investments, and alternative assets form the backbone of lasting wealth.</p>
+                        <div class="seven-pillars-container">
+                            <h3 class="seven-pillars-title">The Seven Pillars of Generational Wealth</h3>
+                            <div class="seven-pillars-grid">
+                                <div class="pillar-item">
+                                    <h4>1. Institutional-Quality Investment Infrastructure</h4>
+                                    <p>Family offices and sophisticated investment vehicles that provide access to opportunities unavailable to retail investors. Private equity, hedge funds, direct investments, and alternative assets form the backbone of lasting wealth.</p>
                                 </div>
-                                <div>
-                                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; font-weight: 600;">2. Advanced Tax Architecture</h4>
-                                    <p style="color: var(--dark-gray); line-height: 1.6; margin-bottom: 1rem;">Dynasty trusts, grantor retained annuity trusts (GRATs), and charitable planning strategies that legally minimize tax obligations across generations while maintaining family control.</p>
+                                <div class="pillar-item">
+                                    <h4>2. Advanced Tax Architecture</h4>
+                                    <p>Dynasty trusts, grantor retained annuity trusts (GRATs), and charitable planning strategies that legally minimize tax obligations across generations while maintaining family control.</p>
                                 </div>
-                                <div>
-                                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; font-weight: 600;">3. Business Empire Development</h4>
-                                    <p style="color: var(--dark-gray); line-height: 1.6; margin-bottom: 1rem;">Creating and acquiring businesses that generate recurring revenue streams and appreciate in value. Focus on industries with high barriers to entry and long-term growth potential.</p>
+                                <div class="pillar-item">
+                                    <h4>3. Business Empire Development</h4>
+                                    <p>Creating and acquiring businesses that generate recurring revenue streams and appreciate in value. Focus on industries with high barriers to entry and long-term growth potential.</p>
                                 </div>
-                                <div>
-                                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; font-weight: 600;">4. Real Estate Holdings</h4>
-                                    <p style="color: var(--dark-gray); line-height: 1.6; margin-bottom: 1rem;">Strategic real estate portfolios including commercial properties, land development, and luxury residential holdings that provide both income and appreciation while serving as inflation hedges.</p>
+                                <div class="pillar-item">
+                                    <h4>4. Real Estate Holdings</h4>
+                                    <p>Strategic real estate portfolios including commercial properties, land development, and luxury residential holdings that provide both income and appreciation while serving as inflation hedges.</p>
                                 </div>
-                                <div>
-                                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; font-weight: 600;">5. Human Capital Investment</h4>
-                                    <p style="color: var(--dark-gray); line-height: 1.6; margin-bottom: 1rem;">Comprehensive education and mentorship programs that prepare next-generation family members to be effective stewards of wealth, including business acumen, financial literacy, and leadership development.</p>
+                                <div class="pillar-item">
+                                    <h4>5. Human Capital Investment</h4>
+                                    <p>Comprehensive education and mentorship programs that prepare next-generation family members to be effective stewards of wealth, including business acumen, financial literacy, and leadership development.</p>
                                 </div>
-                                <div>
-                                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; font-weight: 600;">6. Risk Mitigation Systems</h4>
-                                    <p style="color: var(--dark-gray); line-height: 1.6; margin-bottom: 1rem;">Sophisticated insurance strategies, asset protection structures, and diversification across geographies, currencies, and asset classes to protect against various risk scenarios.</p>
+                                <div class="pillar-item">
+                                    <h4>6. Risk Mitigation Systems</h4>
+                                    <p>Sophisticated insurance strategies, asset protection structures, and diversification across geographies, currencies, and asset classes to protect against various risk scenarios.</p>
                                 </div>
-                                <div>
-                                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem; font-weight: 600;">7. Legacy Governance</h4>
-                                    <p style="color: var(--dark-gray); line-height: 1.6; margin-bottom: 1rem;">Family constitutions, governance structures, and decision-making frameworks that ensure wealth is managed responsibly and family unity is maintained across generations.</p>
+                                <div class="pillar-item">
+                                    <h4>7. Legacy Governance</h4>
+                                    <p>Family constitutions, governance structures, and decision-making frameworks that ensure wealth is managed responsibly and family unity is maintained across generations.</p>
                                 </div>
                             </div>
                         </div>
