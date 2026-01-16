@@ -312,6 +312,31 @@
             padding: 3rem 2rem;
             border-radius: 12px;
             transition: transform 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: var(--white);
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(7, 48, 93, 0.85) 0%, rgba(7, 48, 93, 0.7) 100%);
+            border-radius: 12px;
+            z-index: 1;
+        }
+
+        .value-card > * {
+            position: relative;
+            z-index: 2;
         }
 
         .value-card:hover {
@@ -336,14 +361,16 @@
 
         .value-card h3 {
             font-size: 1.5rem;
-            color: var(--primary-blue);
+            color: var(--white);
             margin-bottom: 1.5rem;
             font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .value-card p {
-            color: var(--dark-gray);
+            color: var(--white);
             line-height: 1.7;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
         /* Team Section */
@@ -369,26 +396,33 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 4rem;
-            max-width: 500px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .team-member {
-            text-align: center;
+            display: flex;
+            align-items: center;
             background: rgba(255, 255, 255, 0.1);
-            padding: 3rem 2rem;
+            padding: 3rem;
             border-radius: 12px;
             backdrop-filter: blur(10px);
+            gap: 3rem;
+            text-align: left;
         }
 
         .member-photo {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             background-size: cover;
             background-position: center;
-            margin: 0 auto 2rem;
             border: 4px solid var(--secondary-beige);
+            flex-shrink: 0;
+        }
+
+        .member-content {
+            flex: 1;
         }
 
         .member-name {
@@ -449,6 +483,17 @@
             .team-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+            
+            .team-member {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .member-photo {
+                width: 150px;
+                height: 150px;
             }
             
             .nav-menu {
@@ -588,44 +633,32 @@
             </div>
             
             <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon" style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=50&h=50&fit=crop');">
-                    </div>
+                <div class="value-card" style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop');">
                     <h3>Selective Partnership</h3>
                     <p>We choose relationships based on mutual commitment and shared vision, not portfolio size. The most successful partnerships are built on alignment of values and long-term thinking.</p>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=50&h=50&fit=crop');">
-                    </div>
+                <div class="value-card" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop');">
                     <h3>Generational Focus</h3>
                     <p>True wealth creation extends beyond individual success to establishing frameworks for multi-generational prosperity. We think in decades, not quarters.</p>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=50&h=50&fit=crop');">
-                    </div>
+                <div class="value-card" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop');">
                     <h3>Alternative Thinking</h3>
                     <p>When conventional wisdom says "diversify and wait," we identify sophisticated pathways that ambitious wealth builders have always known exist.</p>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=50&h=50&fit=crop');">
-                    </div>
+                <div class="value-card" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop');">
                     <h3>Absolute Discretion</h3>
                     <p>Confidentiality isn't just a policy—it's fundamental to how we operate. Your financial sovereignty requires complete privacy protection.</p>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=50&h=50&fit=crop');">
-                    </div>
+                <div class="value-card" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop');">
                     <h3>Performance Excellence</h3>
                     <p>Results matter more than promises. Every strategy we implement is designed to deliver measurable outcomes that compound over time.</p>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon" style="background-image: url('https://images.unsplash.com/photo-1556745753-b2904692b3cd?w=50&h=50&fit=crop');">
-                    </div>
+                <div class="value-card" style="background-image: url('https://images.unsplash.com/photo-1556745753-b2904692b3cd?w=800&h=600&fit=crop');">
                     <h3>Partnership Mindset</h3>
                     <p>We succeed when you succeed. Our interests are aligned with yours through transparent fee structures and long-term thinking.</p>
                 </div>
@@ -643,14 +676,16 @@
             
             <div class="team-grid">
                 <div class="team-member">
-                    <div class="member-photo" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop');"></div>
-                    <h3 class="member-name">Josh Tolley</h3>
-                    <div class="member-title">Founder & CEO</div>
-                    <p class="member-bio">
-                        Josh Tolley started Kingsbridge as a stand-alone subsidiary of his company; Tolley & Co after twenty-five years of starting, buying, building, selling companies. He was noticing too many people were being underserved by the established M&A business brokerages. Too little experience, too much focus on getting hundreds of listings, and certainly no backend support to help ensure the success of the clients after they buy or sell a company was too much to ignore.<br><br>
+                    <div class="member-photo" style="background-image: url('JT_Cutout2.png'); background-size: contain; background-repeat: no-repeat;"></div>
+                    <div class="member-content">
+                        <h3 class="member-name">Josh Tolley</h3>
+                        <div class="member-title">Founder & CEO</div>
+                        <p class="member-bio">
+                            Josh Tolley started Sceptyr as a stand-alone subsidiary of his company; Tolley & Co after twenty-five years of starting, buying, building, selling companies. He was noticing too many people were being underserved by the established M&A business brokerages. Too little experience, too much focus on getting hundreds of listings, and certainly no backend support to help ensure the success of the clients after they buy or sell a company was too much to ignore.<br><br>
 
-                        Kingsbridge is an independent company but also part of the Tolley & Co Business Group meaning that the Kingsbridge clients are supported by and have access to a number of other companies and resources that can be deployed to assist in buying, selling, and growing your business empire.
-                    </p>
+                            Sceptyr is an independent company but also part of the Tolley & Co Business Group meaning that the Sceptyr clients are supported by and have access to a number of other companies and resources that can be deployed to assist in buying, selling, and growing your business empire.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
