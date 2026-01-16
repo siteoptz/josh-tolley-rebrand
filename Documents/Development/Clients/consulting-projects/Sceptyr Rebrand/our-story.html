@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - Sceptyr - Where Legacy Meets Strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #07305d;
+            --secondary-beige: #d8bf95;
+            --light-beige: #f8f2f2;
+            --white: #FFFFFF;
+            --medium-gray: #6C757D;
+            --dark-gray: #343A40;
+            --charcoal: #2B2B2B;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        p {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(7, 48, 93, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-beige);
+        }
+
+        .nav-link.active {
+            color: var(--secondary-beige);
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--secondary-beige);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 100%;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding-top: 120px;
+            padding-bottom: 4rem;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #04213e 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(238,186,43,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            margin-bottom: 6rem;
+        }
+
+        .content-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .content-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+        }
+
+        .content-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Story Timeline */
+        .timeline-section {
+            background: var(--light-beige);
+            padding: 6rem 0;
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .timeline-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-items {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline-items::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--secondary-beige);
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 0 2rem;
+            position: relative;
+        }
+
+        .timeline-year {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--secondary-beige);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description {
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--secondary-beige);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 12px rgba(216, 191, 149, 0.3);
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .value-card {
+            text-align: center;
+            background: var(--light-beige);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary-beige);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        /* Team Section */
+        .team-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #04213e 100%);
+            padding: 6rem 0;
+            color: var(--white);
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .team-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto 2rem;
+            border: 4px solid var(--secondary-beige);
+        }
+
+        .member-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-title {
+            color: var(--secondary-beige);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-bio {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 3rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            
+            .timeline-items::before {
+                left: 20px;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+                transform: translateX(-50%);
+            }
+            
+            .timeline-content {
+                margin-left: 3rem;
+                margin-right: 0;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="sceptyr-staging.html" class="logo">Sceptyr</a>
+            <ul class="nav-menu">
+                <li><a href="our-story.html" class="nav-link active">Our Story</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="resources-media.html" class="nav-link">Resources/Media</a></li>
+                <li><a href="contact-us.html" class="nav-link">Contact us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="header-content">
+            <h1 class="page-title">Our Story</h1>
+            <p class="page-subtitle">
+                Built for those others overlook - a journey of understanding that true wealth transcends net worth
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="content-container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <h2>The Vision Behind Sceptyr</h2>
+                    <p>
+                        Sceptyr was born from a simple observation: while traditional financial institutions chase market cap and net worth, 
+                        they often overlook the most driven wealth builders—those who understand that exceptional results require exceptional thinking.
+                    </p>
+                    <p>
+                        We recognized a gap in the market where hardworking individuals and families with vision and commitment 
+                        were being underserved by cookie-cutter approaches. These are the people who don't need to be convinced 
+                        that alternative strategies exist; they arrive knowing that traditional advice won't build the legacy they envision.
+                    </p>
+                    <p>
+                        Our founding principle was clear: partnership should be based on ambition and commitment, not just existing assets. 
+                        The most successful wealth builders often started with nothing but relentless drive and the intelligence to recognize opportunity.
+                    </p>
+                </div>
+                <div class="content-image" style="background-image: url('https://images.unsplash.com/photo-1560472355-536de3962603?w=600&h=400&fit=crop');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="content-container">
+            <div class="timeline-header">
+                <h2>Our Journey</h2>
+                <p>From inception to becoming a trusted partner for wealth builders nationwide</p>
+            </div>
+            
+            <div class="timeline-items">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2008</div>
+                        <h3 class="timeline-title">Foundation</h3>
+                        <p class="timeline-description">
+                            Sceptyr was founded with a revolutionary approach: focus on the potential of driven individuals 
+                            rather than their current net worth. Our first clients were entrepreneurs and professionals 
+                            who understood that wealth creation requires more than traditional advice.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2012</div>
+                        <h3 class="timeline-title">Expansion</h3>
+                        <p class="timeline-description">
+                            Reached $500M in assets under management by developing custom wealth strategies for high-net-worth families. 
+                            Established partnerships with exclusive investment platforms previously available only to institutional investors.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2017</div>
+                        <h3 class="timeline-title">Innovation</h3>
+                        <p class="timeline-description">
+                            Launched our alternative investment platform, providing qualified clients access to hedge funds, 
+                            private equity, and international opportunities. Crossed $1.5B in structured assets.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021</div>
+                        <h3 class="timeline-title">Digital Evolution</h3>
+                        <p class="timeline-description">
+                            Integrated cutting-edge technology to provide real-time portfolio management and 24/7 client access 
+                            to their wealth strategies. Maintained our personal touch while scaling sophisticated services.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2025</div>
+                        <h3 class="timeline-title">Present Day</h3>
+                        <p class="timeline-description">
+                            Managing over $2.4B in assets for 250+ families nationwide. Recognized as a leader in alternative 
+                            wealth strategies and generational planning, with a 98% client retention rate.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="content-container">
+            <div class="timeline-header">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide every client relationship and strategic decision</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Selective Partnership</h3>
+                    <p>We choose relationships based on mutual commitment and shared vision, not portfolio size. The most successful partnerships are built on alignment of values and long-term thinking.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🏛️</div>
+                    <h3>Generational Focus</h3>
+                    <p>True wealth creation extends beyond individual success to establishing frameworks for multi-generational prosperity. We think in decades, not quarters.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>Alternative Thinking</h3>
+                    <p>When conventional wisdom says "diversify and wait," we identify sophisticated pathways that ambitious wealth builders have always known exist.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🔒</div>
+                    <h3>Absolute Discretion</h3>
+                    <p>Confidentiality isn't just a policy—it's fundamental to how we operate. Your financial sovereignty requires complete privacy protection.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">📈</div>
+                    <h3>Performance Excellence</h3>
+                    <p>Results matter more than promises. Every strategy we implement is designed to deliver measurable outcomes that compound over time.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Partnership Mindset</h3>
+                    <p>We succeed when you succeed. Our interests are aligned with yours through transparent fee structures and long-term thinking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="content-container">
+            <div class="team-header">
+                <h2>Leadership Team</h2>
+                <p>Experienced professionals dedicated to your financial success</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop');"></div>
+                    <h3 class="member-name">Michael Hartwell</h3>
+                    <div class="member-title">Founder & CEO</div>
+                    <p class="member-bio">
+                        With over 20 years in wealth management, Michael founded Sceptyr to serve driven individuals 
+                        overlooked by traditional firms. Former Goldman Sachs partner with expertise in alternative investments 
+                        and generational wealth strategies.
+                    </p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo" style="background-image: url('https://images.unsplash.com/photo-1494790108755-2616b612b17c?w=300&h=300&fit=crop');"></div>
+                    <h3 class="member-name">Sarah Chen</h3>
+                    <div class="member-title">Chief Investment Officer</div>
+                    <p class="member-bio">
+                        Sarah brings 15+ years of institutional investment experience to Sceptyr's alternative strategies. 
+                        Previously managed portfolios for university endowments and family offices, 
+                        specializing in private equity and hedge fund allocations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
