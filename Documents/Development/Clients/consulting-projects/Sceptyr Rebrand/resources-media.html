@@ -181,45 +181,10 @@
             margin: 0 auto;
         }
 
-        /* Content Filters */
-        .filters-section {
-            background: var(--white);
-            padding: 3rem 0;
-            border-bottom: 1px solid rgba(7, 48, 93, 0.1);
-        }
-
         .content-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
-        }
-
-        .filter-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-tab {
-            background: transparent;
-            border: 2px solid var(--light-beige);
-            color: var(--dark-gray);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-
-        .filter-tab:hover,
-        .filter-tab.active {
-            background: var(--primary-blue);
-            color: var(--white);
-            border-color: var(--primary-blue);
         }
 
         /* Featured Content */
@@ -519,14 +484,6 @@
                 font-size: 3rem;
             }
             
-            .filter-tabs {
-                gap: 1rem;
-            }
-            
-            .filter-tab {
-                font-size: 0.8rem;
-                padding: 0.6rem 1.5rem;
-            }
             
             .featured-content {
                 grid-template-columns: 1fr;
@@ -764,20 +721,6 @@
             <p class="page-subtitle">
                 Strategic insights and expert analysis from those who've walked the path to financial sovereignty
             </p>
-        </div>
-    </section>
-
-    <!-- Content Filters -->
-    <section class="filters-section">
-        <div class="content-container">
-            <div class="filter-tabs">
-                <button class="filter-tab active">All Content</button>
-                <button class="filter-tab">Market Analysis</button>
-                <button class="filter-tab">Wealth Strategies</button>
-                <button class="filter-tab">Podcast</button>
-                <button class="filter-tab">Press Releases</button>
-                <button class="filter-tab">White Papers</button>
-            </div>
         </div>
     </section>
 
