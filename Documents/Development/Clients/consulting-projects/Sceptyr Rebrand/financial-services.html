@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Sceptyr - Where Legacy Meets Strategy</title>
+    <title>Financial Services - Sceptyr - Where Legacy Meets Strategy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -114,10 +114,6 @@
             color: var(--secondary-beige);
         }
 
-        .nav-link.active {
-            color: var(--secondary-beige);
-        }
-
         .nav-link:after {
             content: '';
             position: absolute;
@@ -129,8 +125,7 @@
             transition: width 0.3s ease;
         }
 
-        .nav-link:hover:after,
-        .nav-link.active:after {
+        .nav-link:hover:after {
             width: 100%;
         }
 
@@ -181,8 +176,8 @@
             margin: 0 auto;
         }
 
-        /* Services Overview */
-        .services-overview {
+        /* Service Details */
+        .service-details {
             padding: 6rem 0;
             background: var(--white);
         }
@@ -193,116 +188,68 @@
             padding: 0 2rem;
         }
 
-        .overview-text {
+        .service-intro {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 4rem;
         }
 
-        .overview-text h2 {
+        .service-intro h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.8rem;
             color: var(--primary-blue);
             margin-bottom: 2rem;
         }
 
-        .overview-text p {
+        .service-intro p {
             font-size: 1.2rem;
             line-height: 1.8;
             color: var(--dark-gray);
+            margin-bottom: 1.5rem;
         }
 
-        /* Services Grid */
-        .services-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin: 4rem 0;
         }
 
-        .service-card {
+        .feature-item {
             background: var(--light-beige);
-            padding: 3rem;
+            padding: 2.5rem;
             border-radius: 12px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-            min-height: 350px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            color: var(--white);
+            transition: transform 0.3s ease;
         }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(7, 48, 93, 0.85) 0%, rgba(7, 48, 93, 0.7) 100%);
-            border-radius: 12px;
-            z-index: 1;
+        .feature-item:hover {
+            transform: translateY(-5px);
         }
 
-        .service-card > * {
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--primary-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            color: var(--white);
-            background-size: 50px 50px;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .service-card h3 {
+        .feature-item h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            color: var(--white);
+            color: var(--primary-blue);
             margin-bottom: 1.5rem;
-            font-weight: 600;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        .service-card p {
-            color: var(--white);
+        .feature-item p {
+            color: var(--dark-gray);
             line-height: 1.7;
-            margin-bottom: 2rem;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
-        .service-features {
+        .feature-list {
             list-style: none;
+            margin-top: 1.5rem;
         }
 
-        .service-features li {
+        .feature-list li {
             padding: 0.5rem 0;
-            color: var(--white);
             position: relative;
             padding-left: 1.5rem;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
-        .service-features li::before {
+        .feature-list li::before {
             content: '✓';
             position: absolute;
             left: 0;
@@ -310,76 +257,72 @@
             font-weight: bold;
         }
 
-        .service-link {
-            display: inline-block;
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--secondary-beige);
-            padding: 0.8rem 1.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.85rem;
-            margin-top: 1rem;
-        }
-
-        .service-link:hover {
-            background: var(--secondary-beige);
-            color: var(--primary-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(216, 191, 149, 0.4);
-        }
-
-        /* Detailed Services */
-        .detailed-services {
-            padding: 6rem 0;
+        /* Services Breakdown */
+        .services-breakdown {
             background: var(--light-beige);
+            padding: 6rem 0;
         }
 
-        .detailed-service {
+        .breakdown-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-bottom: 6rem;
-        }
-
-        .detailed-service:nth-child(even) {
-            direction: rtl;
-        }
-
-        .detailed-service:nth-child(even) > * {
-            direction: ltr;
-        }
-
-        .service-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 2rem;
-        }
-
-        .service-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            color: var(--dark-gray);
-        }
-
-        .service-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-top: 2rem;
+        }
+
+        .breakdown-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .breakdown-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .breakdown-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .breakdown-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .breakdown-item p {
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--white);
+            padding: 4rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
         }
 
         .stat-item {
             text-align: center;
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 8px;
+            background: var(--light-beige);
+            padding: 2rem;
+            border-radius: 12px;
         }
 
         .stat-number {
@@ -388,6 +331,7 @@
             color: var(--primary-blue);
             font-weight: 700;
             display: block;
+            margin-bottom: 0.5rem;
         }
 
         .stat-label {
@@ -396,69 +340,6 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 500;
-        }
-
-        .service-image {
-            background-size: cover;
-            background-position: center;
-            border-radius: 12px;
-            height: 400px;
-        }
-
-        /* Process Section */
-        .process-section {
-            padding: 6rem 0;
-            background: var(--white);
-        }
-
-        .process-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .process-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--primary-blue);
-            margin-bottom: 1.5rem;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--secondary-beige);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--white);
-        }
-
-        .step-title {
-            font-size: 1.3rem;
-            color: var(--primary-blue);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .step-description {
-            color: var(--dark-gray);
-            line-height: 1.6;
         }
 
         /* CTA Section */
@@ -511,21 +392,16 @@
                 font-size: 3rem;
             }
             
-            .services-grid {
+            .features-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
             
-            .detailed-service {
+            .breakdown-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
             
-            .detailed-service:nth-child(even) {
-                direction: ltr;
-            }
-            
-            .process-steps {
+            .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             
@@ -563,7 +439,7 @@
         }
 
         @media (max-width: 480px) {
-            .process-steps {
+            .stats-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -739,7 +615,7 @@
             </div>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="our-story.html" class="nav-link">Our Story</a></li>
-                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="resources-media.html" class="nav-link">Resources/Media</a></li>
                 <li><a href="contact-us.html" class="nav-link">Contact us</a></li>
             </ul>
@@ -749,201 +625,170 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="header-content">
-            <h1 class="page-title">Our Services</h1>
+            <h1 class="page-title">Financial Services</h1>
             <p class="page-subtitle">
-                Sophisticated wealth strategies designed for those who understand that exceptional results require exceptional thinking
+                Complete financial architecture designed to maximize wealth creation, preservation, and transfer
             </p>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section class="services-overview">
+    <!-- Service Details -->
+    <section class="service-details">
         <div class="content-container">
-            <div class="overview-text">
-                <h2>A Different Standard of Service</h2>
+            <div class="service-intro">
+                <h2>Comprehensive Financial Architecture</h2>
                 <p>
-                    We don't offer cookie-cutter financial advice. Every strategy we implement is designed for 
-                    your specific situation, risk tolerance, and generational goals. Our services combine 
-                    institutional-quality investment access with personalized wealth architecture.
+                    Our financial services encompass the full spectrum of wealth management needs, from cash flow optimization 
+                    to complex financial structures for business owners and entrepreneurs. We design financial strategies that 
+                    work cohesively across all areas of your financial life.
+                </p>
+                <p>
+                    Whether you're building initial wealth, optimizing existing assets, or preparing for major life transitions, 
+                    our comprehensive approach ensures every financial decision supports your long-term objectives while 
+                    maximizing efficiency and minimizing unnecessary risks.
                 </p>
             </div>
 
-            <div class="services-grid">
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=800&h=600&fit=crop');">
-                    <h3>Brokerage Services</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Cash Flow Management</h3>
                     <p>
-                        Institutional-grade trading platforms and investment access typically reserved for ultra-high-net-worth clients. 
-                        Direct access to global markets, alternative investments, and sophisticated trading strategies.
+                        Strategic cash flow planning and optimization to ensure liquidity for opportunities while 
+                        maximizing the productivity of your available capital.
                     </p>
-                    <a href="brokerage-services.html" class="service-link">Learn More →</a>
+                    <ul class="feature-list">
+                        <li>Liquidity planning and analysis</li>
+                        <li>Short-term investment strategies</li>
+                        <li>Credit facility optimization</li>
+                        <li>Expense analysis and budgeting</li>
+                    </ul>
                 </div>
 
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop');">
-                    <h3>Advisory Services</h3>
+                <div class="feature-item">
+                    <h3>Business Financial Structures</h3>
                     <p>
-                        Comprehensive wealth management and financial planning services tailored to your unique situation. 
-                        Strategic guidance that goes beyond investment management to include tax optimization and estate planning.
+                        Complex financial arrangements designed for business owners including succession planning, 
+                        buy-sell agreements, and ownership optimization strategies.
                     </p>
-                    <a href="advisory-services.html" class="service-link">Learn More →</a>
+                    <ul class="feature-list">
+                        <li>Business succession planning</li>
+                        <li>Buy-sell agreement design</li>
+                        <li>Key person insurance strategies</li>
+                        <li>Business loan and credit strategies</li>
+                    </ul>
                 </div>
 
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1551135049-8a33b5883817?w=800&h=600&fit=crop');">
-                    <h3>Financial Services</h3>
+                <div class="feature-item">
+                    <h3>Retirement Planning</h3>
                     <p>
-                        Complete financial architecture designed to maximize wealth creation, preservation, and transfer. 
-                        From cash flow optimization to complex financial structures for business owners and entrepreneurs.
+                        Comprehensive retirement strategies that go beyond traditional 401(k) plans to include 
+                        sophisticated tax-deferred and tax-free growth opportunities.
                     </p>
-                    <a href="financial-services.html" class="service-link">Learn More →</a>
+                    <ul class="feature-list">
+                        <li>Advanced retirement plan design</li>
+                        <li>Pension maximization strategies</li>
+                        <li>Social Security optimization</li>
+                        <li>Healthcare cost planning</li>
+                    </ul>
                 </div>
 
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop');">
-                    <h3>MoneyWorks</h3>
+                <div class="feature-item">
+                    <h3>Risk Management</h3>
                     <p>
-                        Advanced financial planning software and analytical tools that provide deep insights into your wealth strategies. 
-                        Sophisticated modeling and scenario analysis for complex financial decisions.
+                        Comprehensive risk assessment and mitigation strategies to protect your wealth from 
+                        unforeseen circumstances and market volatility.
                     </p>
-                    <a href="moneyworks.html" class="service-link">Learn More →</a>
-                </div>
-
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1460472178825-e5240623afd5?w=800&h=600&fit=crop');">
-                    <h3>Equity Partnerships</h3>
-                    <p>
-                        Strategic business partnerships and investment opportunities for qualified investors. 
-                        Direct equity positions in carefully selected growth companies and alternative investment structures.
-                    </p>
-                    <a href="equity-partnerships.html" class="service-link">Learn More →</a>
+                    <ul class="feature-list">
+                        <li>Life and disability insurance analysis</li>
+                        <li>Asset protection strategies</li>
+                        <li>Liability coverage optimization</li>
+                        <li>Business continuity planning</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Detailed Services -->
-    <section class="detailed-services">
+    <!-- Services Breakdown -->
+    <section class="services-breakdown">
         <div class="content-container">
-            <div class="detailed-service">
-                <div class="service-content">
-                    <h3>Alternative Investment Platform</h3>
+            <div class="breakdown-grid">
+                <div class="breakdown-item">
+                    <div class="breakdown-icon">💼</div>
+                    <h3>Corporate Finance</h3>
                     <p>
-                        Access to exclusive investment opportunities typically reserved for institutional investors. 
-                        Our platform provides qualified clients with direct access to premier hedge funds, 
-                        private equity deals, and international markets.
+                        Strategic financial planning for corporations including capital structure optimization, 
+                        merger and acquisition support, and corporate tax strategies.
                     </p>
-                    <p>
-                        Through our institutional partnerships, we've secured minimum investment thresholds 
-                        significantly lower than direct access, opening sophisticated strategies to a broader 
-                        range of serious wealth builders.
-                    </p>
-                    <div class="service-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">15.2%</span>
-                            <span class="stat-label">Avg Annual Return</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">$50M+</span>
-                            <span class="stat-label">Platform Assets</span>
-                        </div>
-                    </div>
                 </div>
-                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop');"></div>
-            </div>
 
-            <div class="detailed-service">
-                <div class="service-content">
-                    <h3>Generational Wealth Architecture</h3>
+                <div class="breakdown-item">
+                    <div class="breakdown-icon">🏠</div>
+                    <h3>Real Estate Finance</h3>
                     <p>
-                        Building wealth structures that not only grow your current assets but establish 
-                        frameworks for multi-generational prosperity. Our estate planning goes beyond 
-                        traditional will and trust structures.
+                        Sophisticated real estate investment strategies including REITs, direct property investment, 
+                        and real estate development financing.
                     </p>
-                    <p>
-                        We design family governance systems, education trusts, and succession strategies 
-                        that ensure your wealth serves your family's values and goals for generations to come.
-                    </p>
-                    <div class="service-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">65%</span>
-                            <span class="stat-label">Tax Reduction</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">40+</span>
-                            <span class="stat-label">Families Served</span>
-                        </div>
-                    </div>
                 </div>
-                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop');"></div>
-            </div>
 
-            <div class="detailed-service">
-                <div class="service-content">
-                    <h3>Business Exit & Succession Planning</h3>
+                <div class="breakdown-item">
+                    <div class="breakdown-icon">📊</div>
+                    <h3>Investment Banking</h3>
                     <p>
-                        Strategic planning for business owners who understand that exit planning begins 
-                        years before the actual transition. We help maximize business value while 
-                        minimizing tax impact on liquidity events.
+                        Access to investment banking services for qualified clients including private placements, 
+                        capital raises, and institutional investment opportunities.
                     </p>
-                    <p>
-                        Our approach includes business restructuring, valuation optimization, and 
-                        coordination with legal and accounting professionals to ensure seamless execution.
-                    </p>
-                    <div class="service-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">35%</span>
-                            <span class="stat-label">Value Increase</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">25+</span>
-                            <span class="stat-label">Businesses Optimized</span>
-                        </div>
-                    </div>
                 </div>
-                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop');"></div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-icon">🛡️</div>
+                    <h3>Trust Services</h3>
+                    <p>
+                        Complete trust administration and fiduciary services designed to protect and transfer 
+                        wealth according to your specific wishes and objectives.
+                    </p>
+                </div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-icon">🌐</div>
+                    <h3>International Finance</h3>
+                    <p>
+                        Global financial strategies for clients with international assets, businesses, or 
+                        residency including cross-border tax optimization.
+                    </p>
+                </div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-icon">📈</div>
+                    <h3>Alternative Investments</h3>
+                    <p>
+                        Access to sophisticated alternative investment strategies including private equity, 
+                        hedge funds, and structured products.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process-section">
+    <!-- Stats Section -->
+    <section class="stats-section">
         <div class="content-container">
-            <div class="process-header">
-                <h2>Our Strategic Process</h2>
-                <p>A proven methodology for building and preserving wealth across generations</p>
-            </div>
-
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Discovery</h3>
-                    <p class="step-description">
-                        Comprehensive analysis of your current financial position, goals, risk tolerance, 
-                        and family dynamics to understand your complete wealth picture.
-                    </p>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">$3.2B+</span>
+                    <span class="stat-label">Total Assets Managed</span>
                 </div>
-
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Strategy Design</h3>
-                    <p class="step-description">
-                        Custom wealth architecture tailored to your specific situation, incorporating 
-                        tax optimization, risk management, and growth acceleration techniques.
-                    </p>
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Financial Structures Created</span>
                 </div>
-
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Implementation</h3>
-                    <p class="step-description">
-                        Coordinated execution across all aspects of your wealth strategy, working with 
-                        your existing advisors and our specialized partner network.
-                    </p>
+                <div class="stat-item">
+                    <span class="stat-number">85%</span>
+                    <span class="stat-label">Average Tax Efficiency</span>
                 </div>
-
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Ongoing Management</h3>
-                    <p class="step-description">
-                        Continuous monitoring, adjustment, and optimization of your wealth strategies 
-                        as markets change and your life circumstances evolve.
-                    </p>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Client Support</span>
                 </div>
             </div>
         </div>
@@ -953,12 +798,12 @@
     <section class="cta-section">
         <div class="content-container">
             <div class="cta-content">
-                <h2>Ready to Explore Your Options?</h2>
+                <h2>Ready for Comprehensive Financial Services?</h2>
                 <p>
-                    Every wealth strategy begins with understanding your unique situation and goals. 
-                    Schedule a confidential consultation to discuss how our services align with your vision for financial success.
+                    Let us design a complete financial architecture that maximizes your wealth potential 
+                    while providing the security and flexibility you need for long-term success.
                 </p>
-                <a href="contact-us.html" class="cta-button">Schedule Consultation</a>
+                <a href="contact-us.html" class="cta-button">Request Consultation</a>
             </div>
         </div>
     </section>

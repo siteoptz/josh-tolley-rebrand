@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Sceptyr - Where Legacy Meets Strategy</title>
+    <title>MoneyWorks - Sceptyr - Where Legacy Meets Strategy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -114,10 +114,6 @@
             color: var(--secondary-beige);
         }
 
-        .nav-link.active {
-            color: var(--secondary-beige);
-        }
-
         .nav-link:after {
             content: '';
             position: absolute;
@@ -129,8 +125,7 @@
             transition: width 0.3s ease;
         }
 
-        .nav-link:hover:after,
-        .nav-link.active:after {
+        .nav-link:hover:after {
             width: 100%;
         }
 
@@ -181,8 +176,8 @@
             margin: 0 auto;
         }
 
-        /* Services Overview */
-        .services-overview {
+        /* Service Details */
+        .service-details {
             padding: 6rem 0;
             background: var(--white);
         }
@@ -193,116 +188,68 @@
             padding: 0 2rem;
         }
 
-        .overview-text {
+        .service-intro {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 4rem;
         }
 
-        .overview-text h2 {
+        .service-intro h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.8rem;
             color: var(--primary-blue);
             margin-bottom: 2rem;
         }
 
-        .overview-text p {
+        .service-intro p {
             font-size: 1.2rem;
             line-height: 1.8;
             color: var(--dark-gray);
+            margin-bottom: 1.5rem;
         }
 
-        /* Services Grid */
-        .services-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin: 4rem 0;
         }
 
-        .service-card {
+        .feature-item {
             background: var(--light-beige);
-            padding: 3rem;
+            padding: 2.5rem;
             border-radius: 12px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-            min-height: 350px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            color: var(--white);
+            transition: transform 0.3s ease;
         }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(7, 48, 93, 0.85) 0%, rgba(7, 48, 93, 0.7) 100%);
-            border-radius: 12px;
-            z-index: 1;
+        .feature-item:hover {
+            transform: translateY(-5px);
         }
 
-        .service-card > * {
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--primary-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            color: var(--white);
-            background-size: 50px 50px;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .service-card h3 {
+        .feature-item h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            color: var(--white);
+            color: var(--primary-blue);
             margin-bottom: 1.5rem;
-            font-weight: 600;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        .service-card p {
-            color: var(--white);
+        .feature-item p {
+            color: var(--dark-gray);
             line-height: 1.7;
-            margin-bottom: 2rem;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
-        .service-features {
+        .feature-list {
             list-style: none;
+            margin-top: 1.5rem;
         }
 
-        .service-features li {
+        .feature-list li {
             padding: 0.5rem 0;
-            color: var(--white);
             position: relative;
             padding-left: 1.5rem;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
-        .service-features li::before {
+        .feature-list li::before {
             content: '✓';
             position: absolute;
             left: 0;
@@ -310,155 +257,144 @@
             font-weight: bold;
         }
 
-        .service-link {
-            display: inline-block;
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--secondary-beige);
-            padding: 0.8rem 1.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.85rem;
-            margin-top: 1rem;
-        }
-
-        .service-link:hover {
-            background: var(--secondary-beige);
-            color: var(--primary-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(216, 191, 149, 0.4);
-        }
-
-        /* Detailed Services */
-        .detailed-services {
-            padding: 6rem 0;
+        /* Technology Section */
+        .technology-section {
             background: var(--light-beige);
-        }
-
-        .detailed-service {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-bottom: 6rem;
-        }
-
-        .detailed-service:nth-child(even) {
-            direction: rtl;
-        }
-
-        .detailed-service:nth-child(even) > * {
-            direction: ltr;
-        }
-
-        .service-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 2rem;
-        }
-
-        .service-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            color: var(--dark-gray);
-        }
-
-        .service-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary-blue);
-            font-weight: 700;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-
-        .service-image {
-            background-size: cover;
-            background-position: center;
-            border-radius: 12px;
-            height: 400px;
-        }
-
-        /* Process Section */
-        .process-section {
             padding: 6rem 0;
-            background: var(--white);
         }
 
-        .process-header {
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .tech-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .tech-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .tech-item p {
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: var(--white);
+            padding: 6rem 0;
+        }
+
+        .benefits-header {
             text-align: center;
             margin-bottom: 4rem;
         }
 
-        .process-header h2 {
+        .benefits-header h2 {
             font-family: 'Playfair Display', serif;
             font-size: 3rem;
             color: var(--primary-blue);
             margin-bottom: 1.5rem;
         }
 
-        .process-steps {
+        .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .benefits-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefits-list li {
+            padding: 0.8rem 0;
+            position: relative;
+            padding-left: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .benefits-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-beige);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .benefits-visual {
+            background: var(--light-beige);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stats-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
         }
 
-        .process-step {
+        .stat-showcase {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
             text-align: center;
-            position: relative;
         }
 
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--secondary-beige);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
+        .stat-showcase .number {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--white);
-        }
-
-        .step-title {
-            font-size: 1.3rem;
+            font-size: 2rem;
             color: var(--primary-blue);
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
-        .step-description {
-            color: var(--dark-gray);
-            line-height: 1.6;
+        .stat-showcase .label {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* CTA Section */
@@ -511,22 +447,21 @@
                 font-size: 3rem;
             }
             
-            .services-grid {
+            .features-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
             
-            .detailed-service {
+            .tech-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
             
-            .detailed-service:nth-child(even) {
-                direction: ltr;
+            .benefits-grid {
+                grid-template-columns: 1fr;
             }
             
-            .process-steps {
-                grid-template-columns: repeat(2, 1fr);
+            .stats-showcase {
+                grid-template-columns: 1fr;
             }
             
             .hamburger {
@@ -559,12 +494,6 @@
 
             .nav-link {
                 font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .process-steps {
-                grid-template-columns: 1fr;
             }
         }
 
@@ -739,7 +668,7 @@
             </div>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="our-story.html" class="nav-link">Our Story</a></li>
-                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="resources-media.html" class="nav-link">Resources/Media</a></li>
                 <li><a href="contact-us.html" class="nav-link">Contact us</a></li>
             </ul>
@@ -749,201 +678,192 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="header-content">
-            <h1 class="page-title">Our Services</h1>
+            <h1 class="page-title">MoneyWorks</h1>
             <p class="page-subtitle">
-                Sophisticated wealth strategies designed for those who understand that exceptional results require exceptional thinking
+                Advanced financial planning software and analytical tools that provide deep insights into your wealth strategies
             </p>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section class="services-overview">
+    <!-- Service Details -->
+    <section class="service-details">
         <div class="content-container">
-            <div class="overview-text">
-                <h2>A Different Standard of Service</h2>
+            <div class="service-intro">
+                <h2>Sophisticated Financial Analysis</h2>
                 <p>
-                    We don't offer cookie-cutter financial advice. Every strategy we implement is designed for 
-                    your specific situation, risk tolerance, and generational goals. Our services combine 
-                    institutional-quality investment access with personalized wealth architecture.
+                    MoneyWorks is our proprietary financial planning and analysis platform that combines cutting-edge technology 
+                    with sophisticated modeling capabilities to provide unprecedented insight into your financial strategies. 
+                    This powerful tool allows us to model complex scenarios, optimize tax strategies, and project long-term outcomes.
+                </p>
+                <p>
+                    Unlike traditional financial planning software, MoneyWorks integrates advanced analytics, real-time market data, 
+                    and sophisticated optimization algorithms to deliver actionable insights that drive better financial decisions 
+                    and improved wealth outcomes.
                 </p>
             </div>
 
-            <div class="services-grid">
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=800&h=600&fit=crop');">
-                    <h3>Brokerage Services</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Scenario Modeling & Analysis</h3>
                     <p>
-                        Institutional-grade trading platforms and investment access typically reserved for ultra-high-net-worth clients. 
-                        Direct access to global markets, alternative investments, and sophisticated trading strategies.
+                        Advanced modeling capabilities that allow us to test multiple financial scenarios and strategies 
+                        to determine the optimal approach for your specific situation.
                     </p>
-                    <a href="brokerage-services.html" class="service-link">Learn More →</a>
+                    <ul class="feature-list">
+                        <li>Monte Carlo simulations</li>
+                        <li>Stress testing capabilities</li>
+                        <li>What-if scenario analysis</li>
+                        <li>Probability-based outcomes</li>
+                    </ul>
                 </div>
 
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop');">
-                    <h3>Advisory Services</h3>
+                <div class="feature-item">
+                    <h3>Tax Optimization Engine</h3>
                     <p>
-                        Comprehensive wealth management and financial planning services tailored to your unique situation. 
-                        Strategic guidance that goes beyond investment management to include tax optimization and estate planning.
+                        Sophisticated tax planning algorithms that identify opportunities for tax reduction and 
+                        optimization across all areas of your financial life.
                     </p>
-                    <a href="advisory-services.html" class="service-link">Learn More →</a>
+                    <ul class="feature-list">
+                        <li>Multi-year tax strategy modeling</li>
+                        <li>Income timing optimization</li>
+                        <li>Deduction and credit maximization</li>
+                        <li>Estate tax planning scenarios</li>
+                    </ul>
                 </div>
 
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1551135049-8a33b5883817?w=800&h=600&fit=crop');">
-                    <h3>Financial Services</h3>
+                <div class="feature-item">
+                    <h3>Portfolio Optimization</h3>
                     <p>
-                        Complete financial architecture designed to maximize wealth creation, preservation, and transfer. 
-                        From cash flow optimization to complex financial structures for business owners and entrepreneurs.
+                        Advanced portfolio construction and optimization tools that balance risk, return, and 
+                        tax efficiency to maximize your investment outcomes.
                     </p>
-                    <a href="financial-services.html" class="service-link">Learn More →</a>
+                    <ul class="feature-list">
+                        <li>Modern portfolio theory implementation</li>
+                        <li>Risk-adjusted return optimization</li>
+                        <li>Asset location optimization</li>
+                        <li>Rebalancing strategy analysis</li>
+                    </ul>
                 </div>
 
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop');">
-                    <h3>MoneyWorks</h3>
+                <div class="feature-item">
+                    <h3>Real-Time Monitoring</h3>
                     <p>
-                        Advanced financial planning software and analytical tools that provide deep insights into your wealth strategies. 
-                        Sophisticated modeling and scenario analysis for complex financial decisions.
+                        Continuous monitoring and analysis of your financial strategies with real-time alerts 
+                        and recommendations for optimization opportunities.
                     </p>
-                    <a href="moneyworks.html" class="service-link">Learn More →</a>
-                </div>
-
-                <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1460472178825-e5240623afd5?w=800&h=600&fit=crop');">
-                    <h3>Equity Partnerships</h3>
-                    <p>
-                        Strategic business partnerships and investment opportunities for qualified investors. 
-                        Direct equity positions in carefully selected growth companies and alternative investment structures.
-                    </p>
-                    <a href="equity-partnerships.html" class="service-link">Learn More →</a>
+                    <ul class="feature-list">
+                        <li>Real-time performance tracking</li>
+                        <li>Automated rebalancing alerts</li>
+                        <li>Tax loss harvesting identification</li>
+                        <li>Goal progress monitoring</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Detailed Services -->
-    <section class="detailed-services">
+    <!-- Technology Section -->
+    <section class="technology-section">
         <div class="content-container">
-            <div class="detailed-service">
-                <div class="service-content">
-                    <h3>Alternative Investment Platform</h3>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">📊</div>
+                    <h3>Advanced Analytics</h3>
                     <p>
-                        Access to exclusive investment opportunities typically reserved for institutional investors. 
-                        Our platform provides qualified clients with direct access to premier hedge funds, 
-                        private equity deals, and international markets.
+                        Sophisticated data analytics and machine learning algorithms that identify patterns 
+                        and opportunities in your financial data.
                     </p>
-                    <p>
-                        Through our institutional partnerships, we've secured minimum investment thresholds 
-                        significantly lower than direct access, opening sophisticated strategies to a broader 
-                        range of serious wealth builders.
-                    </p>
-                    <div class="service-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">15.2%</span>
-                            <span class="stat-label">Avg Annual Return</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">$50M+</span>
-                            <span class="stat-label">Platform Assets</span>
-                        </div>
-                    </div>
                 </div>
-                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop');"></div>
-            </div>
 
-            <div class="detailed-service">
-                <div class="service-content">
-                    <h3>Generational Wealth Architecture</h3>
+                <div class="tech-item">
+                    <div class="tech-icon">⚡</div>
+                    <h3>Real-Time Processing</h3>
                     <p>
-                        Building wealth structures that not only grow your current assets but establish 
-                        frameworks for multi-generational prosperity. Our estate planning goes beyond 
-                        traditional will and trust structures.
+                        Lightning-fast processing capabilities that provide instant analysis and 
+                        recommendations based on current market conditions.
                     </p>
-                    <p>
-                        We design family governance systems, education trusts, and succession strategies 
-                        that ensure your wealth serves your family's values and goals for generations to come.
-                    </p>
-                    <div class="service-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">65%</span>
-                            <span class="stat-label">Tax Reduction</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">40+</span>
-                            <span class="stat-label">Families Served</span>
-                        </div>
-                    </div>
                 </div>
-                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop');"></div>
-            </div>
 
-            <div class="detailed-service">
-                <div class="service-content">
-                    <h3>Business Exit & Succession Planning</h3>
+                <div class="tech-item">
+                    <div class="tech-icon">🔒</div>
+                    <h3>Bank-Level Security</h3>
                     <p>
-                        Strategic planning for business owners who understand that exit planning begins 
-                        years before the actual transition. We help maximize business value while 
-                        minimizing tax impact on liquidity events.
+                        Enterprise-grade security protocols ensure your financial data remains 
+                        completely protected and confidential.
                     </p>
-                    <p>
-                        Our approach includes business restructuring, valuation optimization, and 
-                        coordination with legal and accounting professionals to ensure seamless execution.
-                    </p>
-                    <div class="service-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">35%</span>
-                            <span class="stat-label">Value Increase</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">25+</span>
-                            <span class="stat-label">Businesses Optimized</span>
-                        </div>
-                    </div>
                 </div>
-                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop');"></div>
+
+                <div class="tech-item">
+                    <div class="tech-icon">📱</div>
+                    <h3>Mobile Access</h3>
+                    <p>
+                        Secure mobile access allows you to monitor your financial progress and 
+                        receive insights anywhere, anytime.
+                    </p>
+                </div>
+
+                <div class="tech-item">
+                    <div class="tech-icon">🔄</div>
+                    <h3>Automated Updates</h3>
+                    <p>
+                        Continuous data integration and automated updates ensure your financial 
+                        analysis is always current and accurate.
+                    </p>
+                </div>
+
+                <div class="tech-item">
+                    <div class="tech-icon">📈</div>
+                    <h3>Predictive Modeling</h3>
+                    <p>
+                        Advanced forecasting capabilities that help predict future outcomes and 
+                        identify potential risks and opportunities.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process-section">
+    <!-- Benefits Section -->
+    <section class="benefits-section">
         <div class="content-container">
-            <div class="process-header">
-                <h2>Our Strategic Process</h2>
-                <p>A proven methodology for building and preserving wealth across generations</p>
+            <div class="benefits-header">
+                <h2>MoneyWorks Advantages</h2>
+                <p>Experience the power of institutional-grade financial analysis tools</p>
             </div>
 
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Discovery</h3>
-                    <p class="step-description">
-                        Comprehensive analysis of your current financial position, goals, risk tolerance, 
-                        and family dynamics to understand your complete wealth picture.
-                    </p>
+            <div class="benefits-grid">
+                <div class="benefits-content">
+                    <h3>Comprehensive Financial Clarity</h3>
+                    <ul class="benefits-list">
+                        <li>Complete financial picture in one integrated platform</li>
+                        <li>Clear visualization of complex financial relationships</li>
+                        <li>Detailed reporting and analysis capabilities</li>
+                        <li>Goal tracking and progress monitoring</li>
+                        <li>Risk assessment and mitigation strategies</li>
+                        <li>Performance attribution analysis</li>
+                    </ul>
                 </div>
 
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Strategy Design</h3>
-                    <p class="step-description">
-                        Custom wealth architecture tailored to your specific situation, incorporating 
-                        tax optimization, risk management, and growth acceleration techniques.
-                    </p>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Implementation</h3>
-                    <p class="step-description">
-                        Coordinated execution across all aspects of your wealth strategy, working with 
-                        your existing advisors and our specialized partner network.
-                    </p>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Ongoing Management</h3>
-                    <p class="step-description">
-                        Continuous monitoring, adjustment, and optimization of your wealth strategies 
-                        as markets change and your life circumstances evolve.
-                    </p>
+                <div class="benefits-visual">
+                    <h4 style="margin-bottom: 2rem; color: var(--primary-blue);">Platform Performance</h4>
+                    <div class="stats-showcase">
+                        <div class="stat-showcase">
+                            <span class="number">99.9%</span>
+                            <span class="label">Uptime</span>
+                        </div>
+                        <div class="stat-showcase">
+                            <span class="number">&lt;2s</span>
+                            <span class="label">Response Time</span>
+                        </div>
+                        <div class="stat-showcase">
+                            <span class="number">256-bit</span>
+                            <span class="label">Encryption</span>
+                        </div>
+                        <div class="stat-showcase">
+                            <span class="number">24/7</span>
+                            <span class="label">Monitoring</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -953,12 +873,12 @@
     <section class="cta-section">
         <div class="content-container">
             <div class="cta-content">
-                <h2>Ready to Explore Your Options?</h2>
+                <h2>Experience MoneyWorks Today</h2>
                 <p>
-                    Every wealth strategy begins with understanding your unique situation and goals. 
-                    Schedule a confidential consultation to discuss how our services align with your vision for financial success.
+                    Discover how our advanced financial planning platform can provide the insights 
+                    and analysis you need to optimize your wealth strategies.
                 </p>
-                <a href="contact-us.html" class="cta-button">Schedule Consultation</a>
+                <a href="contact-us.html" class="cta-button">Request Consultation</a>
             </div>
         </div>
     </section>
