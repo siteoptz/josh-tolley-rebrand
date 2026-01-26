@@ -183,10 +183,49 @@
         .hero-description {
             font-size: 1.3rem;
             color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             line-height: 1.7;
             font-weight: 300;
             max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-services {
+            margin-bottom: 2rem;
+        }
+
+        .services-list {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .services-list li {
+            color: var(--white);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .services-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-beige);
+            font-weight: bold;
+        }
+
+        .hero-closing {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            font-weight: 300;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -1123,11 +1162,24 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-subtitle">For Those Who Understand</div>
+            <div class="hero-subtitle">Complete Financial Solutions</div>
             <h1 class="hero-title">Where Legacy Meets Strategy</h1>
             <p class="hero-description">
-                We work alongside those who recognize that true wealth transcends net worth—
-                individuals, families, and enterprises who understand that legacy is built through deliberate action, not circumstance.
+                SCEPTYR provides finance and commerce solutions to Individuals, Families, Businesses, and Non-Profits
+            </p>
+            <div class="hero-services">
+                <ul class="services-list">
+                    <li>Fixed Income Investments of 13.22% APY</li>
+                    <li>Direct Equity Investments</li>
+                    <li>Private Placement Insurance</li>
+                    <li>Balance Sheet Bankroll™ for Businesses and Non-Profits</li>
+                    <li>Trust and Estate Design and Protection Services</li>
+                    <li>Business and Legacy Training</li>
+                    <li>Business M&A Services</li>
+                </ul>
+            </div>
+            <p class="hero-closing">
+                Whether you are trying to maximize income while creating a 300-year legacy estate, protecting funds for the next generations, or even running a great non-profit but trying to maximize donation effectiveness; SCEPTYR is your Solutions Partner with a proven track record.
             </p>
             <a href="services.html" class="hero-cta">Discover More</a>
         </div>
