@@ -212,6 +212,63 @@
             color: var(--dark-gray);
         }
 
+        .fund-highlight {
+            background: var(--light-beige);
+            border: 2px solid var(--primary-blue);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .fund-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 2rem;
+            border: 3px solid var(--primary-blue);
+            border-radius: 50px;
+            padding: 1rem;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .fund-details {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .fund-details p {
+            font-size: 1.1rem;
+            margin: 0.8rem 0;
+            color: var(--primary-blue);
+            font-weight: 500;
+        }
+
+        .fund-welcome {
+            text-align: center;
+            font-size: 1.3rem !important;
+            color: var(--primary-blue) !important;
+            margin: 2rem 0 !important;
+            font-weight: 600;
+        }
+
+        .fund-disclaimer {
+            text-align: center;
+            font-size: 1.1rem !important;
+            color: var(--primary-blue) !important;
+            margin: 1.5rem 0 !important;
+            font-weight: 500;
+        }
+
+        .fund-note {
+            font-size: 0.9rem !important;
+            color: var(--medium-gray) !important;
+            text-align: center;
+            margin-top: 2rem !important;
+            line-height: 1.4;
+        }
+
         /* Services Grid */
         .services-grid {
             display: grid;
@@ -762,12 +819,25 @@
     <section class="services-overview">
         <div class="content-container">
             <div class="overview-text">
-                <h2>A Different Standard of Service</h2>
-                <p>
-                    We don't offer cookie-cutter financial advice. Every strategy we implement is designed for 
-                    your specific situation, risk tolerance, and generational goals. Our services combine 
-                    institutional-quality investment access with personalized wealth architecture.
-                </p>
+                <h2>New Fund <span style="text-decoration: underline;">Now OPEN</span></h2>
+                <div class="fund-highlight">
+                    <h3 class="fund-name">The Opal Fund</h3>
+                    <div class="fund-details">
+                        <p><strong>Contracted 13.22% APY</strong></p>
+                        <p>Fixed-Income Investment</p>
+                        <p>Paid out MONTHLY</p>
+                        <p>3-year Investment Term</p>
+                        <p>$100k Minimum Investment</p>
+                        <p><strong><u>NO Management Fees</u></strong> For This Style Investment</p>
+                    </div>
+                    <p class="fund-welcome"><strong>Individuals, Money Managers, and other Funds Welcome</strong></p>
+                    <p class="fund-disclaimer">
+                        This is not a bet, this is a Contractual Income Instrument designed for capital preservation and yield
+                    </p>
+                    <p class="fund-note">
+                        <em>Important: An investment in Sceptyr Opal Fund LLC investment units, including projected loss of principal. Your consultation with licensed-liquidity Full details in the Private Placement Memorandum (PPM).</em>
+                    </p>
+                </div>
             </div>
 
             <div class="services-grid">
