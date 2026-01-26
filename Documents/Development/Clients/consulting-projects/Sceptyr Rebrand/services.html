@@ -215,7 +215,7 @@
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr;
             gap: 2rem;
             margin-top: 4rem;
         }
@@ -229,11 +229,13 @@
             overflow: hidden;
             background-size: cover;
             background-position: center;
-            min-height: 350px;
+            min-height: 300px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             color: var(--white);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .service-card::before {
