@@ -678,7 +678,6 @@
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="our-story.html" class="nav-link">Our Story</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="resources-media.html" class="nav-link">Resources/Media</a></li>
                 <li><a href="contact-us.html" class="nav-link active">Contact us</a></li>
             </ul>
         </div>
@@ -714,7 +713,7 @@
                         <div class="contact-method">
                             <div class="method-info">
                                 <h4>Email</h4>
-                                <p>connect@sceptyr.com</p>
+                                <p>info@sceptyr.com</p>
                             </div>
                         </div>
 
@@ -743,7 +742,7 @@
 
                 <div class="contact-form">
                     <h3>Schedule a Consultation</h3>
-                    <form>
+                    <form action="https://formspree.io/f/xpwagvln" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">First Name *</label>
@@ -793,6 +792,11 @@
                             <label for="message">Tell Us About Your Situation *</label>
                             <textarea id="message" name="message" placeholder="Please describe your current financial situation, goals, and what you hope to accomplish through our partnership." required></textarea>
                         </div>
+
+                        <!-- Hidden field for email routing -->
+                        <input type="hidden" name="_to" value="info@sceptyr.com">
+                        <input type="hidden" name="_subject" value="New Consultation Request from Sceptyr Website">
+                        <input type="hidden" name="_next" value="https://sceptyr-staging-80itho5kx-siteoptzs-projects.vercel.app/contact-us.html?success=1">
 
                         <button type="submit" class="submit-button">Request Consultation</button>
                     </form>
@@ -868,7 +872,7 @@
                     The journey to true financial sovereignty starts with a single conversation. 
                     Let's discuss how our sophisticated approach to wealth building can serve your specific goals.
                 </p>
-                <a href="mailto:connect@sceptyr.com" class="cta-button">Start the Conversation</a>
+                <a href="mailto:info@sceptyr.com" class="cta-button">Start the Conversation</a>
             </div>
         </div>
     </section>
@@ -908,14 +912,13 @@
                     <ul class="footer-links">
                         <li><a href="our-story.html">Our Story</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="resources-media.html">Resources/Media</a></li>
                         <li><a href="contact-us.html">Contact us</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Contact Information</h4>
                     <div class="company-info">
-                        <p><strong>Email:</strong> connect@sceptyr.com</p>
+                        <p><strong>Email:</strong> info@sceptyr.com</p>
                         <p><strong>Phone:</strong> (833) 865-4647</p>
                     </div>
                 </div>
@@ -994,8 +997,6 @@
 
         // Form submission
         document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
@@ -1013,12 +1014,22 @@
                 }
             });
             
-            if (isValid) {
-                // Here you would typically send the data to your server
-                alert('Thank you for your interest! We will contact you within 24 hours to schedule your consultation.');
-                this.reset();
-            } else {
+            if (!isValid) {
+                e.preventDefault();
                 alert('Please fill in all required fields.');
+                return false;
+            }
+            
+            // If valid, the form will submit naturally to Formspree
+        });
+
+        // Check for success parameter and show message
+        window.addEventListener('load', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === '1') {
+                alert('Thank you for your interest! We will contact you within 24 hours to schedule your consultation.');
+                // Remove the success parameter from URL
+                window.history.replaceState({}, document.title, window.location.pathname);
             }
         });
     </script>
