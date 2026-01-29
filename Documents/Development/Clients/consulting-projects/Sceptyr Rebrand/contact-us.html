@@ -765,13 +765,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="netWorth">Approximate Net Worth</label>
+                            <label for="netWorth">Approximate Net Worth (not including Primary Residence)</label>
                             <select id="netWorth" name="netWorth">
                                 <option value="">Select Range</option>
-                                <option value="1-5M">$1M - $5M</option>
-                                <option value="5-10M">$5M - $10M</option>
-                                <option value="10-25M">$10M - $25M</option>
-                                <option value="25M+">$25M+</option>
+                                <option value="less-100k">Less that $100K</option>
+                                <option value="100k-500k">$100k-500K</option>
+                                <option value="500k-1m">$500 - $1 million</option>
+                                <option value="1m-2m">$1 million - $2 million</option>
+                                <option value="greater-2m">Greater than $2 million</option>
                             </select>
                         </div>
 
@@ -788,12 +789,21 @@
                             <label for="interest">Primary Interest</label>
                             <select id="interest" name="interest">
                                 <option value="">Select Service</option>
-                                <option value="wealth-management">Wealth Management</option>
-                                <option value="estate-planning">Estate Planning</option>
-                                <option value="alternative-investments">Alternative Investments</option>
-                                <option value="business-exit">Business Exit Planning</option>
-                                <option value="tax-optimization">Tax Optimization</option>
-                                <option value="comprehensive">Comprehensive Strategy</option>
+                                <option value="investment-opportunities">Investment Opportunities</option>
+                                <option value="legacy-guidance">Legacy Guidance & Protection</option>
+                                <option value="strategic-insurance">Strategic Applied Insurance</option>
+                                <option value="business-ma">Business M&A or Exit</option>
+                                <option value="balance-sheet">Balance Sheet Bankroll</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bestTime">When is the best time to reach you to discuss your enquiry?</label>
+                            <select id="bestTime" name="bestTime">
+                                <option value="">Select Time</option>
+                                <option value="morning">Morning – 0900 to 1100</option>
+                                <option value="afternoon">Afternoon – 1300 to 1700</option>
+                                <option value="other">Other: (Please specify a weekday and time that would work better for you)</option>
                             </select>
                         </div>
 
@@ -811,6 +821,10 @@
 
                         <button type="submit" class="submit-button">Request Consultation</button>
                     </form>
+                    
+                    <div style="margin-top: 2rem; padding: 1rem; background: var(--light-beige); border-radius: 8px; font-size: 0.9rem; color: var(--dark-gray); line-height: 1.6;">
+                        <strong>*</strong> An Accredited Investor means that you have a net worth of $1,000,000 (not including primary residence); or for the past two years your income was $200,000 (individual), or $300,000 (couple)
+                    </div>
                 </div>
             </div>
         </div>
