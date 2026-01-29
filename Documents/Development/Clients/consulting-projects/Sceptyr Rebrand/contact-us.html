@@ -742,7 +742,7 @@
 
                 <div class="contact-form">
                     <h3>Schedule a Consultation</h3>
-                    <form action="mailto:info@sceptyr.com" method="post" enctype="text/plain">
+                    <form action="https://formsubmit.co/info@sceptyr.com" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">First Name *</label>
@@ -793,6 +793,12 @@
                             <textarea id="message" name="message" placeholder="Please describe your current financial situation, goals, and what you hope to accomplish through our partnership." required></textarea>
                         </div>
 
+                        <!-- FormSubmit configuration -->
+                        <input type="hidden" name="_subject" value="New Consultation Request from Sceptyr Website">
+                        <input type="hidden" name="_next" value="https://sceptyr-staging-kapnwwg9t-siteoptzs-projects.vercel.app/contact-us.html?success=1">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_cc" value="antonio@siteoptz.com">
 
                         <button type="submit" class="submit-button">Request Consultation</button>
                     </form>
@@ -993,8 +999,6 @@
 
         // Form submission
         document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
@@ -1013,39 +1017,22 @@
             });
             
             if (!isValid) {
+                e.preventDefault();
                 alert('Please fill in all required fields.');
                 return false;
             }
             
-            // Create email body
-            const emailBody = `New Consultation Request from Sceptyr Website
+            // If valid, the form will submit naturally to FormSubmit
+        });
 
-Contact Information:
-- Name: ${data.firstName} ${data.lastName}
-- Email: ${data.email}
-- Phone: ${data.phone || 'Not provided'}
-- Net Worth: ${data.netWorth || 'Not specified'}
-- Primary Interest: ${data.interest || 'Not specified'}
-
-Message:
-${data.message}
-
----
-Submitted from: ${window.location.href}
-Date: ${new Date().toLocaleString()}`;
-            
-            // Create mailto link
-            const subject = 'New Consultation Request from Sceptyr Website';
-            const mailtoLink = `mailto:info@sceptyr.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Show confirmation and reset form
-            setTimeout(() => {
-                alert('Your email client should open with the consultation request. Please send the email to complete your submission. We will contact you within 24 hours.');
-                this.reset();
-            }, 500);
+        // Check for success parameter and show message
+        window.addEventListener('load', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === '1') {
+                alert('Thank you for your consultation request! We will contact you within 24 hours to schedule your consultation.');
+                // Remove the success parameter from URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
         });
     </script>
 </body>
