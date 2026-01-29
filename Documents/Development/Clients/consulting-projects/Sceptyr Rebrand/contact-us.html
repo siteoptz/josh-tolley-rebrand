@@ -1012,8 +1012,6 @@
 
         // Form submission
         document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
@@ -1032,23 +1030,15 @@
             });
             
             if (!isValid) {
+                e.preventDefault();
                 alert('Please fill in all required fields.');
                 return false;
             }
             
-            // Submit form via fetch to prevent page redirect
-            fetch(this.action, {
-                method: 'POST',
-                body: formData
-            }).then(response => {
-                // Show thank you message
-                alert('Thank you for your interest, one of our specialized team members will contact you within 2-4 hours.');
-                // Reset form
-                this.reset();
-            }).catch(error => {
-                console.error('Error:', error);
-                alert('There was an error submitting your request. Please try again or contact us directly.');
-            });
+            // Show thank you message immediately
+            alert('Thank you for your interest, one of our specialized team members will contact you within 2-4 hours.');
+            
+            // Allow form to submit naturally to FormSubmit
         });
 
     </script>
