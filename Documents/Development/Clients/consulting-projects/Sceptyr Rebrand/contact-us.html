@@ -805,7 +805,6 @@
 
                         <!-- FormSubmit configuration -->
                         <input type="hidden" name="_subject" value="New Consultation Request from Sceptyr Website">
-                        <input type="hidden" name="_next" value="https://sceptyr-staging-9ibhyzimm-siteoptzs-projects.vercel.app/contact-us.html?success=1">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_cc" value="antonio@siteoptz.com">
@@ -1013,6 +1012,8 @@
 
         // Form submission
         document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
@@ -1031,23 +1032,25 @@
             });
             
             if (!isValid) {
-                e.preventDefault();
                 alert('Please fill in all required fields.');
                 return false;
             }
             
-            // If valid, the form will submit naturally to FormSubmit
+            // Submit form via fetch to prevent page redirect
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                // Show thank you message
+                alert('Thank you for your interest, one of our specialized team members will contact you within 2-4 hours.');
+                // Reset form
+                this.reset();
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your request. Please try again or contact us directly.');
+            });
         });
 
-        // Check for success parameter and show message
-        window.addEventListener('load', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('success') === '1') {
-                alert('Thank you for your interest, one of our specialized team members will contact you within 2-4 hours.');
-                // Remove the success parameter from URL
-                window.history.replaceState({}, document.title, window.location.pathname);
-            }
-        });
     </script>
 </body>
 </html>
