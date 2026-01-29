@@ -742,7 +742,7 @@
 
                 <div class="contact-form">
                     <h3>Schedule a Consultation</h3>
-                    <form action="https://formspree.io/f/xpwagvln" method="POST">
+                    <form action="mailto:info@sceptyr.com" method="post" enctype="text/plain">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">First Name *</label>
@@ -793,10 +793,6 @@
                             <textarea id="message" name="message" placeholder="Please describe your current financial situation, goals, and what you hope to accomplish through our partnership." required></textarea>
                         </div>
 
-                        <!-- Hidden field for email routing -->
-                        <input type="hidden" name="_to" value="info@sceptyr.com">
-                        <input type="hidden" name="_subject" value="New Consultation Request from Sceptyr Website">
-                        <input type="hidden" name="_next" value="https://sceptyr-staging-80itho5kx-siteoptzs-projects.vercel.app/contact-us.html?success=1">
 
                         <button type="submit" class="submit-button">Request Consultation</button>
                     </form>
@@ -997,6 +993,8 @@
 
         // Form submission
         document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
@@ -1015,22 +1013,39 @@
             });
             
             if (!isValid) {
-                e.preventDefault();
                 alert('Please fill in all required fields.');
                 return false;
             }
             
-            // If valid, the form will submit naturally to Formspree
-        });
+            // Create email body
+            const emailBody = `New Consultation Request from Sceptyr Website
 
-        // Check for success parameter and show message
-        window.addEventListener('load', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('success') === '1') {
-                alert('Thank you for your interest! We will contact you within 24 hours to schedule your consultation.');
-                // Remove the success parameter from URL
-                window.history.replaceState({}, document.title, window.location.pathname);
-            }
+Contact Information:
+- Name: ${data.firstName} ${data.lastName}
+- Email: ${data.email}
+- Phone: ${data.phone || 'Not provided'}
+- Net Worth: ${data.netWorth || 'Not specified'}
+- Primary Interest: ${data.interest || 'Not specified'}
+
+Message:
+${data.message}
+
+---
+Submitted from: ${window.location.href}
+Date: ${new Date().toLocaleString()}`;
+            
+            // Create mailto link
+            const subject = 'New Consultation Request from Sceptyr Website';
+            const mailtoLink = `mailto:info@sceptyr.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show confirmation and reset form
+            setTimeout(() => {
+                alert('Your email client should open with the consultation request. Please send the email to complete your submission. We will contact you within 24 hours.');
+                this.reset();
+            }, 500);
         });
     </script>
 </body>
