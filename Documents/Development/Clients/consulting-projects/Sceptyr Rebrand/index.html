@@ -1,10 +1,1729 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url=/sceptyr-staging.html">
-    <title>Redirecting to Sceptyr Staging...</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sceptyr - Where Legacy Meets Strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #07305d;
+            --secondary-beige: #d8bf95;
+            --light-beige: #f8f2f2;
+            --white: #FFFFFF;
+            --medium-gray: #6C757D;
+            --dark-gray: #343A40;
+            --charcoal: #2B2B2B;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        p {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(7, 48, 93, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Times New Roman', serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .logo .blue-letters {
+            color: var(--primary-blue);
+        }
+        
+        .logo .silver-y {
+            color: #C0C0C0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-blue);
+            transition: 0.3s;
+        }
+
+        .nav-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-beige);
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--secondary-beige);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding: 120px 0 80px 0;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #04213e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(238,186,43,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            padding: 0 2rem;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--secondary-beige);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-services {
+            margin-bottom: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .services-list li {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--secondary-beige);
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .services-list li:hover {
+            background: var(--secondary-beige);
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(216, 191, 149, 0.3);
+        }
+
+        .hero-closing {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--secondary-beige);
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-size: 0.9rem;
+        }
+
+        .hero-cta:hover {
+            background: var(--secondary-beige);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(216, 191, 149, 0.3);
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 8rem 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .story-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .story-intro {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .section-label {
+            font-size: 0.9rem;
+            color: var(--secondary-beige);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .story-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .story-lead {
+            font-size: 1.4rem;
+            color: var(--medium-gray);
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Philosophy Grid */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            margin-top: 6rem;
+        }
+
+        .philosophy-card {
+            text-align: left;
+        }
+
+        .philosophy-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--secondary-beige);
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .philosophy-title {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .philosophy-text {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Metrics Section */
+        .metrics-section {
+            background: var(--light-beige);
+            padding: 6rem 0;
+        }
+
+        .metrics-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .metric-item {
+            padding: 2rem 1rem;
+        }
+
+        .metric-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .metric-label {
+            font-size: 1rem;
+            color: var(--medium-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        /* Approach Section */
+        .approach-section {
+            padding: 8rem 0;
+            background: linear-gradient(rgba(7, 48, 93, 0.85), rgba(7, 48, 93, 0.85)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            position: relative;
+        }
+
+        .approach-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .approach-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .approach-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .approach-text p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+        }
+
+        .approach-list {
+            list-style: none;
+            margin-top: 3rem;
+        }
+
+        .approach-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+
+        .approach-list li:before {
+            content: '→';
+            color: var(--secondary-beige);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #04213e 100%);
+            padding: 8rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(216,191,149,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .contact-section p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            font-weight: 300;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .contact-cta {
+            display: inline-block;
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--secondary-beige);
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-size: 0.9rem;
+        }
+
+        .contact-cta:hover {
+            background: var(--secondary-beige);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(216, 191, 149, 0.3);
+        }
+
+        /* What We Have Done Section */
+        .what-we-have-done-section {
+            padding: 8rem 0;
+            background: var(--white);
+        }
+
+        .accomplishments-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .accomplishment-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--light-beige);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .accomplishment-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .accomplishment-image {
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .accomplishment-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .accomplishment-card p {
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        /* Creativity Section */
+        .creativity-section {
+            padding: 8rem 0;
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .creativity-examples {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .creativity-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-left: 4px solid var(--secondary-beige);
+            border-radius: 5px;
+        }
+
+        .creativity-card h4 {
+            color: var(--secondary-beige);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .creativity-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        /* Activism Section */
+        .activism-section {
+            padding: 8rem 0;
+            background: var(--light-beige);
+        }
+
+        .activism-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .activism-pillar {
+            text-align: center;
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .activism-pillar:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .activism-pillar h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .activism-pillar p {
+            color: var(--dark-gray);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        /* FROM WEALTH BUILDERS Section */
+        .from-wealth-builders-section {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, var(--light-beige) 0%, var(--white) 100%);
+        }
+
+        .entrepreneur-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .entrepreneur-header h2 {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .entrepreneur-header p {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .entrepreneur-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .entrepreneur-card {
+            background: var(--white);
+            border: 1px solid rgba(216, 191, 149, 0.2);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .entrepreneur-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(7, 48, 93, 0.15);
+            border-color: var(--secondary-beige);
+        }
+
+        .entrepreneur-card.featured {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .card-image-small {
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(7, 48, 93, 0.7) 100%);
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .card-category {
+            display: inline-block;
+            color: var(--secondary-beige);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+        }
+
+        .entrepreneur-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        .entrepreneur-card.featured h3 {
+            font-size: 1.8rem;
+        }
+
+        .entrepreneur-card p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .card-link {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-link:hover {
+            color: var(--secondary-beige);
+            gap: 12px;
+        }
+
+        .entrepreneur-cta {
+            text-align: center;
+        }
+
+        .view-all-btn {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-blue);
+            border-radius: 5px;
+        }
+
+        .view-all-btn:hover {
+            background: transparent;
+            color: var(--primary-blue);
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 8rem 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .insight-card {
+            background: var(--white);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .insight-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .insight-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .insight-date {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 3px;
+        }
+
+        .insight-content {
+            padding: 2rem;
+        }
+
+        .insight-category {
+            color: var(--secondary-beige);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .insight-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .insight-content p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            color: var(--secondary-beige);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 160px 0 60px 0;
+                min-height: calc(100vh - 60px);
+            }
+            
+            .hero-content {
+                padding: 0 2rem 20px;
+                margin-top: 2rem;
+            }
+
+            .services-list li {
+                font-size: 0.8rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .hero-services {
+                max-width: 100%;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-cta {
+                display: block;
+                text-align: center;
+                margin: 2rem auto 0;
+                max-width: 200px;
+                padding: 1rem 1.5rem;
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+            }
+            
+            .story-headline {
+                font-size: 2.5rem;
+            }
+            
+            .approach-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .entrepreneur-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .entrepreneur-card.featured {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .entrepreneur-card.featured h3 {
+                font-size: 1.4rem;
+            }
+
+            .accomplishments-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .insights-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .activism-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 85px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 85px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(15px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: right 0.3s ease;
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+            
+            .nav-link {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .accomplishments-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Times New Roman', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-brand h3 .blue-letters {
+            color: var(--light-beige);
+        }
+
+        .footer-brand h3 .silver-y {
+            color: #C0C0C0;
+        }
+        
+        .footer-brand h3 .blue-letters {
+            color: var(--light-beige);
+        }
+        
+        .footer-brand h3 .silver-y {
+            color: #C0C0C0;
+        }
+
+        .footer-brand p {
+            line-height: 1.7;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(248, 242, 242, 0.1);
+            border: 2px solid var(--light-beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--light-beige);
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .social-link:hover {
+            background: var(--light-beige);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--light-beige);
+            padding-left: 5px;
+        }
+
+        .company-info p {
+            color: var(--white);
+            opacity: 0.8;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .company-info strong {
+            color: var(--light-beige);
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(248, 242, 242, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-legal a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-legal a:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        /* Learn More Button Hover Effect */
+        a[href="services.html"]:hover {
+            background: var(--secondary-beige) !important;
+            color: var(--primary-blue) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 20px rgba(216, 191, 149, 0.4) !important;
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to <a href="/sceptyr-staging.html">Sceptyr Staging</a>...</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo"><span class="blue-letters">SCEPT</span><span class="silver-y">Y</span><span class="blue-letters">R</span></a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="contact-us.html" class="nav-link">Contact us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">Complete Financial Solutions</div>
+            <h1 class="hero-title">Where Legacy Meets Strategy</h1>
+            <p class="hero-description">
+                SCEPTYR provides finance and commerce solutions to Individuals, Families, Businesses, and Non-Profits
+            </p>
+            <div class="hero-services">
+                <ul class="services-list">
+                    <li>Fixed Income Investments of 13.22% APY</li>
+                    <li>Direct Equity Investments</li>
+                    <li>Private Placement Insurance</li>
+                    <li>Balance Sheet Bankroll™ for Businesses and Non-Profits</li>
+                    <li>Trust and Estate Design and Protection Services</li>
+                    <li>Business and Legacy Training</li>
+                    <li>Business M&A Services</li>
+                </ul>
+            </div>
+            <p class="hero-closing">
+                Whether you are trying to maximize income while creating a 300-year legacy estate, protecting funds for the next generations, or even running a great non-profit but trying to maximize donation effectiveness; SCEPTYR is your Solutions Partner with a proven track record.
+            </p>
+            <a href="services.html" class="hero-cta">Discover More</a>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="story-section">
+        <div class="story-container">
+            <div class="story-intro">
+                <div class="section-label">Our Foundation</div>
+                <h2 class="story-headline">Built for Those Others Overlook</h2>
+                <p class="story-lead">
+                    While traditional institutions chase market cap and net worth, we focus on something more fundamental: 
+                    the relentless drive to create, protect, and multiply wealth across generations.
+                </p>
+            </div>
+
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="philosophy-number">01</div>
+                    <h3 class="philosophy-title">Selective Partnership</h3>
+                    <p class="philosophy-text">
+                        We choose our relationships based on ambition and commitment, not existing assets. 
+                        The hardest working individuals often have the greatest potential for exponential growth.
+                    </p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-number">02</div>
+                    <h3 class="philosophy-title">Generational Thinking</h3>
+                    <p class="philosophy-text">
+                        True wealth creation requires structures that not only grow today's capital 
+                        but establish frameworks for tomorrow's opportunities.
+                    </p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-number">03</div>
+                    <h3 class="philosophy-title">Beyond Traditional</h3>
+                    <p class="philosophy-text">
+                        When conventional advisors say "diversify and wait," we identify pathways 
+                        that sophisticated wealth builders have always known exist.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opal Fund Section -->
+    <section class="opal-fund-section-home">
+        <div class="story-container">
+            <div class="opal-fund-section" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=600&fit=crop'); background-size: cover; background-position: center; border-radius: 12px; padding: 4rem; margin-bottom: 6rem; position: relative; color: white;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(7, 48, 93, 0.85) 0%, rgba(7, 48, 93, 0.7) 100%); border-radius: 12px; z-index: 1;"></div>
+                <div style="position: relative; z-index: 2; text-align: center;">
+                    <h1 style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.5); font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 600; margin-bottom: 2rem;">New Fund <span style="text-decoration: underline;">Now OPEN</span></h1>
+                    <h4 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: white; margin: 1.5rem 0; border: 3px solid white; border-radius: 50px; padding: 1rem; display: inline-block; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">The Opal Fund</h4>
+                    <div style="margin: 2rem 0;">
+                        <p style="font-size: 1.1rem; margin: 0.8rem 0; color: white; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.5);"><strong>Contracted 13.22% APY</strong></p>
+                        <p style="font-size: 1.1rem; margin: 0.8rem 0; color: white; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Fixed-Income Investment</p>
+                        <p style="font-size: 1.1rem; margin: 0.8rem 0; color: white; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.5);"><strong><u>NO Management Fees</u></strong></p>
+                    </div>
+                    <p style="font-size: 1.3rem; color: white; margin: 2rem 0; font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.5);"><strong>Individuals, Money Managers, and other Funds Welcome</strong></p>
+                    <p style="font-size: 1.1rem; color: white; margin: 1.5rem 0; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">
+                        This is not a bet, this is a Contractual Income Instrument designed for capital preservation and yield
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 2rem; margin: 3rem 0; flex-wrap: wrap;">
+                        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 1.5rem; text-align: center; min-width: 180px;">
+                            <span style="display: block; font-family: 'Playfair Display', serif; font-size: 2rem; color: white; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">13.22%</span>
+                            <span style="display: block; font-size: 0.85rem; color: white; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; opacity: 0.9;">APY Paid Out Monthly</span>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 1.5rem; text-align: center; min-width: 180px;">
+                            <span style="display: block; font-family: 'Playfair Display', serif; font-size: 2rem; color: white; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">$100K</span>
+                            <span style="display: block; font-size: 0.85rem; color: white; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; opacity: 0.9;">Minimum Investment</span>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 1.5rem; text-align: center; min-width: 180px;">
+                            <span style="display: block; font-family: 'Playfair Display', serif; font-size: 2rem; color: white; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">MONTHLY</span>
+                            <span style="display: block; font-size: 0.85rem; color: white; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; opacity: 0.9;">Paid out MONTHLY</span>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 1.5rem; text-align: center; min-width: 180px;">
+                            <span style="display: block; font-family: 'Playfair Display', serif; font-size: 2rem; color: white; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">3-Year</span>
+                            <span style="display: block; font-size: 0.85rem; color: white; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; opacity: 0.9;">Investment Term</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.8); margin-top: 2rem; line-height: 1.4; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">
+                        <em>Important: An investment in Sceptyr Opal Fund LLC investment units, including projected loss of principal. Your consultation with licensed-liquidity Full details in the Private Placement Memorandum (PPM).</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="metrics-section">
+        <div class="metrics-container">
+            <div class="section-label">Track Record</div>
+            <h2 class="story-headline">Results Speak Quietly</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-number">$50M+</span>
+                    <span class="metric-label">Protected Insurance Capital</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">$60M+</span>
+                    <span class="metric-label">M&A Deals</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">250+</span>
+                    <span class="metric-label">Families Served</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">98%</span>
+                    <span class="metric-label">Client Retention</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section id="approach" class="approach-section">
+        <div class="story-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center;">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: white; margin-bottom: 2rem;">Why The Opal Fund Outperforms</h2>
+                <p style="text-align: center; margin-bottom: 4rem; font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto; color: white;">
+                    Compare our 13.22% contracted returns against traditional investment options. 
+                    See why sophisticated investors choose predictable income over market volatility.
+                </p>
+                
+                <div class="investment-comparison-table" style="overflow-x: auto; margin: 3rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(7, 48, 93, 0.1);">
+                        <thead>
+                            <tr style="background: var(--primary-blue); color: var(--white);">
+                                <th style="padding: 1.5rem 1rem; text-align: left; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600;">Investment Type</th>
+                                <th style="padding: 1.5rem 1rem; text-align: center; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600;">Typical Annual Yield/Return (Jan 2026)</th>
+                                <th style="padding: 1.5rem 1rem; text-align: center; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600;">Key Drawbacks</th>
+                                <th style="padding: 1.5rem 1rem; text-align: center; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; background: rgba(216, 191, 149, 0.2);">Why Our Fund is Superior</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: var(--light-beige);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--primary-blue);">High-Yield Savings Accounts</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">Up to 5.00% APY</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">Variable rates; no lock-in</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">Over 2.6x higher yield + contracted monthly income</td>
+                            </tr>
+                            <tr style="background: var(--white);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--primary-blue);">Money Market Accounts/Funds</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">Up to 4.10% APY</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">Lower yields; rate fluctuations</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">3x+ higher + predictable payouts</td>
+                            </tr>
+                            <tr style="background: var(--light-beige);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--primary-blue);">Certificates of Deposit (3-Year)</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">Up to 4.05% APY</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">Locked funds; early penalties</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">3x+ higher + private equity-backed structure</td>
+                            </tr>
+                            <tr style="background: var(--white);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--primary-blue);">U.S. Treasury Bonds (3-Year)</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">~4.0-4.2%</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">Low risk-free returns</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">3x higher with enhanced yield potential</td>
+                            </tr>
+                            <tr style="background: var(--light-beige);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--primary-blue);">Investment-Grade Corporate Bonds (AAA)</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">~5.4%</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">Moderate yields; interest rate risk</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">2.4x higher + monthly cash flow</td>
+                            </tr>
+                            <tr style="background: var(--white);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--primary-blue);">High-Yield (Junk) Bonds</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">7-9% (estimated)</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">Higher default risk; volatility</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">Higher contracted yield with fixed-income stability</td>
+                            </tr>
+                            <tr style="background: var(--light-beige);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--primary-blue);">S&P 500 Stocks/Index Funds</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">~1.1% dividend yield (~10% long-term total return)</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">High volatility; no guaranteed income</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;"><strong>Stable 13.22% vs. market swings; reliable monthly distributions</strong></td>
+                            </tr>
+                            <tr style="background: var(--white);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--primary-blue);">Mutual Funds/ETFs (Broad)</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">Varies; ~4-10% avg.</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">Fees; market exposure</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">Superior fixed yield + income focus</td>
+                            </tr>
+                            <tr style="background: var(--light-beige);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--primary-blue);">Real Estate/REITs</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">4-6% dividends + appreciation</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">Illiquidity; market/recession risk, Tenant Risks</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">Higher yield + defined 3-year term, No Tenants</td>
+                            </tr>
+                            <tr style="background: var(--white);">
+                                <td style="padding: 1rem; font-weight: 600; color: var(--primary-blue);">Annuities (Fixed)</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">4-6%</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--medium-gray);">Low liquidity; fees</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">2-3x higher contracted returns</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(7, 48, 93, 0.05); border-radius: 12px; border-left: 4px solid var(--secondary-beige); max-width: 800px; margin-left: auto; margin-right: auto;">
+                    <p style="font-size: 1.1rem; color: white; font-weight: 600; margin-bottom: 1rem;">
+                        <strong>The Opal Fund delivers 13.22% contracted APY with monthly distributions</strong>
+                    </p>
+                    <p style="color: white; font-size: 0.95rem; margin-bottom: 2rem;">
+                        While others offer variables and volatility, we provide certainty and superior returns backed by contractual guarantees.
+                    </p>
+                    <a href="services.html" style="display: inline-block; background: transparent; color: white; border: 2px solid var(--secondary-beige); padding: 0.8rem 1.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; transition: all 0.3s ease; font-size: 0.85rem; border-radius: 5px; font-family: 'Montserrat', sans-serif;">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Have Done Section -->
+    <section id="what-we-have-done" class="what-we-have-done-section">
+        <div class="story-container">
+            <div class="story-intro">
+                <div class="section-label">Track Record</div>
+                <h2 class="story-headline">What We Have Done</h2>
+                <p class="story-lead">
+                    Our results speak through the families and enterprises we've helped achieve financial sovereignty. 
+                    Each relationship represents years of strategic partnership and measurable success.
+                </p>
+            </div>
+            
+            <div class="accomplishments-grid">
+                <div class="accomplishment-card">
+                    <div class="accomplishment-image" style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=200&fit=crop');"></div>
+                    <h3>Legacy Structuring</h3>
+                    <p>Established multi-generational trust structures for 40+ families, preserving $1.2B+ in wealth transfer while minimizing tax impact by an average of 65%.</p>
+                </div>
+                
+                <div class="accomplishment-card">
+                    <div class="accomplishment-image" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=200&fit=crop');"></div>
+                    <h3>Alternative Investments</h3>
+                    <p>Secured access to exclusive hedge fund opportunities delivering 12-18% annual returns for qualified investors over 5-year periods.</p>
+                </div>
+                
+                <div class="accomplishment-card">
+                    <div class="accomplishment-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=200&fit=crop');"></div>
+                    <h3>Business Optimization</h3>
+                    <p>Restructured 25+ businesses for optimal tax efficiency and succession planning, increasing enterprise value by average of 35%.</p>
+                </div>
+                
+                <div class="accomplishment-card">
+                    <div class="accomplishment-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop');"></div>
+                    <h3>Strategic Planning</h3>
+                    <p>Developed comprehensive wealth strategies resulting in 400% growth for families starting with $2-5M in assets over 10-year periods.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creativity in Service Section -->
+    <section class="creativity-section">
+        <div class="approach-container">
+            <div class="approach-content">
+                <div class="approach-text">
+                    <div class="section-label" style="color: var(--secondary-beige);">Innovation</div>
+                    <h2>Creativity in Service of Our Clients</h2>
+                    <p>
+                        Traditional wealth management follows predictable patterns. We create custom solutions 
+                        that others haven't considered—because exceptional circumstances require exceptional thinking.
+                    </p>
+                    <p>
+                        Whether structuring cross-border wealth transfers, accessing emerging market opportunities, 
+                        or designing tax-advantaged investment vehicles, our creativity serves one purpose: 
+                        your financial success.
+                    </p>
+                </div>
+                <div class="creativity-examples">
+                    <div class="creativity-card">
+                        <h4>Private Market Access</h4>
+                        <p>Exclusive partnerships with premier funds typically available only to institutional investors</p>
+                    </div>
+                    <div class="creativity-card">
+                        <h4>Custom Structures</h4>
+                        <p>Bespoke legal and financial architectures designed for your specific wealth goals</p>
+                    </div>
+                    <div class="creativity-card">
+                        <h4>Global Strategies</h4>
+                        <p>International wealth optimization leveraging jurisdictions most beneficial to your situation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activism Section -->
+    <section class="activism-section">
+        <div class="story-container">
+            <div class="story-intro">
+                <div class="section-label">Our Mission</div>
+                <h2 class="story-headline">Activism Through Access</h2>
+                <p class="story-lead">
+                    We believe extraordinary wealth creation shouldn't be reserved for those who inherit privilege. 
+                    Our activism is practical: opening doors that traditional institutions keep closed.
+                </p>
+            </div>
+            
+            <div class="activism-content">
+                <div class="activism-pillar">
+                    <h3>Democratizing Sophisticated Finance</h3>
+                    <p>Making institutional-quality strategies available to driven individuals regardless of their starting point. If you have the vision and commitment, we provide the access.</p>
+                </div>
+                
+                <div class="activism-pillar">
+                    <h3>Education as Empowerment</h3>
+                    <p>Knowledge transfer that extends beyond portfolio management. We teach the frameworks wealthy families use to think about money, risk, and opportunity.</p>
+                </div>
+                
+                <div class="activism-pillar">
+                    <h3>Challenging Industry Norms</h3>
+                    <p>Questioning why certain investments, strategies, and opportunities remain exclusive. Our role is to expand what's possible for serious wealth builders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FROM WEALTH BUILDERS Section -->
+    <section class="from-wealth-builders-section">
+        <div class="story-container">
+            <div class="entrepreneur-header">
+                <h2>FROM WEALTH BUILDERS FOR WEALTH BUILDERS</h2>
+                <p>Strategic insights and proven strategies from those who've walked the path to financial sovereignty</p>
+            </div>
+            
+            <div class="entrepreneur-grid">
+                <!-- Featured Post -->
+                <div class="entrepreneur-card featured">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop');">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">FEATURED INSIGHT</span>
+                        <h3>Building Generational Wealth: A Blueprint for Success</h3>
+                        <p>How successful families create lasting financial legacies that span multiple generations, featuring exclusive strategies from our wealth advisors.</p>
+                        <a href="resources-media.html" class="card-link">READ MORE →</a>
+                    </div>
+                </div>
+
+                <!-- Top Row - Single Card -->
+                <div class="entrepreneur-card">
+                    <div class="card-content">
+                        <span class="card-category">INVESTMENT PSYCHOLOGY</span>
+                        <h3>The Wealth Mindset: Cognitive Patterns of the Ultra-Rich</h3>
+                        <p>Harvard Business School research reveals the 7 cognitive biases that separate billionaires from millionaires. How mental models around risk, time horizons, and opportunity recognition create exponential wealth gaps.</p>
+                        <a href="psychology-of-wealth.html" class="card-link">READ MORE →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Row - Three Cards -->
+            <div class="entrepreneur-grid">
+                <div class="entrepreneur-card with-image">
+                    <div class="card-image-small" style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&h=300&fit=crop');"></div>
+                    <div class="card-content">
+                        <span class="card-category">MARKET ANALYSIS</span>
+                        <h3>2026 Wealth Outlook: Navigating Unprecedented Opportunities</h3>
+                        <p>Expert insights into emerging market trends, investment opportunities, and strategic wealth positioning for the year ahead.</p>
+                        <a href="2026-wealth-outlook.html" class="card-link">READ MORE →</a>
+                    </div>
+                </div>
+
+                <div class="entrepreneur-card with-image">
+                    <div class="card-image-small" style="background-image: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=300&fit=crop');"></div>
+                    <div class="card-content">
+                        <span class="card-category">SUCCESS STORY</span>
+                        <h3>From $2M to $10M: The Richardson Family Wealth Acceleration</h3>
+                        <p>How a tech executive couple leveraged private equity co-investments, qualified small business stock strategies, and strategic debt structuring to achieve 400% portfolio growth in 7 years.</p>
+                        <a href="case-study-400-growth.html" class="card-link">READ MORE →</a>
+                    </div>
+                </div>
+
+                <div class="entrepreneur-card with-image">
+                    <div class="card-image-small" style="background: linear-gradient(135deg, var(--primary-blue) 0%, #04213e 100%); display: flex; align-items: center; justify-content: center;">
+                        <div style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: var(--white);">SCEPTYR</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">COMPANY NEWS</span>
+                        <h3>Sceptyr Officially Launches to Redefine White-Glove Wealth Management</h3>
+                        <p>Revolutionary wealth management firm introduces institutional-quality service model designed exclusively for the modern ultra-affluent.</p>
+                        <a href="service-expansion-press.html" class="card-link">READ MORE →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="entrepreneur-cta">
+                <a href="resources-media.html" class="view-all-btn">VIEW ALL INSIGHTS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Ready to Begin?</h2>
+            <p>
+                If you've read this far, you likely understand what we do and why it matters. 
+                The next step is a conversation about how these principles apply to your specific situation.
+            </p>
+            <a href="contact-us.html" class="contact-cta">Start the Conversation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3><span class="blue-letters">SCEPT</span><span class="silver-y">Y</span><span class="blue-letters">R</span></h3>
+                    <p>Helping driven individuals and families build lasting legacies through sophisticated wealth management strategies. Your partner in financial sovereignty since 2008.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" title="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" title="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" title="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact-us.html">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Information</h4>
+                    <div class="company-info">
+                        <p><strong>Email:</strong> info@sceptyr.com</p>
+                        <p><strong>Phone:</strong> (833) 865-4647</p>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Location & Hours</h4>
+                    <div class="company-info">
+                        <p><strong>Headquarters:</strong> 1904 Longmire Rd Bldg 300, Conroe, TX 77304</p>
+                        <p><strong>Business Hours:</strong><br>
+                        Monday - Friday: 8:00 AM - 6:00 PM CST</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© 2026 Sceptyr. All rights reserved.</div>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="disclosures.html">Disclosures</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        }
+
+    </script>
 </body>
 </html>
