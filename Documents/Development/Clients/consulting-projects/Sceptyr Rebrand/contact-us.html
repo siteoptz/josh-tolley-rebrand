@@ -742,7 +742,7 @@
 
                 <div class="contact-form">
                     <h3>Schedule a Consultation</h3>
-                    <form action="https://formsubmit.co/antonio@siteoptz.com" method="POST">
+                    <form action="/api/form-submission" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">First Name *</label>
@@ -803,11 +803,7 @@
                             <textarea id="message" name="message" placeholder="Please describe your current financial situation, goals, and what you hope to accomplish through our partnership."></textarea>
                         </div>
 
-                        <!-- FormSubmit configuration -->
-                        <input type="hidden" name="_subject" value="New Consultation Request from Sceptyr Website">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_cc" value="info@sceptyr.com">
+                        <!-- Monday.com integration via serverless function -->
 
                         <button type="submit" class="submit-button">Request Consultation</button>
                     </form>
@@ -1011,7 +1007,9 @@
         });
 
         // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
+        document.querySelector('form').addEventListener('submit', async function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
@@ -1030,15 +1028,44 @@
             });
             
             if (!isValid) {
-                e.preventDefault();
                 alert('Please fill in all required fields.');
                 return false;
             }
             
-            // Show thank you message immediately
-            alert('Thank you for your interest, one of our specialized team members will contact you within 2-4 hours.');
+            // Show loading state
+            const submitButton = this.querySelector('.submit-button');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Submitting...';
+            submitButton.disabled = true;
             
-            // Allow form to submit naturally to FormSubmit
+            try {
+                // Submit to our API endpoint
+                const response = await fetch('/api/form-submission', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    // Success - show thank you message
+                    alert('Thank you for your interest! Your information has been submitted to our team and you will be contacted within 2-4 hours.');
+                    
+                    // Reset form
+                    this.reset();
+                } else {
+                    throw new Error('Submission failed');
+                }
+                
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('There was an error submitting your form. Please try again or contact us directly at info@sceptyr.com');
+            } finally {
+                // Restore button state
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
         });
 
     </script>
