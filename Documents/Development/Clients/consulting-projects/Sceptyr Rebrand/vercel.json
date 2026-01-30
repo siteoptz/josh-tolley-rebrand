@@ -1,12 +1,112 @@
 {
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/sceptyr-staging.html"
+      "source": "/our-story",
+      "destination": "/our-story.html"
     },
     {
-      "source": "/sceptyr-staging",
-      "destination": "/sceptyr-staging.html"
+      "source": "/services",
+      "destination": "/services.html"
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact-us.html"
+    },
+    {
+      "source": "/investment-opportunities",
+      "destination": "/investment-opportunities.html"
+    },
+    {
+      "source": "/legacy-protection",
+      "destination": "/legacy-protection.html"
+    },
+    {
+      "source": "/strategic-insurance",
+      "destination": "/strategic-insurance.html"
+    },
+    {
+      "source": "/business-ma",
+      "destination": "/business-ma.html"
+    },
+    {
+      "source": "/balance-sheet-services",
+      "destination": "/balance-sheet-services.html"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy.html"
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms-of-service.html"
+    },
+    {
+      "source": "/disclosures",
+      "destination": "/disclosures.html"
+    },
+    {
+      "source": "/resources-media",
+      "destination": "/resources-media.html"
+    },
+    {
+      "source": "/advisory-services",
+      "destination": "/advisory-services.html"
+    },
+    {
+      "source": "/brokerage-services",
+      "destination": "/brokerage-services.html"
+    },
+    {
+      "source": "/financial-services",
+      "destination": "/financial-services.html"
+    },
+    {
+      "source": "/equity-partnerships",
+      "destination": "/equity-partnerships.html"
+    },
+    {
+      "source": "/moneyworks",
+      "destination": "/moneyworks.html"
+    },
+    {
+      "source": "/2026-wealth-outlook",
+      "destination": "/2026-wealth-outlook.html"
+    },
+    {
+      "source": "/alternative-investment-podcast",
+      "destination": "/alternative-investment-podcast.html"
+    },
+    {
+      "source": "/alternative-investment-research",
+      "destination": "/alternative-investment-research.html"
+    },
+    {
+      "source": "/business-exit-podcast",
+      "destination": "/business-exit-podcast.html"
+    },
+    {
+      "source": "/case-study-400-growth",
+      "destination": "/case-study-400-growth.html"
+    },
+    {
+      "source": "/generational-wealth-transfer",
+      "destination": "/generational-wealth-transfer.html"
+    },
+    {
+      "source": "/psychology-of-wealth",
+      "destination": "/psychology-of-wealth.html"
+    },
+    {
+      "source": "/service-expansion-press",
+      "destination": "/service-expansion-press.html"
+    },
+    {
+      "source": "/tax-efficient-video",
+      "destination": "/tax-efficient-video.html"
+    },
+    {
+      "source": "/sceptyr-narrative-focused",
+      "destination": "/sceptyr-narrative-focused.html"
     }
   ]
 }
