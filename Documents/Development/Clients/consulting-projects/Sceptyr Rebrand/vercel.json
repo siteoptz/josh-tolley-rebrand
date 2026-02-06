@@ -107,6 +107,10 @@
     {
       "source": "/sceptyr-narrative-focused",
       "destination": "/sceptyr-narrative-focused.html"
+    },
+    {
+      "source": "/sms-terms",
+      "destination": "/sms-terms.html"
     }
   ]
 }
