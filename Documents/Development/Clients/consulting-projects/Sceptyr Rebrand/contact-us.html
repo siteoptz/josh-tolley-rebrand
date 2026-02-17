@@ -813,9 +813,9 @@
 
                         <div class="form-group" style="margin-bottom: 1.5rem;">
                             <div class="sms-consent-container" style="display: flex; align-items: flex-start; gap: 0.75rem;">
-                                <input type="checkbox" id="smsConsent" name="smsConsent" style="margin-top: 0.25rem; min-width: 18px; height: 18px;">
+                                <input type="checkbox" id="smsConsent" name="smsConsent" required style="margin-top: 0.25rem; min-width: 18px; height: 18px;">
                                 <label for="smsConsent" style="font-size: 0.9rem; line-height: 1.5; color: var(--dark-gray); font-weight: 400; cursor: pointer;">
-                                    By checking this box, you agree to receive text messages from us related to our services at the phone number provided above. The number of messages you receive will vary based on the nature of the communication. Message and data rates may apply. Also, you can get HELP at (833) 865-4647. You can reply STOP to opt-out of SMS messages. Please check or Visit <a href="https://sceptyr.com/privacy-policy" style="color: var(--primary-blue); text-decoration: underline;">https://sceptyr.com/privacy-policy</a> for privacy policy and <a href="https://www.sceptyr.com/terms-of-service" style="color: var(--primary-blue); text-decoration: underline;">https://www.sceptyr.com/terms-of-service</a> for Terms of Service.
+                                    By checking this box, you agree to receive text messages from us related to our services at the phone number provided above. The number of messages you receive will vary based on the nature of the communication. Message and data rates may apply. Also, you can get HELP at (833) 865-4647. You can reply STOP to opt-out of SMS messages. Please check or Visit <a href="https://sceptyr.com/privacy-policy" style="color: var(--primary-blue); text-decoration: underline;">https://sceptyr.com/privacy-policy</a> for privacy policy and <a href="https://www.sceptyr.com/terms-of-service" style="color: var(--primary-blue); text-decoration: underline;">https://www.sceptyr.com/terms-of-service</a> for Terms of Service. *
                                 </label>
                             </div>
                         </div>
@@ -1084,8 +1084,19 @@
                 }
             });
             
+            // Validate SMS consent checkbox
+            const smsConsent = document.getElementById('smsConsent');
+            if (!smsConsent.checked) {
+                isValid = false;
+                smsConsent.parentElement.style.borderColor = 'red';
+                smsConsent.parentElement.style.border = '2px solid red';
+            } else {
+                smsConsent.parentElement.style.borderColor = 'rgba(7, 48, 93, 0.1)';
+                smsConsent.parentElement.style.border = '1px solid rgba(7, 48, 93, 0.1)';
+            }
+            
             if (!isValid) {
-                alert('Please fill in all required fields.');
+                alert('Please fill in all required fields and agree to SMS communications.');
                 return false;
             }
             
