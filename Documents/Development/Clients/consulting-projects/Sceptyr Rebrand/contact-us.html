@@ -787,7 +787,7 @@
                     </div>
                 </div>
 
-                <div class="contact-form">
+                <div class="contact-form" id="contact-form">
                     <h3>Schedule a Consultation</h3>
                     <form action="/api/form-submission" method="POST">
                         <div class="form-row">
@@ -939,7 +939,7 @@
                     The journey to true financial sovereignty starts with a single conversation. 
                     Let's discuss how our sophisticated approach to wealth building can serve your specific goals.
                 </p>
-                <a href="mailto:info@sceptyr.com" class="cta-button">Start the Conversation</a>
+                <a href="#contact-form" class="cta-button" onclick="scrollToForm()">Start the Conversation</a>
             </div>
         </div>
     </section>
@@ -1125,6 +1125,25 @@
                 submitButton.disabled = false;
             }
         });
+
+        // Scroll to contact form function
+        function scrollToForm() {
+            event.preventDefault();
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Focus on the first input field after scrolling
+                setTimeout(() => {
+                    const firstInput = contactForm.querySelector('input');
+                    if (firstInput) {
+                        firstInput.focus();
+                    }
+                }, 500);
+            }
+        }
 
     </script>
 </body>
