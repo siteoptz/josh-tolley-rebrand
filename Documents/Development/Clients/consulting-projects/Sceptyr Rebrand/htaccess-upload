@@ -1,0 +1,66 @@
+RewriteEngine On
+
+# Redirect non-www to www
+RewriteCond %{HTTP_HOST} ^sceptyr\.com$ [NC]
+RewriteRule ^(.*)$ https://www.sceptyr.com/$1 [R=301,L]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Clean URL redirects for all pages
+RewriteRule ^our-story/?$ /our-story.html [L]
+RewriteRule ^services/?$ /services.html [L]
+RewriteRule ^contact-us/?$ /contact-us.html [L]
+RewriteRule ^investment-opportunities/?$ /investment-opportunities.html [L]
+RewriteRule ^legacy-protection/?$ /legacy-protection.html [L]
+RewriteRule ^strategic-insurance/?$ /strategic-insurance.html [L]
+RewriteRule ^business-ma/?$ /business-ma.html [L]
+RewriteRule ^balance-sheet-services/?$ /balance-sheet-services.html [L]
+RewriteRule ^privacy-policy/?$ /privacy-policy.html [L]
+RewriteRule ^terms-of-service/?$ /terms-of-service.html [L]
+RewriteRule ^disclosures/?$ /disclosures.html [L]
+RewriteRule ^resources-media/?$ /resources-media.html [L]
+RewriteRule ^advisory-services/?$ /advisory-services.html [L]
+RewriteRule ^brokerage-services/?$ /brokerage-services.html [L]
+RewriteRule ^financial-services/?$ /financial-services.html [L]
+RewriteRule ^equity-partnerships/?$ /equity-partnerships.html [L]
+RewriteRule ^moneyworks/?$ /moneyworks.html [L]
+RewriteRule ^2026-wealth-outlook/?$ /2026-wealth-outlook.html [L]
+RewriteRule ^alternative-investment-podcast/?$ /alternative-investment-podcast.html [L]
+RewriteRule ^alternative-investment-research/?$ /alternative-investment-research.html [L]
+RewriteRule ^business-exit-podcast/?$ /business-exit-podcast.html [L]
+RewriteRule ^case-study-400-growth/?$ /case-study-400-growth.html [L]
+RewriteRule ^generational-wealth-transfer/?$ /generational-wealth-transfer.html [L]
+RewriteRule ^psychology-of-wealth/?$ /psychology-of-wealth.html [L]
+RewriteRule ^service-expansion-press/?$ /service-expansion-press.html [L]
+RewriteRule ^tax-efficient-video/?$ /tax-efficient-video.html [L]
+RewriteRule ^sceptyr-narrative-focused/?$ /sceptyr-narrative-focused.html [L]
+
+# Security headers
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+Header always set X-XSS-Protection "1; mode=block"
+
+# Compress files for better performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# Cache static files
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+</IfModule>

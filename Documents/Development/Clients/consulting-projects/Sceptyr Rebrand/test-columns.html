@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monday.com Column Discovery</title>
+</head>
+<body>
+    <h2>Monday.com Column Discovery</h2>
+    <button onclick="discoverColumns()">Get Column IDs</button>
+    <pre id="results"></pre>
+    
+    <script>
+    async function discoverColumns() {
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.textContent = 'Loading...';
+        
+        try {
+            const response = await fetch('https://www.sceptyr.com/form-handler-browser-debug.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    action: 'discover_columns'
+                })
+            });
+            
+            const data = await response.json();
+            resultsDiv.textContent = JSON.stringify(data, null, 2);
+        } catch (error) {
+            resultsDiv.textContent = 'Error: ' + error.message;
+        }
+    }
+    </script>
+</body>
+</html>

@@ -27,10 +27,14 @@ export default async function handler(req, res) {
     const mondayResult = await createMondayItem(formData, MONDAY_API_TOKEN, BOARD_ID);
     console.log('Monday.com result:', mondayResult);
     
-    // Temporarily disable email notifications to prevent Monday.com duplication
-    // The PHP email handler also submits to Monday.com, causing duplicates
-    let emailStatus = 'disabled to prevent duplication';
-    console.log('Email notifications temporarily disabled to prevent Monday.com duplication');
+    // Send email notifications using email-only handler (no Monday.com duplication)
+    let emailStatus = 'success';
+    try {
+      await sendEmailNotifications(formData);
+    } catch (emailError) {
+      console.error('Email error:', emailError);
+      emailStatus = 'failed';
+    }
     
     return res.status(200).json({ 
       success: true,
@@ -42,8 +46,12 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error('Form submission error:', error);
     
-    // Email notifications disabled to prevent Monday.com duplication
-    console.log('Email fallback skipped to prevent Monday.com duplication');
+    // Try to send email even if Monday.com fails
+    try {
+      await sendEmailNotifications(req.body);
+    } catch (emailError) {
+      console.error('Email fallback failed:', emailError);
+    }
     
     return res.status(500).json({ 
       error: 'Error processing form submission',
@@ -117,12 +125,11 @@ async function createMondayItem(formData, apiToken, boardId) {
 }
 
 async function sendEmailNotifications(formData) {
-  const { firstName, lastName, email, phone, netWorth, accredited, interest, message } = formData;
+  const { firstName, lastName, email, phone, netWorth, accredited, interest, message, smsConsent } = formData;
   
-  // Use a PHP email handler that ONLY sends emails, not Monday.com submissions
-  // We need to create a separate email-only handler to avoid duplicate Monday.com submissions
+  // Use email-only PHP handler that ONLY sends emails (no Monday.com submissions)
   try {
-    const response = await fetch('https://f0h.ab3.myftpupload.com/email-only-handler.php', {
+    const response = await fetch('https://f0h.ab3.myftpupload.com/form-handler.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -135,22 +142,29 @@ async function sendEmailNotifications(formData) {
         netWorth,
         accredited,
         interest,
-        message
+        message,
+        smsConsent,
+        emailOnly: true  // Tell PHP handler to skip Monday.com submission
       })
     });
 
     if (response.ok) {
       const result = await response.json();
       console.log('Email-only handler result:', result);
-      return true;
+      
+      // Check if emails were sent successfully
+      if (result.results?.email_result?.success) {
+        console.log('Emails sent successfully via email-only handler');
+        return true;
+      } else {
+        console.log('Email-only handler reported failure:', result.results?.email_result);
+        throw new Error('Email-only handler failed');
+      }
     } else {
-      // If email-only handler doesn't exist, skip email for now to prevent Monday.com duplication
-      console.log('Email-only handler not available, skipping email to prevent Monday.com duplication');
-      return true;
+      throw new Error(`Email server returned ${response.status}`);
     }
   } catch (error) {
     console.error('Email notification failed:', error);
-    // Don't throw error to prevent form submission failure due to email issues
-    return false;
+    throw new Error('Email notification failed');
   }
 }

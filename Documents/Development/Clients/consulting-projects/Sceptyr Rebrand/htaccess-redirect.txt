@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Redirect non-www to www
+RewriteCond %{HTTP_HOST} ^sceptyr\.com$ [NC]
+RewriteRule ^(.*)$ https://www.sceptyr.com/$1 [R=301,L]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
