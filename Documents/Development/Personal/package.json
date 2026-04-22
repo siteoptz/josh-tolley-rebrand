@@ -1,0 +1,17 @@
+{
+  "name": "personal-development",
+  "version": "1.0.0",
+  "description": "Personal development workspace for experiments and projects",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "echo \"Add linting when needed\"",
+    "build": "echo \"Add build process when needed\""
+  },
+  "keywords": ["personal", "development", "workspace"],
+  "author": "siteoptz",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
