@@ -19,14 +19,57 @@ export default async function handler(req, res) {
     const formData = req.body;
     console.log('Form data received:', formData);
     
-    // Verify reCAPTCHA
-    if (!formData.recaptcha) {
-      return res.status(400).json({ error: 'reCAPTCHA verification required' });
+    // ABSOLUTE HARD BLOCK - NO EXCEPTIONS
+    if (!formData.recaptcha || formData.recaptcha.length < 100) {
+      console.error('BLOCKED: No valid reCAPTCHA token provided');
+      return res.status(403).json({ 
+        error: 'BLOCKED: reCAPTCHA verification required. This submission has been rejected.',
+        blocked: true
+      });
     }
     
-    const recaptchaValid = await verifyRecaptcha(formData.recaptcha);
-    if (!recaptchaValid) {
-      return res.status(400).json({ error: 'reCAPTCHA verification failed. Please try again.' });
+    console.log('Attempting reCAPTCHA verification...');
+    const recaptchaResult = await verifyRecaptcha(formData.recaptcha);
+    
+    // Reasonable verification check - Allow most legitimate users through
+    if (!recaptchaResult || !recaptchaResult.valid) {
+      console.error('BLOCKED: reCAPTCHA verification failed');
+      return res.status(403).json({ 
+        error: 'BLOCKED: reCAPTCHA verification failed. Please try refreshing the page.',
+        blocked: true,
+        reason: recaptchaResult?.reason || 'Verification failed'
+      });
+    }
+    
+    // Only block extremely low scores (obvious bots)
+    if (recaptchaResult.score < 0.3) {
+      console.error('BLOCKED: Very low reCAPTCHA score');
+      return res.status(403).json({ 
+        error: 'BLOCKED: Automated submission detected. Please try again.',
+        blocked: true,
+        score: recaptchaResult.score
+      });
+    }
+    
+    console.log('reCAPTCHA verification PASSED with score:', recaptchaResult.score);
+    
+    // LIGHT BOT DETECTION - Only check for very obvious bot patterns
+    const obviousBotPatterns = [
+      /test\s*bot/i,
+      /aaaaaa.*bbbbbb.*cccccc/i,
+      /@(test|fake|spam)\./i
+    ];
+    
+    const formText = JSON.stringify(formData).toLowerCase();
+    for (const pattern of obviousBotPatterns) {
+      if (pattern.test(formText)) {
+        console.error('BLOCKED: Obvious bot pattern detected:', pattern);
+        return res.status(403).json({ 
+          error: 'BLOCKED: Suspicious content detected. Please use genuine information.',
+          blocked: true,
+          pattern: pattern.toString()
+        });
+      }
     }
     
     // Monday.com configuration
@@ -135,9 +178,17 @@ async function createMondayItem(formData, apiToken, boardId) {
 }
 
 async function verifyRecaptcha(token) {
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY || '6LeB5sQsAAAAAKrSwpvXgHSx-PsIrbwk2VyQtuQZ'; // Production secret key
+  const secretKey = '6LeB5sQsAAAAAKrSwpvXgHSx-PsIrbwk2VyQtuQZ';
+  
+  console.log('STRICT reCAPTCHA verification starting...');
+  
+  if (!token || token.length < 100) {
+    console.error('FAILED: Invalid or missing token');
+    return { valid: false, reason: 'Invalid token', score: 0 };
+  }
   
   try {
+    // ONLY use standard reCAPTCHA API - no fallbacks, no enterprise complexity
     const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
       method: 'POST',
       headers: {
@@ -146,13 +197,39 @@ async function verifyRecaptcha(token) {
       body: `secret=${secretKey}&response=${token}`
     });
     
-    const result = await response.json();
-    console.log('reCAPTCHA verification result:', result);
+    if (!response.ok) {
+      console.error('FAILED: API request failed');
+      return { valid: false, reason: 'API request failed', score: 0 };
+    }
     
-    return result.success;
+    const result = await response.json();
+    console.log('reCAPTCHA API result:', result);
+    
+    // STRICT VALIDATION - must pass all checks
+    if (!result.success) {
+      console.error('FAILED: reCAPTCHA not successful:', result['error-codes']);
+      return { valid: false, reason: `API error: ${result['error-codes']?.join(', ')}`, score: 0 };
+    }
+    
+    // For v3, check score - Use reasonable threshold
+    if (result.score !== undefined) {
+      const score = result.score;
+      const threshold = 0.3; // REASONABLE threshold - allows most humans
+      
+      console.log(`Score check: ${score} >= ${threshold}?`);
+      
+      if (score < threshold) {
+        console.error('FAILED: Score too low');
+        return { valid: false, reason: `Score too low: ${score}`, score: score };
+      }
+    }
+    
+    console.log('SUCCESS: reCAPTCHA verification passed');
+    return { valid: true, reason: 'Verification successful', score: result.score || 1.0 };
+    
   } catch (error) {
-    console.error('reCAPTCHA verification error:', error);
-    return false;
+    console.error('FAILED: Exception in verification:', error);
+    return { valid: false, reason: `Exception: ${error.message}`, score: 0 };
   }
 }
 
