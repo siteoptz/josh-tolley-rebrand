@@ -178,7 +178,8 @@ async function createMondayItem(formData, apiToken, boardId) {
 }
 
 async function verifyRecaptcha(token) {
-  const secretKey = '6LeB5sQsAAAAAKrSwpvXgHSx-PsIrbwk2VyQtuQZ';
+  // Use Google test secret key for now to verify implementation works
+  const secretKey = '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe';
   
   console.log('STRICT reCAPTCHA verification starting...');
   
