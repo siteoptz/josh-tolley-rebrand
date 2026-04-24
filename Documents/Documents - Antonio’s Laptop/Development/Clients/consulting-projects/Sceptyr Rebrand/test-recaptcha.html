@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reCAPTCHA v3 Test</title>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeB5sQsAAAAAOAvk1OSlJ7YigEt7GiV2Di80ONS"></script>
+</head>
+<body>
+    <h1>reCAPTCHA v3 Test</h1>
+    
+    <div id="status"></div>
+    <button onclick="testRecaptcha()">Test reCAPTCHA v3</button>
+    
+    <script>
+        function testRecaptcha() {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = 'Testing reCAPTCHA v3...';
+            
+            grecaptcha.ready(async function() {
+                try {
+                    console.log('Starting reCAPTCHA test...');
+                    
+                    const token = await grecaptcha.execute('6LeB5sQsAAAAAOAvk1OSlJ7YigEt7GiV2Di80ONS', {action: 'test'});
+                    
+                    if (token) {
+                        statusDiv.innerHTML = `✅ SUCCESS: reCAPTCHA v3 working!<br>Token: ${token.substring(0, 50)}...`;
+                        console.log('Full token:', token);
+                    } else {
+                        statusDiv.innerHTML = '❌ FAILED: No token received';
+                    }
+                    
+                } catch (error) {
+                    statusDiv.innerHTML = `❌ ERROR: ${error.message}`;
+                    console.error('reCAPTCHA error:', error);
+                }
+            });
+        }
+        
+        // Test automatically when page loads
+        window.addEventListener('load', function() {
+            setTimeout(testRecaptcha, 1000);
+        });
+    </script>
+</body>
+</html>
