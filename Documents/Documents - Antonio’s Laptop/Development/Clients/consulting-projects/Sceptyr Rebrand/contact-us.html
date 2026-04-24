@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeB5sQsAAAAAOAvk1OSlJ7YigEt7GiV2Di80ONS"></script>
     <style>
         * {
             margin: 0;
@@ -342,12 +342,7 @@
             transform: none;
         }
 
-        /* reCAPTCHA Styling */
-        .recaptcha-container {
-            margin: 2rem 0;
-            display: flex;
-            justify-content: center;
-        }
+        /* reCAPTCHA Enterprise is invisible - no styling needed */
 
         /* SMS Consent Checkbox Styles */
         .sms-consent-container {
@@ -882,10 +877,8 @@
                             <textarea id="message" name="message" placeholder="Please describe your current financial situation, goals, and what you hope to accomplish through our partnership."></textarea>
                         </div>
 
-                        <!-- reCAPTCHA -->
-                        <div class="recaptcha-container">
-                            <div class="g-recaptcha" data-sitekey="6LeB5sQsAAAAAOAvk1OSlJ7YigEt7GiV2Di80ONS"></div>
-                        </div>
+                        <!-- reCAPTCHA Enterprise (invisible) -->
+                        <input type="hidden" id="recaptcha-token" name="recaptcha">
 
                         <!-- Monday.com integration via serverless function -->
 
@@ -1095,19 +1088,45 @@
         document.querySelector('form').addEventListener('submit', async function(e) {
             e.preventDefault(); // Prevent default form submission
             
-            // Validate reCAPTCHA first
-            const recaptchaResponse = grecaptcha.getResponse();
-            if (!recaptchaResponse) {
-                alert('Please complete the reCAPTCHA verification.');
-                return false;
-            }
+            const formElement = this;
             
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Add reCAPTCHA response to form data
-            data.recaptcha = recaptchaResponse;
+            // Get reCAPTCHA token with proper async handling
+            grecaptcha.ready(async function() {
+                try {
+                    console.log('Starting reCAPTCHA verification...');
+                    
+                    const token = await grecaptcha.execute('6LeB5sQsAAAAAOAvk1OSlJ7YigEt7GiV2Di80ONS', {action: 'contact_form'});
+                    console.log('reCAPTCHA token received:', token ? 'Success' : 'Failed');
+                    
+                    if (!token) {
+                        throw new Error('No reCAPTCHA token received');
+                    }
+                    
+                    document.getElementById('recaptcha-token').value = token;
+                    
+                    // Continue with form processing
+                    await processFormSubmission(formElement, token);
+                    
+                } catch (error) {
+                    console.error('reCAPTCHA error:', error);
+                    alert('reCAPTCHA verification failed: ' + error.message);
+                }
+            });
+        });
+        
+        // Separate function to handle form submission
+        async function processFormSubmission(formElement, recaptchaToken) {
+            try {
+                // Get form data
+                const formData = new FormData(formElement);
+                const data = Object.fromEntries(formData);
+                
+                // Ensure reCAPTCHA token is in the data
+                data.recaptcha = recaptchaToken;
+                
+                console.log('Processing form with reCAPTCHA token');
+                console.log('reCAPTCHA token length:', recaptchaToken.length);
+                console.log('reCAPTCHA token preview:', recaptchaToken.substring(0, 50) + '...');
             
             // Validate required fields
             const requiredFields = ['firstName', 'lastName', 'email', 'phone'];
@@ -1133,50 +1152,54 @@
                 smsConsent.parentElement.style.border = '1px solid rgba(7, 48, 93, 0.1)';
             }
             
-            if (!isValid) {
-                alert('Please fill in all required fields and agree to SMS communications.');
-                return false;
-            }
-            
-            // Show loading state
-            const submitButton = this.querySelector('.submit-button');
-            const originalText = submitButton.textContent;
-            submitButton.textContent = 'Submitting...';
-            submitButton.disabled = true;
-            
-            try {
-                // Submit to form handler with reCAPTCHA
-                const response = await fetch('/api/form-submission', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
+                if (!isValid) {
+                    alert('Please fill in all required fields and agree to SMS communications.');
+                    return;
+                }
                 
-                if (response.ok) {
-                    const result = await response.json();
-                    // Success - show thank you message
-                    alert('SUCCESS! ' + result.message);
+                // Show loading state
+                const submitButton = formElement.querySelector('.submit-button');
+                const originalText = submitButton.textContent;
+                submitButton.textContent = 'Submitting...';
+                submitButton.disabled = true;
+                
+                try {
+                    // Submit to form handler with reCAPTCHA
+                    const response = await fetch('/api/form-submission', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
                     
-                    // Reset form and reCAPTCHA
-                    this.reset();
-                    grecaptcha.reset();
-                } else {
-                    throw new Error('Submission failed');
+                    if (response.ok) {
+                        const result = await response.json();
+                        // Success - show thank you message
+                        alert('SUCCESS! ' + result.message);
+                        
+                        // Reset form
+                        formElement.reset();
+                    } else {
+                        const errorText = await response.text();
+                        console.error('Server error:', errorText);
+                        throw new Error('Submission failed: ' + errorText);
+                    }
+                    
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    alert('There was an error submitting your form. Please try again or contact us directly at info@sceptyr.com');
+                } finally {
+                    // Restore button state
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
                 }
                 
             } catch (error) {
-                console.error('Form submission error:', error);
-                alert('There was an error submitting your form. Please try again or contact us directly at info@sceptyr.com');
-                // Reset reCAPTCHA on error
-                grecaptcha.reset();
-            } finally {
-                // Restore button state
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
+                console.error('Process form submission error:', error);
+                alert('Form processing error: ' + error.message);
             }
-        });
+        }
 
         // Scroll to contact form function
         function scrollToForm() {
