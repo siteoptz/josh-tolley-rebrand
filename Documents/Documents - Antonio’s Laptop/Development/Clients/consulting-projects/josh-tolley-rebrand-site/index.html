@@ -100,6 +100,7 @@
 
         .nav-menu {
             display: flex;
+            /* Force horizontal layout */
             list-style: none;
             gap: 2.5rem;
             align-items: center;
@@ -1578,7 +1579,7 @@
                 flex-direction: column;
                 padding: 2rem 0;
                 gap: 0;
-                display: block;
+                display: none;
                 z-index: 999;
                 border-top: 1px solid rgba(216, 191, 149, 0.3);
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -1601,7 +1602,7 @@
             .nav-menu a {
                 font-size: 1.1rem;
                 padding: 0.5rem 0;
-                display: block;
+                display: none;
             }
 
             .mobile-menu-toggle {
@@ -1610,7 +1611,7 @@
             }
 
             .logo h1 {
-                display: block;
+                display: none;
             }
 
             .logo img {
@@ -1741,7 +1742,7 @@
             }
 
             .hero-stats::-webkit-scrollbar {
-                display: block;
+                display: none;
             }
 
             .stat {
