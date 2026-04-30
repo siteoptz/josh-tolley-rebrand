@@ -95,9 +95,6 @@
             font-weight: 700;
         }
 
-            color: var(--accent-gold);
-        }
-
         .nav-menu {
             display: flex;
             /* Force horizontal layout */
@@ -170,7 +167,7 @@
         }
 
         .mobile-menu-toggle {
-            display: block;
+            display: none;
             flex-direction: column;
             gap: 4px;
             cursor: pointer;
@@ -1602,7 +1599,7 @@
             .nav-menu a {
                 font-size: 1.1rem;
                 padding: 0.5rem 0;
-                display: none;
+                display: block;
             }
 
             .mobile-menu-toggle {
@@ -1789,6 +1786,21 @@
             .speaking-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
+            }
+        }
+
+        /* Desktop hard override to prevent accidental mobile stacking */
+        @media (min-width: 769px) {
+            .header .nav-menu {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center;
+                gap: 2.5rem;
+                list-style: none;
+            }
+
+            .header .mobile-menu-toggle {
+                display: none !important;
             }
         }
     </style>
