@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Josh Tolley - Leadership & Vision</title>
+    <meta name="description" content="Learn about Josh Tolley's extensive experience in business, finance, and entrepreneurial leadership spanning over three decades.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-black: #0D0D0D;
+            --accent-gold: #d8bf95;
+            --dark-gold: #c4a878;
+            --rich-black: #000000;
+            --light-gray: #F5F5F5;
+            --medium-gray: #6C757D;
+            --white: #FFFFFF;
+            --charcoal: #2B2B2B;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--primary-black);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Header */
+        .header {
+            background: var(--primary-black);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(216, 191, 149, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+        }
+
+        .logo h1 {
+            color: var(--white);
+            font-size: 1.8rem;
+            display: none;
+        }
+
+        .logo .gold {
+            color: var(--accent-gold);
+        }
+
+        .back-link {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--charcoal) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            color: var(--white);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        /* Executive Profile Section */
+        .executive-section {
+            padding: 6rem 0;
+            background: var(--primary-black);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .executive-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .executive-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .executive-info h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .executive-title {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .executive-bio {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        /* Leadership Stats */
+        .leadership-stats {
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border: 1px solid rgba(216, 191, 149, 0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+
+        /* Experience Timeline */
+        .experience-section {
+            padding: 6rem 0;
+            background: var(--primary-black);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: 2rem 0;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            position: absolute;
+            left: -9px;
+            top: 2.5rem;
+        }
+
+        .timeline-year {
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            color: var(--white);
+            margin: 0.5rem 0;
+        }
+
+        .timeline-desc {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Core Values */
+        .values-section {
+            padding: 6rem 0;
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border: 1px solid rgba(216, 191, 149, 0.1);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-black);
+        }
+
+        .value-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .value-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+
+        .value-desc {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            padding: 4rem 0;
+            background: var(--accent-gold);
+            text-align: center;
+            color: var(--primary-black);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-black);
+            color: var(--white);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--charcoal);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .executive-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .timeline-item {
+                padding-left: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Icon-Gold-Version-PNG.png" alt="Josh Tolley Logo">
+                <h1>Josh <span class="gold">Tolley</span></h1>
+            </div>
+            <a href="index.html" class="back-link">← Back to Main Site</a>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Leadership & Vision</h1>
+                <p class="subtitle">Three decades of transformational business leadership</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="executive-section">
+        <div class="container">
+            <div class="executive-content">
+                <div class="executive-image">
+                    <img src="JT_Cutout2.png" alt="Josh Tolley, Chairman & CEO">
+                </div>
+                <div class="executive-info">
+                    <h2>Josh Tolley</h2>
+                    <p class="executive-title">Chairman & CEO | Business Strategist | Media Personality</p>
+                    
+                    <div class="executive-bio">
+                        <p>With over thirty years of experience in finance and commerce, Josh Tolley has established himself as a globally recognized leader in entrepreneurship and business strategy. As "The Chairman" of Tolley & Company, he oversees an organization with significant business and market transactions.</p>
+                        
+                        <p>Josh brings over fifteen years of expertise exploring social and political issues from a non-partisan perspective, focusing on reason, clarity, and solutions for all areas of life. This unique approach has made him a trusted advisor to everyone from Fortune 500 CEOs to homeschooling entrepreneurs.</p>
+                        
+                        <p>As a 3x Amazon #1 Best-Selling Author and host of The Logical Podcast, Josh continues to expand his reach and impact, providing logical frameworks for success in an increasingly complex business landscape.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="leadership-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">40M+</span>
+                    <span class="stat-label">Podcast Downloads</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Amazon #1 Bestsellers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Top 25</span>
+                    <span class="stat-label">Business Advisor</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Journey</h2>
+                <p>A timeline of leadership, innovation, and transformational business growth</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <h3 class="timeline-title">Chairman & CEO, Tolley & Company</h3>
+                    <p class="timeline-desc">Leading a diverse organization with significant market presence and business transactions across multiple industries.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2020-Present</div>
+                    <h3 class="timeline-title">Host, The Logical Podcast</h3>
+                    <p class="timeline-desc">Expanding reach and impact through logical frameworks for entrepreneurship, with over 40 million downloads worldwide.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2015-Present</div>
+                    <h3 class="timeline-title">Amazon #1 Best-Selling Author</h3>
+                    <p class="timeline-desc">Published three Amazon #1 bestsellers including "Evangelpreneur" and "Acquisitional Wealth," providing practical business wisdom.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2008-Present</div>
+                    <h3 class="timeline-title">Media Personality & Business Advisor</h3>
+                    <p class="timeline-desc">Recognized as Top 25 Business Advisor, providing non-partisan analysis and logical solutions to complex business challenges.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1990s-2000s</div>
+                    <h3 class="timeline-title">Finance & Commerce Leadership</h3>
+                    <p class="timeline-desc">Built foundational expertise in finance and commerce, developing frameworks that would later define his business philosophy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: var(--white);">Core Values & Philosophy</h2>
+                <p style="color: rgba(255,255,255,0.8);">The principles that drive exceptional business leadership</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">
+                        <svg fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Logical Thinking</h3>
+                    <p class="value-desc">Every decision is based on reason, data, and clear logical frameworks that drive sustainable results.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <svg fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Strategic Focus</h3>
+                    <p class="value-desc">Maintaining clarity of purpose and strategic direction in an ever-changing business landscape.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <svg fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Authentic Leadership</h3>
+                    <p class="value-desc">Leading with integrity, transparency, and genuine commitment to empowering others' success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Discover how logical frameworks and strategic thinking can unlock your organization's potential</p>
+            <a href="index.html" class="cta-button">Explore Our Resources</a>
+        </div>
+    </section>
+</body>
+</html>

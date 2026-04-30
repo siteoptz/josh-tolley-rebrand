@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acquisitional Wealth - Josh Tolley</title>
+    <meta name="description" content="Learn how to build wealth through strategic business acquisitions and investments with Josh Tolley's comprehensive guide.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-black: #0D0D0D;
+            --accent-gold: #d8bf95;
+            --dark-gold: #c4a878;
+            --rich-black: #000000;
+            --light-gray: #F5F5F5;
+            --medium-gray: #6C757D;
+            --white: #FFFFFF;
+            --charcoal: #2B2B2B;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .header {
+            background: var(--primary-black);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            color: var(--white);
+            font-size: 1.8rem;
+        }
+
+        .logo .gold {
+            color: var(--accent-gold);
+        }
+
+        .back-link {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--white);
+        }
+
+        .product-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--charcoal) 100%);
+            color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .product-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .product-image {
+            text-align: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-info h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .product-info .subtitle {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .product-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .features {
+            margin: 2rem 0;
+        }
+
+        .features h3 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .price-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--primary-black);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+        }
+
+        .guarantee {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(216, 191, 149, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 8px;
+        }
+
+        .guarantee h4 {
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .product-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .product-info h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Josh <span class="gold">Tolley</span></h1>
+            </div>
+            <a href="index.html" class="back-link">← Back to Main Site</a>
+        </div>
+    </header>
+
+    <section class="product-section">
+        <div class="container">
+            <div class="product-content">
+                <div class="product-image">
+                    <img src="acquisitionalwealth2.png" alt="Acquisitional Wealth Book Cover">
+                </div>
+                <div class="product-info">
+                    <h1>Acquisitional Wealth</h1>
+                    <p class="subtitle">Building Wealth Through Strategic Business Acquisitions</p>
+                    
+                    <div class="product-description">
+                        <p>Discover the secrets to building massive wealth through strategic business acquisitions and investments. Josh Tolley reveals time-tested strategies used by the world's wealthiest individuals to acquire businesses, assets, and investments that generate passive income and long-term financial freedom.</p>
+                        
+                        <p>This comprehensive guide takes you step-by-step through the acquisition process, from identifying opportunities to structuring deals that maximize your returns while minimizing risk.</p>
+                    </div>
+
+                    <div class="features">
+                        <h3>What You'll Learn:</h3>
+                        <ul>
+                            <li>How to identify undervalued acquisition targets</li>
+                            <li>Proven negotiation strategies for better deals</li>
+                            <li>Financing techniques that preserve your capital</li>
+                            <li>Due diligence processes that protect your investments</li>
+                            <li>Post-acquisition optimization for maximum profitability</li>
+                            <li>Building a portfolio of income-generating assets</li>
+                            <li>Tax strategies for acquisition-based wealth building</li>
+                        </ul>
+                    </div>
+
+                    <div class="price-section">
+                        <div class="price">$14.95</div>
+                        <a href="https://www.amazon.com/gp/product/163774482X?tag=randohouseinc7986-20" class="cta-button">Shop Now</a>
+                        
+                        <div class="guarantee">
+                            <h4>30-Day Money-Back Guarantee</h4>
+                            <p>If you're not completely satisfied with your purchase, return it within 30 days for a full refund. No questions asked.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

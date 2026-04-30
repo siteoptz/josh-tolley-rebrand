@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evangelpreneur - Josh Tolley</title>
+    <meta name="description" content="Discover how Biblical Free Enterprise Can Empower Your Faith, Family, and Freedom with Josh Tolley's Amazon #1 Bestseller.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-black: #0D0D0D;
+            --accent-gold: #d8bf95;
+            --dark-gold: #c4a878;
+            --rich-black: #000000;
+            --light-gray: #F5F5F5;
+            --medium-gray: #6C757D;
+            --white: #FFFFFF;
+            --charcoal: #2B2B2B;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .header {
+            background: var(--primary-black);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            color: var(--white);
+            font-size: 1.8rem;
+        }
+
+        .logo .gold {
+            color: var(--accent-gold);
+        }
+
+        .back-link {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--white);
+        }
+
+        .product-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--charcoal) 100%);
+            color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .product-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .product-image {
+            text-align: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .bestseller-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .product-info h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .product-info .subtitle {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .product-info .tagline {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .product-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .features {
+            margin: 2rem 0;
+        }
+
+        .features h3 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .price-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--primary-black);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+        }
+
+        .testimonials {
+            margin: 3rem 0;
+        }
+
+        .testimonials h3 {
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial .author {
+            font-weight: 600;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+        }
+
+        .guarantee {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(216, 191, 149, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 8px;
+        }
+
+        .guarantee h4 {
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .product-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .product-info h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Josh <span class="gold">Tolley</span></h1>
+            </div>
+            <a href="index.html" class="back-link">← Back to Main Site</a>
+        </div>
+    </header>
+
+    <section class="product-section">
+        <div class="container">
+            <div class="product-content">
+                <div class="product-image">
+                    <img src="evangelpreneur2.png" alt="Evangelpreneur Book Cover">
+                </div>
+                <div class="product-info">
+                    <div class="bestseller-badge">🏆 Amazon #1 Bestseller</div>
+                    <h1>Evangelpreneur</h1>
+                    <p class="subtitle">Revised and Expanded Edition</p>
+                    <p class="tagline">How Biblical Free Enterprise Can Empower Your Faith, Family, and Freedom</p>
+                    
+                    <div class="product-description">
+                        <p>In this groundbreaking book, Josh Tolley reveals how Biblical principles and free enterprise work together to create lasting prosperity and freedom. This isn't just another business book—it's a blueprint for aligning your entrepreneurial ventures with God's design for abundance.</p>
+                        
+                        <p>The revised and expanded edition includes new chapters on digital entrepreneurship, modern marketplace challenges, and how to build a business that honors God while generating significant profits.</p>
+                    </div>
+
+                    <div class="features">
+                        <h3>What You'll Discover:</h3>
+                        <ul>
+                            <li>Biblical foundations for ethical entrepreneurship</li>
+                            <li>How to build wealth while staying true to your faith</li>
+                            <li>Strategies for family-centered business building</li>
+                            <li>Creating businesses that serve God and community</li>
+                            <li>Overcoming secular business world challenges</li>
+                            <li>Biblical stewardship and wealth management</li>
+                            <li>Building generational wealth with Kingdom principles</li>
+                            <li>Modern applications of ancient wisdom</li>
+                        </ul>
+                    </div>
+
+                    <div class="testimonials">
+                        <h3>What Readers Are Saying:</h3>
+                        <div class="testimonial">
+                            <p>"This book completely transformed how I view business and my role as a Christian entrepreneur. Josh provides practical wisdom that actually works."</p>
+                            <div class="author">- Sarah M., Business Owner</div>
+                        </div>
+                        <div class="testimonial">
+                            <p>"Evangelpreneur gave me the confidence to start my business knowing I could honor God while building wealth for my family."</p>
+                            <div class="author">- Michael R., Tech Entrepreneur</div>
+                        </div>
+                    </div>
+
+                    <div class="price-section">
+                        <div class="price">$17.99</div>
+                        <a href="https://www.joshtolley.com/store-checkout/cart" class="cta-button">Shop Now</a>
+                        
+                        <div class="guarantee">
+                            <h4>30-Day Money-Back Guarantee</h4>
+                            <p>If you're not completely satisfied with your purchase, return it within 30 days for a full refund. Your satisfaction is our priority.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
