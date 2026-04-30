@@ -86,7 +86,7 @@
             color: var(--white);
             text-decoration: none;
             letter-spacing: 1px;
-            display: none;
+            display: block;
         }
 
         .logo .gold {
@@ -164,7 +164,7 @@
         }
 
         .mobile-menu-toggle {
-            display: none;
+            display: block;
             flex-direction: column;
             gap: 4px;
             cursor: pointer;
@@ -943,7 +943,7 @@
         }
 
         .tab-content {
-            display: none;
+            display: block;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 16px;
             padding: 2.5rem;
@@ -1558,7 +1558,7 @@
                 flex-direction: column;
                 padding: 2rem 0;
                 gap: 0;
-                display: none;
+                display: block;
                 z-index: 999;
                 border-top: 1px solid rgba(216, 191, 149, 0.3);
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -1590,7 +1590,7 @@
             }
 
             .logo h1 {
-                display: none;
+                display: block;
             }
 
             .logo img {
@@ -1721,7 +1721,7 @@
             }
 
             .hero-stats::-webkit-scrollbar {
-                display: none;
+                display: block;
             }
 
             .stat {
@@ -1873,39 +1873,6 @@
     </section>
 
     <!-- Featured Content -->
-    <section class="featured-content">
-        <div class="container">
-            <h2 class="section-title">Latest <span class="gold">Episodes & Content</span></h2>
-            <div class="content-grid">
-                <div class="content-card podcast">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=400&h=300&fit=crop" alt="Podcast Studio with Microphone">
-                    </div>
-                    <h3>The Logical Podcast</h3>
-                    <p>Deep discussions on entrepreneurship, faith, and freedom with industry leaders.</p>
-                    <a href="https://open.spotify.com/show/2jPsO0El3ZtoC1oI8EI8Yr" class="card-cta">Listen Now</a>
-                </div>
-                <div class="content-card education">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop" alt="Educational Conference">
-                    </div>
-                    <h3>Educational Resources</h3>
-                    <p>Free courses, worksheets, and tools to empower your life logically.</p>
-                    <a href="#education" class="card-cta">Learn More</a>
-                </div>
-                <div class="content-card foundation">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop" alt="Community Foundation Work">
-                    </div>
-                    <h3>The Logical Foundation's Impact</h3>
-                    <p>Supporting communities and individuals through strategic philanthropic initiatives.</p>
-                    <a href="about.html" class="card-cta">Get Involved</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Podcast Section -->
     <section id="podcast" class="podcast-section">
         <div class="container">
             <h2 class="section-title">The Logical <span class="gold">Podcast</span></h2>
@@ -2141,7 +2108,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h1 class="section-title">Contact Josh for media & event appearances <button class="cta-button primary large contact-inline-btn">CONNECT WITH US NOW</button></h1>
+            <h1 class="section-title">Contact Josh for media & event appearances <button class="cta-button primary large contact-inline-btn" onclick="openContactModal()">CONNECT WITH US NOW</button></h1>
             <div class="contact-content">
                 <div class="contact-info">
                     <h2>For booking inquiries, media requests, and event appearances, please reach out through our official channels. We look forward to connecting with you and exploring opportunities to share Josh's logical perspective with your audience.</h2>
@@ -2185,9 +2152,13 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 Josh Tolley. All rights reserved.</p>
                 <div class="social-links">
-                    <a href="#" class="social-link">Twitter</a>
-                    <a href="#" class="social-link">LinkedIn</a>
-                    <a href="#" class="social-link">YouTube</a>
+                    <a href="https://www.instagram.com/officialjoshtolley" class="social-link" target="_blank" rel="noopener">📷 Instagram</a>
+                    <a href="https://www.tiktok.com/@Officialjoshtolley" class="social-link" target="_blank" rel="noopener">🎵 TikTok</a>
+                    <a href="https://www.facebook.com/Officialjoshytolley" class="social-link" target="_blank" rel="noopener">📘 Facebook</a>
+                    <a href="https://www.youtube.com/@thejoshtolleychannel" class="social-link" target="_blank" rel="noopener">📺 YouTube</a>
+                    <a href="https://twitter.com/joshtolley" class="social-link" target="_blank" rel="noopener">❌ X</a>
+                    <a href="https://www.linkedin.com/in/joshtolley" class="social-link" target="_blank" rel="noopener">💼 LinkedIn</a>
+                    <a href="https://rumble.com/c/joshtolley" class="social-link" target="_blank" rel="noopener">📹 Rumble</a>
                 </div>
             </div>
             
@@ -2436,7 +2407,7 @@
         });
     </script>
     <!-- DEI Modal -->
-    <div id="deiModal" class="modal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);">
+    <div id="deiModal" class="modal" style="display: block; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);">
         <div class="modal-content" style="background-color: var(--white); margin: 5% auto; padding: 3rem; border-radius: 16px; width: 90%; max-width: 800px; max-height: 80vh; overflow-y: auto; position: relative; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);">
             <span class="close" onclick="closeDEIModal()" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; position: absolute; top: 1rem; right: 1.5rem;">&times;</span>
             <h2 style="color: var(--primary-black); margin-bottom: 2rem; font-family: 'Montserrat', sans-serif;">Our Approach to True Equality</h2>
@@ -2460,7 +2431,7 @@
     </div>
 
     <!-- Newsletter Modal -->
-    <div id="newsletterModal" class="modal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);">
+    <div id="newsletterModal" class="modal" style="display: block; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);">
         <div class="modal-content" style="background-color: var(--white); margin: 10% auto; padding: 3rem; border-radius: 16px; width: 90%; max-width: 500px; position: relative; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);">
             <span class="close" onclick="closeNewsletterModal()" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; position: absolute; top: 1rem; right: 1.5rem;">&times;</span>
             <h2 style="color: var(--primary-black); margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; text-align: center;">Join the <span style="color: var(--accent-gold);">Logical Movement</span></h2>
@@ -2480,7 +2451,7 @@
     </div>
 
     <!-- Contact Modal -->
-    <div id="contactModal" class="modal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);">
+    <div id="contactModal" class="modal" style="display: block; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);">
         <div class="contact-modal-content">
             <div class="modal-header">
                 <h2>Get in Touch</h2>
