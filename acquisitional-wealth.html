@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acquisitional Wealth - Josh Tolley</title>
+    <meta name="description" content="Learn how to build wealth through strategic business acquisitions and investments with Josh Tolley's comprehensive guide.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-black: #0D0D0D;
+            --accent-gold: #d8bf95;
+            --dark-gold: #c4a878;
+            --rich-black: #000000;
+            --light-gray: #F5F5F5;
+            --medium-gray: #6C757D;
+            --white: #FFFFFF;
+            --charcoal: #2B2B2B;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background: var(--white);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            position: relative;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+        }
+
+        .logo h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        .logo .gold {
+            color: var(--accent-gold);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-gold);
+        }
+
+        .cta-button {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--accent-gold);
+            padding: 0.8rem 1.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .cta-button.primary {
+            background: var(--accent-gold);
+            color: var(--primary-black);
+            border-color: var(--accent-gold);
+        }
+
+        .cta-button:hover {
+            background: var(--accent-gold);
+            color: var(--primary-black);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-button.primary:hover {
+            background: var(--dark-gold);
+            border-color: var(--dark-gold);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--charcoal);
+            border-color: var(--charcoal);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        .cta-button.large {
+            padding: 1.2rem 2.5rem;
+            font-size: 0.95rem;
+            min-width: fit-content;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .back-link {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--white);
+        }
+
+        .product-section {
+            padding: 8rem 0 4rem 0;
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--charcoal) 100%);
+            color: var(--white);
+            margin-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .product-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .product-image {
+            text-align: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-info h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .product-info .subtitle {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .product-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .features {
+            margin: 2rem 0;
+        }
+
+        .features h3 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .price-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+
+        .guarantee {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(216, 191, 149, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 8px;
+        }
+
+        .guarantee h4 {
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-black);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-links-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand .gold {
+            color: var(--accent-gold);
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .link-group h4 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .link-group ul {
+            list-style: none;
+        }
+
+        .link-group li {
+            margin-bottom: 0.5rem;
+        }
+
+        .link-group a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .link-group a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-link:hover {
+            color: var(--accent-gold);
+            background: rgba(216, 191, 149, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .dei-policy {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .dei-policy h4 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .dei-policy p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            * {
+                max-width: 100vw;
+                box-sizing: border-box;
+            }
+
+            html, body {
+                overflow-x: hidden;
+                width: 100%;
+                position: relative;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(13, 13, 13, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem 0;
+                gap: 0;
+                display: none;
+                z-index: 999;
+                border-top: 1px solid rgba(216, 191, 149, 0.3);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .nav-menu.active {
+                display: flex;
+                top: 80px;
+            }
+
+            .nav-menu li {
+                padding: 1rem 2rem;
+                border-bottom: 1px solid rgba(216, 191, 149, 0.1);
+            }
+
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-menu a {
+                font-size: 1.1rem;
+                padding: 0.5rem 0;
+                display: block;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+                z-index: 1000;
+            }
+
+            .logo h1 {
+                display: none;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .product-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .product-info h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .footer-links-section {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.8rem; text-decoration: none;">
+                    <img src="Icon-Gold-Version-PNG.png" alt="Josh Tolley Logo">
+                    <h1>Josh <span class="gold">Tolley</span></h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#podcast">Podcast</a></li>
+                <li><a href="index.html#education">Education</a></li>
+                <li><a href="index.html#foundation">Foundation</a></li>
+                <li><a href="acquisitional-wealth.html">Books</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="cta-button primary" onclick="openContactModal()">Connect with us now</button>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="product-section">
+        <div class="container">
+            <div class="product-content">
+                <div class="product-image">
+                    <img src="acquisitionalwealth2.png" alt="Acquisitional Wealth Book Cover">
+                </div>
+                <div class="product-info">
+                    <h1>Acquisitional Wealth</h1>
+                    <p class="subtitle">Building Wealth Through Strategic Business Acquisitions</p>
+                    
+                    <div class="product-description">
+                        <p>Discover the secrets to building massive wealth through strategic business acquisitions and investments. Josh Tolley reveals time-tested strategies used by the world's wealthiest individuals to acquire businesses, assets, and investments that generate passive income and long-term financial freedom.</p>
+                        
+                        <p>This comprehensive guide takes you step-by-step through the acquisition process, from identifying opportunities to structuring deals that maximize your returns while minimizing risk.</p>
+                    </div>
+
+                    <div class="features">
+                        <h3>What You'll Learn:</h3>
+                        <ul>
+                            <li>How to identify undervalued acquisition targets</li>
+                            <li>Proven negotiation strategies for better deals</li>
+                            <li>Financing techniques that preserve your capital</li>
+                            <li>Due diligence processes that protect your investments</li>
+                            <li>Post-acquisition optimization for maximum profitability</li>
+                            <li>Building a portfolio of income-generating assets</li>
+                            <li>Tax strategies for acquisition-based wealth building</li>
+                        </ul>
+                    </div>
+
+                    <div class="price-section">
+                        <div class="price">$14.95</div>
+                        <a href="https://www.amazon.com/gp/product/163774482X?tag=randohouseinc7986-20" class="cta-button">Shop Now</a>
+                        
+                        <div class="guarantee">
+                            <h4>30-Day Money-Back Guarantee</h4>
+                            <p>If you're not completely satisfied with your purchase, return it within 30 days for a full refund. No questions asked.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="Icon-Gold-Version-PNG.png" alt="Josh Tolley Logo" style="height: 60px; margin-bottom: 1rem;">
+                    <p>Unleashing Truth, Freedom & Entrepreneurial Power</p>
+                </div>
+                <div class="footer-links-section">
+                    <div class="link-group">
+                        <h4>Content</h4>
+                        <ul>
+                            <li><a href="index.html#podcast">Podcast</a></li>
+                            <li><a href="index.html#education">Education</a></li>
+                            <li><a href="index.html#books">Books</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Foundation</h4>
+                        <ul>
+                            <li><a href="index.html#foundation">Our Mission</a></li>
+                            <li><a href="index.html#about">Get Involved</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="index.html#contact" onclick="openContactModal(); return false;">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Josh Tolley. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/officialjoshtolley" class="social-link" target="_blank" rel="noopener" title="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@Officialjoshtolley" class="social-link" target="_blank" rel="noopener" title="TikTok">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/Officialjoshytolley" class="social-link" target="_blank" rel="noopener" title="Facebook">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@thejoshtolleychannel" class="social-link" target="_blank" rel="noopener" title="YouTube">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/joshtolley" class="social-link" target="_blank" rel="noopener" title="X (Twitter)">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/joshtolley" class="social-link" target="_blank" rel="noopener" title="LinkedIn">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://rumble.com/c/joshtolley" class="social-link" target="_blank" rel="noopener" title="Rumble">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12s5.373 12 12 12 12-5.373 12-12zM10.64 15.008l-2.87-1.66v-3.696l2.87-1.66 4.62 3.508-4.62 3.508zm.64-6.344v2.672L12.8 12l-1.52-.664z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- DEI Policy Section -->
+            <div class="dei-policy">
+                <h4><a href="#" onclick="openDEIModal()" style="color: var(--accent-gold); text-decoration: none;">Our Approach to Diversity, Equity & Inclusion</a></h4>
+                <p>Because we believe in ending racism and sexism we have a different approach than that which causes the problem. <a href="#" onclick="openDEIModal()" style="color: var(--accent-gold);">Learn more about our stance.</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Enhanced navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            const scrolled = window.scrollY;
+            
+            if (scrolled > 100) {
+                header.style.background = 'rgba(13, 13, 13, 0.98)';
+                header.style.backdropFilter = 'blur(20px)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(13, 13, 13, 0.95)';
+                header.style.backdropFilter = 'blur(15px)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileToggle && navMenu) {
+            mobileToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                
+                // Animate hamburger menu
+                const spans = mobileToggle.querySelectorAll('span');
+                spans.forEach((span, index) => {
+                    if (navMenu.classList.contains('active')) {
+                        if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                        if (index === 1) span.style.opacity = '0';
+                        if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                    } else {
+                        span.style.transform = 'none';
+                        span.style.opacity = '1';
+                    }
+                });
+            });
+
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    const spans = mobileToggle.querySelectorAll('span');
+                    spans.forEach(span => {
+                        span.style.transform = 'none';
+                        span.style.opacity = '1';
+                    });
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                    navMenu.classList.remove('active');
+                    const spans = mobileToggle.querySelectorAll('span');
+                    spans.forEach(span => {
+                        span.style.transform = 'none';
+                        span.style.opacity = '1';
+                    });
+                }
+            });
+        }
+
+        // Scroll animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.content-card, .education-card, .involvement-card, .book-card, .section-title, .section-description');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('fade-in', 'visible');
+                } else {
+                    element.classList.add('fade-in');
+                }
+            });
+        }
+
+        // Initialize animations on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        document.addEventListener('DOMContentLoaded', animateOnScroll);
+
+        // Enhanced card interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Content cards hover effects
+            const contentCards = document.querySelectorAll('.content-card');
+            contentCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px) scale(1.02) rotateX(5deg)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1) rotateX(0)';
+                });
+            });
+
+            // Education cards enhanced interaction
+            const educationCards = document.querySelectorAll('.education-card');
+            educationCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                    this.style.filter = 'brightness(1.05)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                    this.style.filter = 'brightness(1)';
+                });
+            });
+
+            // Button pulse animation
+            const buttons = document.querySelectorAll('.cta-button, .card-cta, .program-cta');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.animation = 'pulse 0.5s ease-in-out';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.animation = 'none';
+                });
+            });
+        });
+
+        // Parallax effect for background images
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.hero, .featured-content, .about-section, .podcast-section, .education-section, .foundation-section, .books-section, .cta-section');
+            
+            parallaxElements.forEach((element, index) => {
+                const rate = scrolled * -0.5;
+                element.style.backgroundPosition = `center ${rate}px`;
+            });
+        });
+
+        // Add pulse animation keyframes to CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Tab switching functionality
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tab buttons
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            
+            // Show the selected tab content and mark button as active
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        // DEI Modal functionality
+        function openDEIModal() {
+            document.getElementById('deiModal').style.display = 'block';
+        }
+
+        function closeDEIModal() {
+            document.getElementById('deiModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const deiModal = document.getElementById('deiModal');
+            const newsletterModal = document.getElementById('newsletterModal');
+            if (event.target == deiModal) {
+                deiModal.style.display = 'none';
+            }
+            if (event.target == newsletterModal) {
+                newsletterModal.style.display = 'none';
+            }
+        }
+
+        // Newsletter Modal functionality
+        function openNewsletterModal() {
+            document.getElementById('newsletterModal').style.display = 'block';
+        }
+
+        function closeNewsletterModal() {
+            document.getElementById('newsletterModal').style.display = 'none';
+        }
+
+        // Newsletter form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(e.target);
+                    const firstName = e.target.querySelector('input[placeholder="First Name"]').value;
+                    const lastName = e.target.querySelector('input[placeholder="Last Name"]').value;
+                    const email = e.target.querySelector('input[placeholder="Email Address"]').value;
+                    
+                    // Here you would typically send the data to your newsletter service
+                    // For now, we'll just show a success message
+                    alert(`Thank you ${firstName}! You've been subscribed to The Logical Movement newsletter.`);
+                    
+                    // Close modal and reset form
+                    closeNewsletterModal();
+                    e.target.reset();
+                });
+            }
+        });
+    </script>
+    <!-- DEI Modal -->
+    <div id="deiModal" class="modal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: var(--white); margin: 5% auto; padding: 3rem; border-radius: 16px; width: 90%; max-width: 800px; max-height: 80vh; overflow-y: auto; position: relative; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);">
+            <span class="close" onclick="closeDEIModal()" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; position: absolute; top: 1rem; right: 1.5rem;">&times;</span>
+            <h2 style="color: var(--primary-black); margin-bottom: 2rem; font-family: 'Montserrat', sans-serif;">Our Approach to True Equality</h2>
+            
+            <div style="line-height: 1.7; color: var(--charcoal);">
+                <p style="margin-bottom: 1.5rem; font-weight: 600;">Josh places great importance and priority on making the world a better place. A place of equal opportunity, true equity in hands of many, freedom of thought and belief, as well as responsible stewardship of natural resources.</p>
+                
+                <p style="margin-bottom: 1.5rem; font-weight: 600;">Because of this fact we actively reject the popularized ESG/CEI scoring systems.</p>
+                
+                <p style="margin-bottom: 1.5rem;">The ESG/CEI scoring system, while much publicized as a sound set of practices, actually work against the stated objectives these systems proport, not only for the company but also for stakeholders, customers, communities, and environment.</p>
+                
+                <p style="margin-bottom: 1.5rem;">The hatred, division, subjugation, real inequality, societal decay, environmental endangerment and poor business practices these scoring systems promote must be avoided. So too do we avoid then the companies organizations that actively promote ESG/CEI scoring systems and specifically the investment advisors/money managers who use their funds under management to 'nudge' companies towards ESG/CEI compliance or face not 'qualifying' for capital investment.</p>
+                
+                <p style="margin-bottom: 2rem;">Additionally, when it comes patronizing, or investing in, businesses that seek a high ESG/CEI score we urge caution. At times, these companies are yielding to the inappropriate pressures of the public market manipulators. If that is the case, we recommend investing or purchasing sparingly until the board of directors are made aware of the damage caused by the pursuit of the higher ESG/CEI score and restorations can be made.</p>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button onclick="closeDEIModal()" class="cta-button primary" style="background: var(--accent-gold); color: var(--primary-black); border: 2px solid var(--accent-gold); padding: 0.8rem 1.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; border-radius: 4px; font-family: inherit;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Modal -->
+    <div id="newsletterModal" class="modal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: var(--white); margin: 10% auto; padding: 3rem; border-radius: 16px; width: 90%; max-width: 500px; position: relative; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);">
+            <span class="close" onclick="closeNewsletterModal()" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; position: absolute; top: 1rem; right: 1.5rem;">&times;</span>
+            <h2 style="color: var(--primary-black); margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; text-align: center;">Join the <span style="color: var(--accent-gold);">Logical Movement</span></h2>
+            <p style="color: var(--charcoal); margin-bottom: 2rem; text-align: center; line-height: 1.6;">Stay updated with Josh's latest insights, podcast episodes, and exclusive content delivered straight to your inbox.</p>
+            
+            <form id="newsletterForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="display: flex; gap: 1rem;">
+                    <input type="text" placeholder="First Name" required style="flex: 1; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                    <input type="text" placeholder="Last Name" required style="flex: 1; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                </div>
+                <input type="email" placeholder="Email Address" required style="padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                <button type="submit" class="cta-button primary" style="background: var(--accent-gold); color: var(--primary-black); border: 2px solid var(--accent-gold); padding: 1rem 2rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; border-radius: 4px; font-family: inherit; margin-top: 1rem;">Subscribe Now</button>
+            </form>
+            
+            <p style="font-size: 0.85rem; color: var(--medium-gray); text-align: center; margin-top: 1.5rem;">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);">
+        <div class="contact-modal-content">
+            <div class="modal-header">
+                <h2>Get in Touch</h2>
+                <span class="close" onclick="closeContactModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Ready to explore how we can work together? Let's connect and discuss your goals.</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="contactName">Name</label>
+                        <input type="text" id="contactName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Subject</label>
+                        <select id="contactSubject" name="subject" required>
+                            <option value="">Select a topic</option>
+                            <option value="podcast">Podcast Inquiry</option>
+                            <option value="speaking">Speaking Engagement</option>
+                            <option value="business">Business Consultation</option>
+                            <option value="foundation">Foundation Partnership</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .contact-modal-content {
+            position: relative;
+            background: var(--primary-black);
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            color: var(--white);
+        }
+
+        .contact-modal-content .modal-header {
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid rgba(216, 191, 149, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-modal-content .modal-header h2 {
+            margin: 0;
+            color: var(--white);
+        }
+
+        .contact-modal-content .close {
+            color: var(--medium-gray);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .contact-modal-content .close:hover {
+            color: var(--accent-gold);
+        }
+
+        .contact-modal-content .modal-body {
+            padding: 2rem;
+        }
+
+        .contact-modal-content .modal-body p {
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(216, 191, 149, 0.3);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+            font-family: inherit;
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        .contact-form button {
+            width: 100%;
+            margin-top: 1rem;
+        }
+    </style>
+
+    <script>
+        function openContactModal() {
+            document.getElementById('contactModal').style.display = 'block'; document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').style.display = 'none'; document.body.style.overflow = 'auto';
+        }
+
+        // Close contact modal when clicking outside of it
+        document.addEventListener('click', function(event) {
+            const contactModal = document.getElementById('contactModal');
+            if (event.target === contactModal) {
+                closeContactModal();
+            }
+        });
+    </script>
+
+</body>
+</html></body>
+</html>

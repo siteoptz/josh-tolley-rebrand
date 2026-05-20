@@ -1,0 +1,2487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josh Tolley - Unleashing Truth, Freedom, and Entrepreneurial Power - UPDATED VERSION</title>
+    <meta name="description" content="Join Josh Tolley's mission to empower individuals through truth, freedom, and entrepreneurial education. Podcast, educational content, and foundation work.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-black: #0D0D0D;
+            --accent-gold: #d8bf95;
+            --dark-gold: #c4a878;
+            --rich-black: #000000;
+            --light-gray: #F5F5F5;
+            --medium-gray: #6C757D;
+            --white: #FFFFFF;
+            --charcoal: #2B2B2B;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        p, span, div, li {
+            font-family: 'Inter', 'Roboto', Arial, sans-serif;
+        }
+
+        .narrative-text {
+            font-family: 'Inter', 'Roboto', Arial, sans-serif;
+            line-height: 1.7;
+            letter-spacing: 0.2px;
+        }
+
+        /* Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo .gold {
+            color: var(--accent-gold);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-gold);
+        }
+
+        .cta-button {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--accent-gold);
+            padding: 0.8rem 1.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .cta-button.primary {
+            background: var(--accent-gold);
+            color: var(--primary-black);
+            border-color: var(--accent-gold);
+        }
+
+        .cta-button:hover {
+            background: var(--accent-gold);
+            color: var(--primary-black);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-button.primary:hover {
+            background: var(--dark-gold);
+            border-color: var(--dark-gold);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--charcoal);
+            border-color: var(--charcoal);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        .cta-button.large {
+            padding: 1.2rem 2.5rem;
+            font-size: 0.95rem;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: 
+                linear-gradient(135deg, rgba(13, 13, 13, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&h=1080&fit=crop') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background-attachment: fixed;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(13, 13, 13, 0.6);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(13, 13, 13, 0.3);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1000px;
+            padding: 0 2rem;
+            z-index: 2;
+            position: relative;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 120px);
+            padding-top: 120px;
+        }
+
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-title .gold {
+            color: var(--accent-gold);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+            font-weight: 300;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap !important;
+            margin-top: 2rem;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            padding: 0 2rem;
+            gap: 2rem;
+            overflow-x: auto;
+            overflow-y: visible;
+        }
+
+        .stat {
+            text-align: center;
+            flex-shrink: 0;
+            min-width: 200px;
+            white-space: nowrap;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Section Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-black);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title .gold {
+            color: var(--accent-gold);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        /* Featured Content */
+        .featured-content {
+            padding: 6rem 0;
+            background: 
+                linear-gradient(rgba(248, 245, 245, 0.95), rgba(248, 245, 245, 0.95)),
+                url('https://images.unsplash.com/photo-1559223607-a43c990c692c?w=1920&h=1080&fit=crop') center/cover;
+            background-attachment: fixed;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            border-top: 4px solid var(--accent-gold);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(216, 191, 149, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .content-card:hover::before {
+            left: 100%;
+        }
+
+        .content-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+            border-top: 4px solid var(--dark-gold);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .content-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .content-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .content-card p {
+            color: var(--medium-gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-cta {
+            background: var(--accent-gold);
+            color: var(--primary-black);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .card-cta:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Metrics Section */
+        .metrics-section {
+            padding: 6rem 0;
+            background: 
+                linear-gradient(rgba(13, 13, 13, 0.9), rgba(0, 0, 0, 0.9)),
+                url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1920&h=1080&fit=crop') center/cover;
+            background-attachment: fixed;
+            color: var(--white);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .metric-item {
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(216, 191, 149, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(216, 191, 149, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .metric-item:hover::before {
+            left: 100%;
+        }
+
+        .metric-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-gold);
+        }
+
+        .metric-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            display: block;
+        }
+
+        .metric-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.3;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 8rem 0;
+            background: 
+                linear-gradient(rgba(13, 13, 13, 0.9), rgba(0, 0, 0, 0.9)),
+                url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&h=1080&fit=crop') center/cover;
+            background-attachment: fixed;
+            color: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-text h2 .gold {
+            color: var(--accent-gold);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .credentials {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .credential {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: transparent;
+            border-radius: 8px;
+        }
+
+        .credential-title {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .credential-desc {
+            font-size: 0.9rem;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .about-image img {
+            width: 115%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transform: scale(1.15);
+            transform-origin: center;
+        }
+
+        /* Podcast Section */
+        .podcast-section {
+            padding: 8rem 0;
+            background: 
+                linear-gradient(rgba(13, 13, 13, 0.9), rgba(0, 0, 0, 0.9)),
+                url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1920&h=1080&fit=crop') center/cover;
+            background-attachment: fixed;
+            color: var(--white);
+        }
+
+        .podcast-section .section-title {
+            color: var(--white);
+        }
+
+        .podcast-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .podcast-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .episode-featured {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .episode-featured h3 {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .episode-featured h4 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .play-button {
+            background: var(--accent-gold);
+            color: var(--primary-black);
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 50px;
+            margin-top: 1rem;
+        }
+
+        .play-button:hover {
+            background: var(--dark-gold);
+            transform: scale(1.05);
+        }
+
+        .podcast-links h4 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .platform-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .platform-link {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .platform-link:hover {
+            background: var(--dark-gold) !important;
+            color: var(--primary-black) !important;
+            transform: translateY(-2px);
+        }
+
+        .recent-episodes h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .episode-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .episode-card h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .episode-card p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.8rem;
+        }
+
+        .episode-date {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        /* Education Section */
+        .education-section {
+            padding: 8rem 0;
+            background: 
+                linear-gradient(rgba(248, 245, 245, 0.95), rgba(248, 245, 245, 0.95)),
+                url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&h=1080&fit=crop') center/cover;
+            background-attachment: fixed;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 400px;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(216, 191, 149, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .education-card:hover::before {
+            left: 100%;
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .education-card.featured {
+            border: 2px solid var(--accent-gold);
+            transform: scale(1.02);
+        }
+
+        .education-card h3 {
+            color: var(--primary-black);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-card ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .education-card li {
+            padding: 0.3rem 0;
+            color: var(--charcoal);
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .education-card li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* Foundation Section */
+        .foundation-section {
+            padding: 8rem 0;
+            background: 
+                linear-gradient(rgba(13, 13, 13, 0.9), rgba(0, 0, 0, 0.9)),
+                url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1920&h=1080&fit=crop') center/cover;
+            background-attachment: fixed;
+            color: var(--white);
+        }
+
+        .foundation-section .section-title {
+            color: var(--white);
+        }
+
+        .foundation-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .foundation-wide-container {
+            max-width: 100%;
+            width: 100%;
+            padding: 0 2rem;
+            margin: 0;
+        }
+
+        .foundation-top-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin: 3rem 0 4rem 0;
+            flex-wrap: wrap;
+        }
+
+        .foundation-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+
+        .impact-stats {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .impact-stat {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border-top: 4px solid var(--accent-gold);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(216, 191, 149, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .impact-stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-gold);
+        }
+
+        .impact-stat h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .impact-stat p {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        .foundation-mission {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .foundation-mission h3 {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .foundation-mission p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            text-align: left;
+            max-width: 100%;
+        }
+
+        /* Foundation Tabs */
+        .foundation-tabs {
+            margin-top: 4rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tab-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(216, 191, 149, 0.3);
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-btn:hover {
+            background: rgba(216, 191, 149, 0.2);
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--accent-gold);
+            color: var(--primary-black);
+            border-color: var(--accent-gold);
+        }
+
+        .tab-content {
+            display: none;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2.5rem;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(216, 191, 149, 0.2);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Pillars Content */
+        .pillars-content {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .pillar-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(216, 191, 149, 0.1);
+        }
+
+        .pillar-item:last-child {
+            border-bottom: none;
+        }
+
+        .pillar-number {
+            color: var(--accent-gold);
+            font-weight: 900;
+            font-size: 1.4rem;
+            min-width: 35px;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .pillar-item p {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.5;
+            margin: 0;
+            text-align: justify;
+            font-size: 1.05rem;
+            letter-spacing: 0.3px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* Rules Content */
+        .rules-content {
+            display: grid;
+            gap: 1.2rem;
+        }
+
+        .rule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.8rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(216, 191, 149, 0.15);
+        }
+
+        .rule-item:last-child {
+            border-bottom: none;
+        }
+
+        .rule-number {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .gold-circle {
+            background: var(--accent-gold);
+            color: var(--primary-black);
+            box-shadow: 0 4px 12px rgba(216, 191, 149, 0.4);
+        }
+
+        .dark-circle {
+            background: var(--primary-black);
+            color: var(--white);
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .rule-item p {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.5;
+            margin: 0;
+            font-size: 1.1rem;
+            text-align: justify;
+            letter-spacing: 0.3px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .involvement-options h4 {
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .involvement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .involvement-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.8rem;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(216, 191, 149, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .involvement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(216, 191, 149, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .involvement-card:hover::before {
+            left: 100%;
+        }
+
+        .involvement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-gold);
+        }
+
+        .involvement-card h5 {
+            color: var(--white);
+            margin-bottom: 0.8rem;
+        }
+
+        .involvement-card p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+        }
+
+        /* Books Section */
+        .books-section {
+            padding: 8rem 0;
+            background: 
+                linear-gradient(rgba(13, 13, 13, 0.9), rgba(0, 0, 0, 0.9)),
+                url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1920&h=1080&fit=crop') center/cover;
+            background-attachment: fixed;
+            color: var(--white);
+        }
+
+        .books-section .section-title {
+            color: var(--white);
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .book-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(216, 191, 149, 0.2);
+            position: relative;
+        }
+
+        .book-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(216, 191, 149, 0.1), transparent);
+            transition: left 0.6s ease;
+            z-index: 1;
+        }
+
+        .book-card:hover::before {
+            left: 100%;
+        }
+
+        .book-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-gold);
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 350px;
+            object-fit: contain;
+            background: transparent;
+            border-radius: 8px;
+        }
+
+        .book-info {
+            padding: 2rem;
+        }
+
+        .book-info h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-subtitle {
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .book-badges {
+            margin: 1rem 0;
+        }
+
+        .badge {
+            background: var(--accent-gold);
+            color: var(--primary-black);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Speaking Section */
+        .speaking-section {
+            padding: 8rem 0;
+            background: 
+                linear-gradient(rgba(13, 13, 13, 0.9), rgba(0, 0, 0, 0.9)),
+                url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&h=1080&fit=crop') center/cover;
+            background-attachment: fixed;
+            color: var(--white);
+        }
+
+        .speaking-section .section-title {
+            color: var(--white);
+        }
+
+        .speaking-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .speaking-content {
+            margin-top: 3rem;
+        }
+
+        .speaking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .speaking-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            border-top: 4px solid var(--accent-gold);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(216, 191, 149, 0.2);
+        }
+
+        .speaking-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(216, 191, 149, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .speaking-card:hover::before {
+            left: 100%;
+        }
+
+        .speaking-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+            border-top: 4px solid var(--dark-gold);
+        }
+
+        .speaking-card h3 {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .speaking-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .speaking-card ul {
+            list-style: none;
+            margin: 1rem 0;
+            text-align: left;
+        }
+
+        .speaking-card li {
+            padding: 0.3rem 0;
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .speaking-card li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .speaking-cta {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--primary-black);
+            border-radius: 16px;
+            border: 2px solid var(--accent-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .speaking-cta h3 {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .speaking-cta p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 0;
+            background: 
+                linear-gradient(rgba(13, 13, 13, 0.9), rgba(0, 0, 0, 0.9)),
+                url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&h=1080&fit=crop') center/cover;
+            background-attachment: fixed;
+            text-align: center;
+            color: var(--white);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 8rem 0;
+            background: 
+                linear-gradient(rgba(13, 13, 13, 0.9), rgba(0, 0, 0, 0.9)),
+                url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&h=1080&fit=crop') center/cover;
+            background-attachment: fixed;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .contact-section .section-title {
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-inline-btn {
+            font-size: 0.9rem !important;
+            padding: 0.8rem 1.5rem !important;
+            margin: 0 !important;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(216, 191, 149, 0.2);
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info h2 {
+            font-size: 1.8rem;
+            color: var(--white);
+            line-height: 1.5;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .contact-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .cta-section h2 .gold {
+            color: var(--accent-gold);
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-options {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-section .cta-button {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: var(--primary-black);
+        }
+
+        .cta-section .cta-button:hover {
+            background: var(--dark-gold);
+            border-color: var(--dark-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(216, 191, 149, 0.4);
+        }
+
+        .cta-section .cta-button.secondary {
+            background: transparent;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-black);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-links-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand .gold {
+            color: var(--accent-gold);
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .link-group h4 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .link-group ul {
+            list-style: none;
+        }
+
+        .link-group li {
+            margin-bottom: 0.5rem;
+        }
+
+        .link-group a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .link-group a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--accent-gold);
+        }
+
+        .dei-policy {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .dei-policy h4 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .dei-policy p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Mobile Responsiveness */
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Parallax effect enhancement */
+        .parallax-section {
+            position: relative;
+            background-attachment: fixed;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(13, 13, 13, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem 0;
+                gap: 0;
+                display: none;
+                z-index: 999;
+                border-top: 1px solid rgba(216, 191, 149, 0.3);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .nav-menu.active {
+                display: flex;
+                top: 80px;
+            }
+
+            .nav-menu li {
+                padding: 1rem 2rem;
+                border-bottom: 1px solid rgba(216, 191, 149, 0.1);
+            }
+
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-menu a {
+                font-size: 1.1rem;
+                padding: 0.5rem 0;
+                display: block;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+                z-index: 1000;
+            }
+
+            .logo h1 {
+                display: none;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .podcast-content {
+                grid-template-columns: 1fr;
+            }
+
+
+            .foundation-top-stats {
+                gap: 2rem;
+                margin: 2rem 0 3rem 0;
+            }
+
+            .foundation-wide-container {
+                padding: 0 1rem;
+            }
+
+            .foundation-tabs {
+                margin-top: 3rem;
+            }
+
+            .tab-navigation {
+                gap: 0.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .tab-btn {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+                flex: 1;
+                min-width: 0;
+                text-align: center;
+            }
+
+            .tab-content {
+                padding: 1.5rem;
+            }
+
+            .pillar-item {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 1rem;
+                padding: 0.6rem 0;
+            }
+
+            .pillar-number {
+                font-size: 1.2rem;
+                min-width: 30px;
+            }
+
+            .pillar-item p {
+                font-size: 1rem;
+                text-align: justify;
+            }
+
+            .rule-item {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+                gap: 1.2rem;
+                padding: 1rem 0;
+            }
+
+            .rule-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+                margin-bottom: 0;
+            }
+
+            .rule-item p {
+                font-size: 1rem;
+                text-align: justify;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .footer-links-section {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+                padding: 0 1rem;
+                margin-top: 1.5rem;
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+
+            .hero-stats::-webkit-scrollbar {
+                display: none;
+            }
+
+            .stat {
+                min-width: 150px;
+                flex-shrink: 0;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 0.7rem;
+                letter-spacing: 0.5px;
+            }
+
+            .credentials {
+                grid-template-columns: 1fr;
+            }
+
+            /* Disable parallax on mobile */
+            .hero,
+            .featured-content,
+            .about-section,
+            .metrics-section,
+            .podcast-section,
+            .education-section,
+            .foundation-section,
+            .books-section,
+            .speaking-section,
+            .cta-section {
+                background-attachment: scroll !important;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .metric-number {
+                font-size: 2.5rem;
+            }
+
+            .speaking-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="Icon-Gold-Version-PNG.png" alt="Josh Tolley Logo">
+                <h1>Josh <span class="gold">Tolley</span></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#podcast">Podcast</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#foundation">Foundation</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cta-button primary" onclick="openNewsletterModal()">Join the Movement</button>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Unleashing logic, freedom and <span class="gold">financial power</span></h1>
+                <p class="hero-subtitle">Join millions who've discovered authentic success and lasting joy through returning to The Logical Life</p>
+                <div class="hero-cta">
+                    <button class="cta-button primary large">Listen to Latest Episode</button>
+                    <button class="cta-button primary large">Explore Resources</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="metrics-section">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <div class="metric-number">24K+</div>
+                    <div class="metric-label">FACEBOOK FOLLOWERS</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">146K+</div>
+                    <div class="metric-label">YOUTUBE SUBSCRIBERS</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">40+</div>
+                    <div class="metric-label">MILLION VIEWS</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">100K+</div>
+                    <div class="metric-label">ATTENDEES</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">3x</div>
+                    <div class="metric-label">AMAZON #1 BESTSELLER</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Meet <span class="gold">Josh Tolley</span></h2>
+                    <p class="lead">CEO, Founder, Talk-Show Host, 3x Amazon #1 Best-Selling Author and the steward of logic</p>
+                    <p>With over thirty years experience in finance & commerce and over fifteen years exploring social and political issues from a non-partisan prospective focusing on reason, clarity, and solutions for all areas of life. Which is why everyone from CEOs to Homeschooling moms find the clarity they seek with Josh Tolley and his Logical Podcast.</p>
+                    <p>Josh Tolley has become a globally recognized voice in entrepreneurship and business strategy. As "The Chairman" of Tolley & Company, he oversees an organization with significant business and market transactions.</p>
+                    <p>Now, as The Josh Tolley Show has developed into Josh Tolley's Logical Podcast the show is expanding in reach and impact.</p>
+                    <div class="credentials">
+                        <div class="credential">
+                            <span class="credential-title">Top 25</span>
+                            <span class="credential-desc">Business Advisor</span>
+                        </div>
+                        <div class="credential">
+                            <span class="credential-title">Top 100</span>
+                            <span class="credential-desc">Business Trainer</span>
+                        </div>
+                        <div class="credential">
+                            <span class="credential-title">CEO</span>
+                            <span class="credential-desc">Multiple Companies</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="JT_Cutout2.png" alt="Josh Tolley">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Content -->
+    <section class="featured-content">
+        <div class="container">
+            <h2 class="section-title">Latest <span class="gold">Episodes & Content</span></h2>
+            <div class="content-grid">
+                <div class="content-card podcast">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=400&h=300&fit=crop" alt="Podcast Studio with Microphone">
+                    </div>
+                    <h3>The Logical Podcast</h3>
+                    <p>Deep discussions on entrepreneurship, faith, and freedom with industry leaders.</p>
+                    <button class="card-cta">Listen Now</button>
+                </div>
+                <div class="content-card education">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop" alt="Educational Conference">
+                    </div>
+                    <h3>Educational Resources</h3>
+                    <p>Free courses, worksheets, and tools to empower your life logically.</p>
+                    <button class="card-cta">Learn More</button>
+                </div>
+                <div class="content-card foundation">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop" alt="Community Foundation Work">
+                    </div>
+                    <h3>The Logical Foundation's Impact</h3>
+                    <p>Supporting communities and individuals through strategic philanthropic initiatives.</p>
+                    <button class="card-cta">Get Involved</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Podcast Section -->
+    <section id="podcast" class="podcast-section">
+        <div class="container">
+            <h2 class="section-title">The Logical <span class="gold">Podcast</span></h2>
+            <p class="section-subtitle">40+ million downloads and streams worldwide</p>
+            <div class="podcast-content">
+                <div class="podcast-player">
+                    <div class="episode-featured">
+                        <h3>Latest Episode</h3>
+                        <h4>"Building Biblical Businesses in a Secular World"</h4>
+                        <p>Guest: Leading Christian Entrepreneur</p>
+                        <button class="play-button">▶ Play Episode</button>
+                    </div>
+                </div>
+                <div class="podcast-links">
+                    <h4>Listen On:</h4>
+                    <div class="platform-links">
+                        <a href="https://www.iheart.com/" target="_blank" class="platform-link" style="background: var(--accent-gold); color: var(--primary-black); border: 2px solid var(--accent-gold);">
+                            <span style="font-weight: 600;">🎵</span> iHeart Radio
+                        </a>
+                        <a href="https://music.amazon.com" target="_blank" class="platform-link" style="background: var(--accent-gold); color: var(--primary-black); border: 2px solid var(--accent-gold);">
+                            <span style="font-weight: 600;">🎵</span> Amazon Music
+                        </a>
+                        <a href="https://itunes.com" target="_blank" class="platform-link" style="background: var(--accent-gold); color: var(--primary-black); border: 2px solid var(--accent-gold);">
+                            <span style="font-weight: 600;">🎵</span> iTunes
+                        </a>
+                        <a href="https://spotify.com" target="_blank" class="platform-link" style="background: var(--accent-gold); color: var(--primary-black); border: 2px solid var(--accent-gold);">
+                            <span style="font-weight: 600;">🎵</span> Spotify
+                        </a>
+                    </div>
+                    <button class="cta-button primary">Subscribe Now</button>
+                </div>
+            </div>
+            <div class="recent-episodes">
+                <h3>Recent Episodes</h3>
+                <div class="episodes-grid">
+                    <div class="episode-card">
+                        <h4>The Table Method Explained</h4>
+                        <p>How to build million-dollar businesses in 90 days</p>
+                        <span class="episode-date">Dec 10, 2024</span>
+                    </div>
+                    <div class="episode-card">
+                        <h4>Faith & Finance</h4>
+                        <p>Biblical principles for wealth creation</p>
+                        <span class="episode-date">Dec 5, 2024</span>
+                    </div>
+                    <div class="episode-card">
+                        <h4>Entrepreneurial Freedom</h4>
+                        <p>Breaking free from corporate limitations</p>
+                        <span class="episode-date">Dec 1, 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to become a logical pilar in your <span class="gold">community</span>?</h2>
+            <p>Join the millions of people who have discovered the power and profitability of living The Logical Life</p>
+            <div class="cta-options">
+                <button class="cta-button primary large">Subscribe to Podcast</button>
+                <button class="cta-button primary large">Download Free Resources</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="section-title">Educational <span class="gold">Resources</span></h2>
+            <p class="section-subtitle">Essential tools and resources to empower your logical life</p>
+            <div class="education-grid">
+                <div class="education-card featured">
+                    <h3>The Logical Tool</h3>
+                    <p>A comprehensive PDF guide that provides the foundational framework for logical thinking and decision-making in all areas of life.</p>
+                    <ul>
+                        <li>Step-by-step logical analysis methods</li>
+                        <li>Critical thinking frameworks</li>
+                        <li>Real-world application examples</li>
+                    </ul>
+                    <a href="logical-tool.pdf" download="Logical-Tool.pdf" class="cta-button primary">Download PDF</a>
+                </div>
+                <div class="education-card">
+                    <h3>Retail Investing vs Investing</h3>
+                    <p>Understand the crucial differences between retail investing and true wealth-building investment strategies.</p>
+                    <ul>
+                        <li>Investment strategy comparisons</li>
+                        <li>Risk assessment methodologies</li>
+                        <li>Long-term wealth building principles</li>
+                    </ul>
+                    <button class="cta-button primary">Read Whitepaper</button>
+                </div>
+                <div class="education-card">
+                    <h3>Balance Sheet Bankroll</h3>
+                    <p>Learn how to leverage your personal balance sheet to create sustainable wealth and financial independence.</p>
+                    <ul>
+                        <li>Balance sheet optimization</li>
+                        <li>Asset leverage strategies</li>
+                        <li>Cash flow maximization</li>
+                    </ul>
+                    <button class="cta-button primary">Read Whitepaper</button>
+                </div>
+                <div class="education-card">
+                    <h3>The Logical Chronical</h3>
+                    <p>Stay updated with Josh's latest insights, analysis, and logical perspectives on current events and business trends.</p>
+                    <ul>
+                        <li>Weekly logical analysis</li>
+                        <li>Business trend insights</li>
+                        <li>Exclusive subscriber content</li>
+                    </ul>
+                    <a href="https://joshtolleyofficial.substack.com/" target="_blank" class="cta-button primary">Subscribe Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foundation Section -->
+    <section id="foundation" class="foundation-section">
+        <div class="foundation-wide-container">
+            <h2 class="section-title">The Logical Foundation's Impact</h2>
+            <div class="foundation-top-stats">
+                <div class="impact-stat">
+                    <h3>25+</h3>
+                    <p>Lawsuits Funded</p>
+                </div>
+            </div>
+            <div class="foundation-content">
+                <div class="foundation-mission">
+                    <h3>Our Mission</h3>
+                    <p>When you partner with the Logical Foundation you help bring back logically based adult thinking and behavior, deductive reasoning and a better society through our educational and advocacy efforts.</p>
+                    <p>The Logical Foundation funds lawsuits in order to restore logical law enforcement and justice systems, scientific research to restore the deductive foundation of the scientific method, as well as educational and media outreach impacting life itself void of the partisan and emotional strife holding back humanity currently.</p>
+                </div>
+                
+                <div class="foundation-tabs">
+                    <div class="tab-navigation">
+                        <button class="tab-btn active" onclick="openTab(event, 'twelve-pillars')">Twelve Pillars of a Logical Life</button>
+                        <button class="tab-btn" onclick="openTab(event, 'four-rules')">The Logical Life - Four Rules</button>
+                    </div>
+                    
+                    <div id="twelve-pillars" class="tab-content active">
+                        <div class="pillars-content">
+                            <div class="pillar-item">
+                                <span class="pillar-number">1.</span>
+                                <p>Logic leads to cleaner, more pure emotions and a deeper source of meaning.</p>
+                            </div>
+                            <div class="pillar-item">
+                                <span class="pillar-number">2.</span>
+                                <p>Redemption culture can correct "cancel culture" through love, forgiveness, education, and of course, logic.</p>
+                            </div>
+                            <div class="pillar-item">
+                                <span class="pillar-number">3.</span>
+                                <p>Logic is the foundation of true tolerance as opposed to emotionally based forced acceptance, which only breeds a deeper form of hate.</p>
+                            </div>
+                            <div class="pillar-item">
+                                <span class="pillar-number">4.</span>
+                                <p>Self-development is a pursuit that fulfills whereas 'self-help' tends to serve as a synthetic form of achievement.</p>
+                            </div>
+                            <div class="pillar-item">
+                                <span class="pillar-number">5.</span>
+                                <p>Searching for a higher unknown is a noble calling in everyone's life</p>
+                            </div>
+                            <div class="pillar-item">
+                                <span class="pillar-number">6.</span>
+                                <p>Learning a broad array of topics and hearing a broad range of perspectives always serves both personal and societal benefits.</p>
+                            </div>
+                            <div class="pillar-item">
+                                <span class="pillar-number">7.</span>
+                                <p>Logical governance and justice are needed for humanity to thrive, and while we must make efforts at the national level, it may be even more important to focus on the local level.</p>
+                            </div>
+                            <div class="pillar-item">
+                                <span class="pillar-number">8.</span>
+                                <p>Constantly challenging and changing one's own beliefs is a sign of maturity.</p>
+                            </div>
+                            <div class="pillar-item">
+                                <span class="pillar-number">9.</span>
+                                <p>All people are valuable so extend forgiveness and a path to redemption for those who error.</p>
+                            </div>
+                            <div class="pillar-item">
+                                <span class="pillar-number">10.</span>
+                                <p>Logical markets and economic practices are pivotal for sound economic health.</p>
+                            </div>
+                            <div class="pillar-item">
+                                <span class="pillar-number">11.</span>
+                                <p>Logical science is paramount to advancement and as such the scientific method and scientific integrity must be maintained in all areas of scientific research, mathematics, and technology.</p>
+                            </div>
+                            <div class="pillar-item">
+                                <span class="pillar-number">12.</span>
+                                <p>Social norms and cultural issues must be established and evaluated by Logical, Objective deduction or society can rot. This Logical filter must extend to recreation, hobbies, enjoyment, arts, sports, music, and entertainment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="four-rules" class="tab-content">
+                        <div class="rules-content">
+                            <div class="rule-item">
+                                <div class="rule-number gold-circle">01</div>
+                                <p>As a Non-Partisan Platform, we ask you leave your political affiliations at the door.</p>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-number dark-circle">02</div>
+                                <p>As a program for adults, we recognize there is not place in society for self-defined truth, self-provided morality, nor subjective reality, leave these things at the door as well.</p>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-number gold-circle">03</div>
+                                <p>Emotion needs to be bound and led by logic; therefore, no emotionally based argument will be accepted as valid.</p>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-number dark-circle">04</div>
+                                <p>Being wrong is the first step to becoming right; therefore, we do not treat a wrong point of view as a moral infraction but rather a learning opportunity, a bonding opportunity, and a growth opportunity that we not only welcome for ourselves but encourage in others.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books" class="books-section">
+        <div class="container">
+            <h2 class="section-title">Best-Selling <span class="gold">Books</span></h2>
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="evangelpreneur2.png" alt="Evangelpreneur Book">
+                    </div>
+                    <div class="book-info">
+                        <h3>Evangelpreneur</h3>
+                        <p class="book-subtitle">Revised and Expanded Edition</p>
+                        <p>How Biblical Free Enterprise Can Empower Your Faith, Family, and Freedom</p>
+                        <div class="book-badges">
+                            <span class="badge bestseller">Amazon #1 Bestseller</span>
+                        </div>
+                        <button class="cta-button primary">Get Your Copy</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="Acquisitionalwealth2.png" alt="Acquisitional Wealth Book">
+                    </div>
+                    <div class="book-info">
+                        <h3>Acquisitional Wealth</h3>
+                        <p>Building wealth through strategic business acquisitions and investments</p>
+                        <div class="book-badges">
+                            <span class="badge">Essential Reading</span>
+                        </div>
+                        <button class="cta-button primary">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h1 class="section-title">Contact Josh for media & event appearances <button class="cta-button primary large contact-inline-btn">CONNECT WITH US NOW</button></h1>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>For booking inquiries, media requests, and event appearances, please reach out through our official channels. We look forward to connecting with you and exploring opportunities to share Josh's logical perspective with your audience.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Josh <span class="gold">Tolley</span></h3>
+                    <p>Unleashing Truth, Freedom & Entrepreneurial Power</p>
+                </div>
+                <div class="footer-links-section">
+                    <div class="link-group">
+                        <h4>Content</h4>
+                        <ul>
+                            <li><a href="#podcast">Podcast</a></li>
+                            <li><a href="#education">Education</a></li>
+                            <li><a href="#books">Books</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Foundation</h4>
+                        <ul>
+                            <li><a href="#foundation">Our Mission</a></li>
+                            <li><a href="#">Get Involved</a></li>
+                            <li><a href="#">Impact Stories</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#">Speaking</a></li>
+                            <li><a href="#">Media Kit</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Josh Tolley. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">LinkedIn</a>
+                    <a href="#" class="social-link">YouTube</a>
+                </div>
+            </div>
+            
+            <!-- DEI Policy Section -->
+            <div class="dei-policy">
+                <h4><a href="#" onclick="openDEIModal()" style="color: var(--accent-gold); text-decoration: none;">Our Approach to Diversity, Equity & Inclusion</a></h4>
+                <p>Because we believe in ending racism and sexism we have a different approach than that which causes the problem. <a href="#" onclick="openDEIModal()" style="color: var(--accent-gold);">Learn more about our stance.</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Enhanced navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            const scrolled = window.scrollY;
+            
+            if (scrolled > 100) {
+                header.style.background = 'rgba(13, 13, 13, 0.98)';
+                header.style.backdropFilter = 'blur(20px)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(13, 13, 13, 0.95)';
+                header.style.backdropFilter = 'blur(15px)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileToggle && navMenu) {
+            mobileToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                
+                // Animate hamburger menu
+                const spans = mobileToggle.querySelectorAll('span');
+                spans.forEach((span, index) => {
+                    if (navMenu.classList.contains('active')) {
+                        if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                        if (index === 1) span.style.opacity = '0';
+                        if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                    } else {
+                        span.style.transform = 'none';
+                        span.style.opacity = '1';
+                    }
+                });
+            });
+
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    const spans = mobileToggle.querySelectorAll('span');
+                    spans.forEach(span => {
+                        span.style.transform = 'none';
+                        span.style.opacity = '1';
+                    });
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                    navMenu.classList.remove('active');
+                    const spans = mobileToggle.querySelectorAll('span');
+                    spans.forEach(span => {
+                        span.style.transform = 'none';
+                        span.style.opacity = '1';
+                    });
+                }
+            });
+        }
+
+        // Scroll animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.content-card, .education-card, .involvement-card, .book-card, .section-title, .section-description');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('fade-in', 'visible');
+                } else {
+                    element.classList.add('fade-in');
+                }
+            });
+        }
+
+        // Initialize animations on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        document.addEventListener('DOMContentLoaded', animateOnScroll);
+
+        // Enhanced card interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Content cards hover effects
+            const contentCards = document.querySelectorAll('.content-card');
+            contentCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px) scale(1.02) rotateX(5deg)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1) rotateX(0)';
+                });
+            });
+
+            // Education cards enhanced interaction
+            const educationCards = document.querySelectorAll('.education-card');
+            educationCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                    this.style.filter = 'brightness(1.05)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                    this.style.filter = 'brightness(1)';
+                });
+            });
+
+            // Button pulse animation
+            const buttons = document.querySelectorAll('.cta-button, .card-cta, .program-cta');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.animation = 'pulse 0.5s ease-in-out';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.animation = 'none';
+                });
+            });
+        });
+
+        // Parallax effect for background images
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.hero, .featured-content, .about-section, .podcast-section, .education-section, .foundation-section, .books-section, .cta-section');
+            
+            parallaxElements.forEach((element, index) => {
+                const rate = scrolled * -0.5;
+                element.style.backgroundPosition = `center ${rate}px`;
+            });
+        });
+
+        // Add pulse animation keyframes to CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Tab switching functionality
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tab buttons
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            
+            // Show the selected tab content and mark button as active
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        // DEI Modal functionality
+        function openDEIModal() {
+            document.getElementById('deiModal').style.display = 'block';
+        }
+
+        function closeDEIModal() {
+            document.getElementById('deiModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const deiModal = document.getElementById('deiModal');
+            const newsletterModal = document.getElementById('newsletterModal');
+            if (event.target == deiModal) {
+                deiModal.style.display = 'none';
+            }
+            if (event.target == newsletterModal) {
+                newsletterModal.style.display = 'none';
+            }
+        }
+
+        // Newsletter Modal functionality
+        function openNewsletterModal() {
+            document.getElementById('newsletterModal').style.display = 'block';
+        }
+
+        function closeNewsletterModal() {
+            document.getElementById('newsletterModal').style.display = 'none';
+        }
+
+        // Newsletter form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(e.target);
+                    const firstName = e.target.querySelector('input[placeholder="First Name"]').value;
+                    const lastName = e.target.querySelector('input[placeholder="Last Name"]').value;
+                    const email = e.target.querySelector('input[placeholder="Email Address"]').value;
+                    
+                    // Here you would typically send the data to your newsletter service
+                    // For now, we'll just show a success message
+                    alert(`Thank you ${firstName}! You've been subscribed to The Logical Movement newsletter.`);
+                    
+                    // Close modal and reset form
+                    closeNewsletterModal();
+                    e.target.reset();
+                });
+            }
+        });
+    </script>
+    <!-- DEI Modal -->
+    <div id="deiModal" class="modal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: var(--white); margin: 5% auto; padding: 3rem; border-radius: 16px; width: 90%; max-width: 800px; max-height: 80vh; overflow-y: auto; position: relative; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);">
+            <span class="close" onclick="closeDEIModal()" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; position: absolute; top: 1rem; right: 1.5rem;">&times;</span>
+            <h2 style="color: var(--primary-black); margin-bottom: 2rem; font-family: 'Montserrat', sans-serif;">Our Approach to True Equality</h2>
+            
+            <div style="line-height: 1.7; color: var(--charcoal);">
+                <p style="margin-bottom: 1.5rem; font-weight: 600;">Josh places great importance and priority on making the world a better place. A place of equal opportunity, true equity in hands of many, freedom of thought and belief, as well as responsible stewardship of natural resources.</p>
+                
+                <p style="margin-bottom: 1.5rem; font-weight: 600;">Because of this fact we actively reject the popularized ESG/CEI scoring systems.</p>
+                
+                <p style="margin-bottom: 1.5rem;">The ESG/CEI scoring system, while much publicized as a sound set of practices, actually work against the stated objectives these systems proport, not only for the company but also for stakeholders, customers, communities, and environment.</p>
+                
+                <p style="margin-bottom: 1.5rem;">The hatred, division, subjugation, real inequality, societal decay, environmental endangerment and poor business practices these scoring systems promote must be avoided. So too do we avoid then the companies organizations that actively promote ESG/CEI scoring systems and specifically the investment advisors/money managers who use their funds under management to 'nudge' companies towards ESG/CEI compliance or face not 'qualifying' for capital investment.</p>
+                
+                <p style="margin-bottom: 2rem;">Additionally, when it comes patronizing, or investing in, businesses that seek a high ESG/CEI score we urge caution. At times, these companies are yielding to the inappropriate pressures of the public market manipulators. If that is the case, we recommend investing or purchasing sparingly until the board of directors are made aware of the damage caused by the pursuit of the higher ESG/CEI score and restorations can be made.</p>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button onclick="closeDEIModal()" class="cta-button primary" style="background: var(--accent-gold); color: var(--primary-black); border: 2px solid var(--accent-gold); padding: 0.8rem 1.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; border-radius: 4px; font-family: inherit;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Modal -->
+    <div id="newsletterModal" class="modal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: var(--white); margin: 10% auto; padding: 3rem; border-radius: 16px; width: 90%; max-width: 500px; position: relative; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);">
+            <span class="close" onclick="closeNewsletterModal()" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; position: absolute; top: 1rem; right: 1.5rem;">&times;</span>
+            <h2 style="color: var(--primary-black); margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; text-align: center;">Join the <span style="color: var(--accent-gold);">Logical Movement</span></h2>
+            <p style="color: var(--charcoal); margin-bottom: 2rem; text-align: center; line-height: 1.6;">Stay updated with Josh's latest insights, podcast episodes, and exclusive content delivered straight to your inbox.</p>
+            
+            <form id="newsletterForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="display: flex; gap: 1rem;">
+                    <input type="text" placeholder="First Name" required style="flex: 1; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                    <input type="text" placeholder="Last Name" required style="flex: 1; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                </div>
+                <input type="email" placeholder="Email Address" required style="padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit;">
+                <button type="submit" class="cta-button primary" style="background: var(--accent-gold); color: var(--primary-black); border: 2px solid var(--accent-gold); padding: 1rem 2rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; border-radius: 4px; font-family: inherit; margin-top: 1rem;">Subscribe Now</button>
+            </form>
+            
+            <p style="font-size: 0.85rem; color: var(--medium-gray); text-align: center; margin-top: 1.5rem;">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </div>
+
+</body>
+</html>
