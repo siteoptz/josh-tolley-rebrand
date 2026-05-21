@@ -1195,8 +1195,9 @@
             // Add Web3Forms access key
             formData.append('access_key', WEB3FORMS_ACCESS_KEY);
             
-            // Add recipient email
-            formData.append('email', 'media@sceptyr.com');
+            // Add enhanced email fields
+            formData.append('from_name', formData.get('name') || 'Contact Form');
+            formData.append('subject', 'Contact Form: ' + (formData.get('subject') || 'Inquiry'));
             
             // Convert FormData to JSON
             const object = Object.fromEntries(formData);

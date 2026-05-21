@@ -1178,7 +1178,8 @@
                     
                     // Configure Web3Forms options
                     formData.append('redirect', 'false'); // Don't redirect
-                    formData.append('email', 'media@sceptyr.com'); // Send to this email
+                    formData.append('from_name', formData.get('name') || 'Contact Form');
+                    formData.append('subject', 'Contact Form: ' + (formData.get('subject') || 'Inquiry'));
                     
                     // Submit to Web3Forms
                     const response = await fetch('https://api.web3forms.com/submit', {
